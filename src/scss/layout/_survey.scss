@@ -1,0 +1,29 @@
+
+.container__survey{
+    display: none;
+    &.show{
+        display: block;
+        width: 100%;
+    }
+}
+.card--one{
+    display: none;
+    &.show{
+        display: block;
+        background-color: rgb(189, 224, 137);
+    }
+}
+.card--two{
+    display: none;
+    &.show{
+        display: block;
+        background-color: rgb(133, 133, 226);
+    }
+}
+.card--three{
+    display: none;
+    &.show{
+        display: block;
+        background-color: rgb(243, 132, 132);
+    }
+}

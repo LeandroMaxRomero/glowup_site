@@ -1,0 +1,12 @@
+
+html {
+    font-size: 62.5%; //? 1rem = 10px
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+  }
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+    max-width: 100%;
+  }
