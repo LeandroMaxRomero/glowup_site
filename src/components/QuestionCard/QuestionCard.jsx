@@ -1,111 +1,227 @@
-import  {useState, useContext, useEffect } from 'react';
-import { QuestionnaireContext } from '../../Context/QuestionnaireContext';
+import { useState, useContext, useEffect } from 'react';
+import { SurveyContext } from '../../Context/SurveyContext';
 
 const QuestionCard = () => {
-    const { showCard, setShowCard, setCompleted } = useContext(QuestionnaireContext);
+    const { showCard, setShowCard, setCompleted, completed } = useContext(SurveyContext);
+    const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+    const [selectedOptions, setSelectedOptions] = useState(new Set());
+    const [userInput, setUserInput] = useState('');
+    const [userResponses, setUserResponses] = useState({});
 
     useEffect(() => {
-        const isCompleted = localStorage.getItem('questionnaireCompleted');
+        const isCompleted = localStorage.getItem('surveyCompleted');
+        const isClosedWithoutCompletion = localStorage.getItem('surveyClosedWithoutCompletion');
+
         if (isCompleted) {
-          setShowCard(false);
+            setShowCard(false); // Si el cuestionario se ha completado, no lo mostramos
+        } else if (isClosedWithoutCompletion) {
+            setShowCard(true); // Si el cuestionario fue cerrado sin completarse, lo mostramos nuevamente
         }
-      }, [setShowCard]);
+    }, [setShowCard]);
+
+    const handleCloseSurvey = () => {
+        if (!completed) {
+            localStorage.setItem('surveyClosedWithoutCompletion', 'true'); // Guardamos el registro en el almacenamiento local
+        }
+        setShowCard(false); // Siempre cerramos el cuestionario al hacer clic en "Cerrar cuestionario"
+    };
+
+    // useEffect(() => {
+    //     const isCompleted = localStorage.getItem('surveyCompleted');
+    //     if (isCompleted) {
+    //         setShowCard(false);
+    //     } else if (closedWithoutCompletion) { // Si el cuestionario fue cerrado sin completarse, volvemos a mostrarlo
+    //         setShowCard(true);
+    //     }
+    // }, [setShowCard, closedWithoutCompletion]);
+
+    // useEffect(() => {
+    //     const isCompleted = localStorage.getItem('surveyCompleted');
+    //     if (isCompleted) {
+    //         setShowCard(false);
+    //     }
+    // }, [setShowCard]);
+
+    // const handleCloseSurvey = () => {
+    //     if (!completed) { // Si el cuestionario no se ha completado
+    //         setClosedWithoutCompletion(true); // Marcamos que el cuestionario fue cerrado sin completarse
+    //     }
+    //     setShowCard(false); // Siempre cerramos el cuestionario al hacer clic en "Cerrar cuestionario"
+    // };
+
+    // useEffect(() => {
+    //     if (closedWithoutCompletion) {
+    //         setShowCard(true); // Si el cuestionario fue cerrado sin completarse, volvemos a mostrarlo
+    //     }
+    // }, [closedWithoutCompletion, setShowCard]);
 
 
-  const questions = [
-    {
-      id: 1,
-      question: '¿Cuál es la capital de Francia?',
-      options: ['Madrid', 'París', 'Londres']
-    },
-    {
-      id: 2,
-      question: '¿Cuál es el río más largo del mundo?',
-      options: ['Amazonas', 'Nilo', 'Mississippi']
-    },
-    {
-      id: 3,
-      question: '¿Cuál es tu opinión sobre este tema?',
-      input: true
-    },
-    {
-      id: 4,
-      question: '¿Cuál es la montaña más alta del mundo?',
-      options: ['Monte Everest', 'Monte Kilimanjaro', 'Monte Aconcagua']
-    },
-    {
-      id: 5,
-      question: '¿Cuál es la capital de España?',
-      options: ['Madrid', 'Barcelona', 'Valencia']
-    }
-  ];
+    // useEffect(() => {
+    //     const isCompleted = localStorage.getItem('surveyCompleted');
+    //     if (isCompleted) {
+    //         setShowCard(false);
+    //     }
+    // }, [setShowCard]);
 
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const [selectedOption, setSelectedOption] = useState(null);
-  const [userInput, setUserInput] = useState('');
-  
-  const handleCloseQuestionnaire = () => {
-    setShowCard(false);
-  };
 
-  const handleOptionSelect = (option) => {
-    setSelectedOption(option);
-  };
+    useEffect(() => {
+        if (Object.keys(userResponses).length > 0) {
+            localStorage.setItem('userResponses', JSON.stringify(userResponses));
+        }
+    }, [userResponses]);
 
-  const handleUserInput = (event) => {
-    setUserInput(event.target.value);
-  };
+    // const handleCloseSurvey = () => {
+    //     setShowCard(false);
+    // };
+    // const handleCloseSurvey = () => {
+    //     setClosedWithoutCompletion(true); // Marcamos que el cuestionario fue cerrado sin completarse
+    //     setShowCard(false); // No necesitamos establecer showCard en false directamente aquí
+    // };
+
+    const handleOptionSelect = (option) => {
+        if (currentQuestionIndex === 1) {
+            const updatedSelectedOptions = new Set(selectedOptions);
+            if (updatedSelectedOptions.has(option)) {
+                updatedSelectedOptions.delete(option);
+            } else {
+                updatedSelectedOptions.add(option);
+            }
+            setSelectedOptions(updatedSelectedOptions);
+        } else {
+            setSelectedOptions(new Set([option]));
+        }
+    };
+
+    const handleUserInput = (event) => {
+        setUserInput(event.target.value);
+    };
+
+    const handlePreviousQuestion = () => {
+        setCurrentQuestionIndex(Math.max(currentQuestionIndex - 1, 0));
+    };
 
   const handleNextQuestion = () => {
-    const selectedAnswer = {
-      question: questions[currentQuestionIndex].question,
-      answer: selectedOption || userInput
-    };
-    localStorage.setItem(`question_${currentQuestionIndex}`, JSON.stringify(selectedAnswer));
+    const currentQuestion = questions[currentQuestionIndex];
+    let response;
 
-    setSelectedOption(null);
+    if (currentQuestion.options) {
+        response = [...selectedOptions];
+
+        
+        if (selectedOptions.has("Other (please specify)")) {
+            response.push(userInput.trim());
+        }
+    } else {
+        response = userInput;
+    }
+
+    setUserResponses((prevResponses) => ({
+        ...prevResponses,
+        [currentQuestionIndex]: response,
+    }));
+
+    setSelectedOptions(new Set());
     setUserInput('');
 
     if (currentQuestionIndex < questions.length - 1) {
-      setCurrentQuestionIndex(currentQuestionIndex + 1);
+        setCurrentQuestionIndex(currentQuestionIndex + 1);
     } else {
-      setShowCard(false);
-    }
-    if (currentQuestionIndex === questions.length - 1) {
+        setShowCard(false);
         setCompleted(true);
-        localStorage.setItem('questionnaireCompleted', 'true');
-      }
-  };
+        localStorage.setItem('surveyCompleted', 'true');
+    }
+};
 
+  
 
-  return (
-    <div>
-      {showCard && (
-        <div>
-          <button onClick={handleCloseQuestionnaire}>Cerrar cuestionario</button>
-          <h2>{questions[currentQuestionIndex].question}</h2>
-          {questions[currentQuestionIndex].options ? (
-            <ul>
-              {questions[currentQuestionIndex].options.map((option, index) => (
-                <li key={index}>
-                  <button onClick={() => handleOptionSelect(option)} disabled={selectedOption !== null}>
-                    {option}
-                  </button>
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <textarea value={userInput} onChange={handleUserInput} />
-          )}
-          {selectedOption || userInput ? (
-            <button onClick={handleNextQuestion}>
-              {currentQuestionIndex === questions.length - 1 ? 'Finalizar' : 'Siguiente pregunta'}
-            </button>
-          ) : null}
+    const questions = [
+        {
+            id: 1,
+            question: 'How satisfied are you with your current marketing efforts?',
+            options: ['Very satisfied', 'Satisfied', 'Neutral', 'Dissatisfied', 'Very Dissatisfied']
+        },
+        {
+            id: 2,
+            question: "What are your main goals for improving your practice's marketing?",
+            options: ['Increase patient inquiries', 'Enhance online visibility', 'Boost appointment bookings', 'Improve brand awareness', 'Generate more leads', 'Other (please specify)'],
+        },
+        {
+            id: 3,
+            question: 'What challenges or obstacles are you currently facing with your marketing efforts?',
+            input: true
+        },
+        {
+            id: 4,
+            question: 'How important is it for you to address these challenges and improve your marketing strategy?',
+            options: ['Not Important', 'Somewhat Important', 'Neutral ', 'Important', 'Very Important']
+        },
+        {
+            id: 5,
+            question: 'How likely are you to consider partnering with a marketing agency to address these challenges?',
+            options: ['Very Unlikely', 'Unlikely', 'Neutral', 'Likely', 'Very Likely']
+        }
+    ];
+
+    return (
+        <div className='container__survey'>
+            {showCard && (
+                <div className='survey--card'>
+                    <button className='survey__btn--close' onClick={handleCloseSurvey}>X</button>
+
+                    <h2>{questions[currentQuestionIndex].question}</h2>
+
+                    {questions[currentQuestionIndex].options
+                        ? (
+                            <ul className='answers--list'>
+                                {questions[currentQuestionIndex].options.map((option, index) => (
+                                    <li key={index}>
+                                        {currentQuestionIndex === 1 ? (
+                                            <label>
+                                                <input
+                                                    type="checkbox"
+                                                    value={option}
+                                                    checked={selectedOptions.has(option)}
+                                                    onChange={() => handleOptionSelect(option)}
+                                                    className='checkboxes'
+                                                />
+                                                <br></br>
+                                                {option}
+                                            </label>
+                                        ) : (
+                                            <button onClick={() => handleOptionSelect(option)} disabled={selectedOptions.has(option)}>
+                                                {option}
+                                            </button>
+                                        )}
+                                    </li>
+                                ))}
+                            </ul>
+                        )
+                        : (
+                            <textarea value={userInput} onChange={handleUserInput} />
+                        )}
+
+                    {currentQuestionIndex === 1 && selectedOptions.has("Other (please specify)") && (
+                        <textarea
+                            value={userInput}
+                            onChange={handleUserInput}
+                            placeholder="Ingrese su respuesta aquí..."
+                        />
+                    )}
+
+                    <div className='survey__btn--nav'>
+                        {currentQuestionIndex > 0 && (
+                            <button className='survey__btn--anterior' onClick={handlePreviousQuestion}>Anterior</button>
+                        )}
+                        {(selectedOptions.size > 0 || userInput) && (
+                            <button className='survey__btn--siguiente' onClick={handleNextQuestion}>
+                                {currentQuestionIndex === questions.length - 1 ? 'Finalizar' : 'Siguiente pregunta'}
+                            </button>
+                        )}
+                    </div>
+                </div>
+            )}
         </div>
-      )}
-    </div>
-  );
+    );
 };
 
 export default QuestionCard;

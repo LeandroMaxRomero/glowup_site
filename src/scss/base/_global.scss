@@ -1,3 +1,4 @@
+@use '../base/variables' as v;
 
 html {
     font-size: 62.5%; //? 1rem = 10px
@@ -9,4 +10,24 @@ html {
   *:after {
     box-sizing: inherit;
     max-width: 100%;
+  }
+
+  body{
+    background-color: v.$blanco;
+  }
+  a{
+    text-decoration: none;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  p{
+    font-family: v.$font;
+    color: v.$negro;
+    margin: 0;
+  }
+
+  button{
+    cursor: pointer;
   }

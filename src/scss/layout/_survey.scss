@@ -1,29 +1,84 @@
+@use '../base/variables' as v;
 
-.container__survey{
-    display: none;
-    &.show{
-        display: block;
-        width: 100%;
+// .container__survey{
+//     display: flex;
+//     justify-content: center;
+//     }
+.survey--card{
+    display: flex;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: v.$gris;
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
+    min-height: 200px;
+    min-width: 500px;
+    flex-direction: column;
+    justify-content: space-around;
+    .survey__btn--close{
+        background-color: v.$negro;
+        color: v.$blanco;
+        width: 30px;
+        border: none;
+        border-radius: 5px;
+        align-self: flex-end;
+        margin-bottom: 5px;
+    }
+    h2{
+        padding: 0.5rem 1rem;
     }
 }
-.card--one{
-    display: none;
-    &.show{
-        display: block;
-        background-color: rgb(189, 224, 137);
+
+.answers--list{
+    display: flex;
+    gap: 1rem;
+    padding: 0;
+    justify-content: space-evenly;
+    li{
+        display: flex;
+    }
+    button{
+        background-color: v.$blanco;
+        height: 28px;
+        font-weight: 600;
+        border: none;
+        border-radius: 2.5px;
+        box-shadow: 2.5px 2.5px 5px 0px rgba(29, 28, 28, 0.25);
+    }
+    label{
+        font-family: v.$font;
+        font-size: 16px;
+        font-weight: 500;
+        padding-left: 1rem;
+        &:hover{
+            color:v.$blanco;
+        }
+    }
+    .checkboxes{
+        appearance: none;
+        background-color: v.$blanco;
+        border-radius: 50%;
+        height: 20px;
+        width: 20px;
+        &:checked{
+            background-color: green;
+        }
     }
 }
-.card--two{
-    display: none;
-    &.show{
-        display: block;
-        background-color: rgb(133, 133, 226);
-    }
+.survey__btn--nav{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 2rem;
 }
-.card--three{
-    display: none;
-    &.show{
-        display: block;
-        background-color: rgb(243, 132, 132);
-    }
+.survey__btn--anterior, .survey__btn--siguiente{
+    background-color: v.$negro;
+    color: v.$blanco;
+    height: 28px;
+    font-weight: 600;
+    border: none;
+    border-radius: 2.5px;
+    box-shadow: 2.5px 2.5px 5px 0px rgba(29, 28, 28, 0.25);
 }

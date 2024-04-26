@@ -1,12 +1,12 @@
 import QuestionCard from "../QuestionCard/QuestionCard";
+import { Header } from "./Header";
 // import { Survey } from "../Survey/Survey";
 
 export const Home = () => {
   return (
-    <div>
-      {/* <Survey /> */}
+    <div className="container__home">
+      <Header />
       <QuestionCard />
-      <a href="/form"><button>Ir al formulario</button></a>
     </div>
   )
 }
