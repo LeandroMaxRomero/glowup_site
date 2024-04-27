@@ -1,3 +1,82 @@
+@use '../base/variables' as v;
+
 .container__home{
     height: 3900px;
+}
+
+.container__services{
+    width: 100%;
+    max-width: 1320px;
+    padding: 0 1rem;
+    margin: 0 auto 206px;
+    border: 2px dashed v.$gris;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    h2{
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        text-transform: uppercase;
+        text-align: end;
+    }
+}
+
+.container__aboutus{
+    width: 100%;
+    max-width: 1320px;
+    padding: 0 1rem;
+    margin: 0 auto 230px;
+    border: 2px dashed v.$gris;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+    grid-template-areas: "b1 b2 tex tex"
+                         "b3 b4 b5 b6";
+    .box{
+        background-color: v.$gris;
+        height: 310px;
+    }
+    .box1{
+        grid-area: b1;
+    }
+    .box2{
+        grid-area: b2;
+    }
+    .box3{
+        grid-area: b3;
+    }
+    .box4{
+        grid-area: b4;
+    }
+    .box5{
+        grid-area: b5;
+    }
+    .box6{
+        grid-area: b6;
+    }
+    .text{
+        grid-area: tex;
+        display: flex;
+        flex-direction: column;
+        padding-top: 40px;
+        gap: 20px;
+    }
+    h2{
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        text-transform: uppercase;
+    }
+    h3{
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-transform: uppercase;
+        width: 530px;
+    }
 }
