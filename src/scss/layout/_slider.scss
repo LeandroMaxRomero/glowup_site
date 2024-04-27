@@ -1,68 +1,10 @@
 @use '../base/variables' as v;
 
-// .slider-container {
-//     width: 100%;
-//     max-width: 1320px;
-//     padding: 0 1rem;
-//     margin: 0 auto 230px;
-//     border: 2px dashed v.$gris;
-//     position: relative;
-//     overflow: hidden;
-//     height: 300px;
-//   }
-  
-//   .card {
-//     position: absolute;
-//     height: 100%;
-//     transition: transform 0.5s ease;
-//   }
-  
-//   .card.active {
-//     transform: translateX(0);
-//   }
-  
-//   .card-image {
-//     width: 420px;
-//     height: 435px;
-//     background-color: v.$gris;
-//     height: 100%;
-//     object-fit: cover;
-//     float: left;
-//   }
-  
-//   .card-content {
-//     // width: calc(66.667% - 20px); /* Dos tercios menos el espacio para la imagen */
-//     height: 100%;
-//     padding: 10px;
-//     float: right;
-//   }
-  
-//   .prev, .next {
-//     position: absolute;
-//     top: 50%;
-//     transform: translateY(-50%);
-//     background-color: rgba(255, 255, 255, 0.5);
-//     border: none;
-//     color: black;
-//     padding: 10px;
-//     cursor: pointer;
-//     z-index: 100;
-//   }
-  
-//   .prev {
-//     left: 0;
-//   }
-  
-//   .next {
-//     right: 0;
-//   }
-
 .slider-container {
         width: 100%;
         max-width: 1320px;
         padding: 0 1rem;
         margin: 0 auto 184px;
-        border: 2px dashed v.$gris;
         position: relative;
         overflow: hidden;
         height: 437px;
@@ -76,11 +18,12 @@
   .active {
     position: absolute;
     width: 100%;
-    max-width: 1080px; /* Cambiado a 100% para que ocupe todo el contenedor */
+    max-width: 1080px;
     height: 100%;
     display: flex;
     gap: 20px;
     transition: transform 0.5s ease;
+    border: 2px dashed v.$gris;
   }
   
   .card img {
@@ -92,10 +35,15 @@
   .card-content {
     display: flex;
     flex-direction: column;
-    gap: 40px;
-    padding: 10px;
-    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semitransparente */
-    overflow: hidden; /* Evitar que el texto se desborde */
+    justify-content: space-between;
+    padding-top: 17px;
+    background-color: rgba(255, 255, 255, 0.8);
+    overflow: hidden;
+    img{
+        width: 58px;
+        height: 58px;
+        object-fit: contain;
+    }
     p{
         font-size: 32px;
         font-style: normal;
@@ -108,21 +56,33 @@
         font-style: normal;
         font-weight: 700;
         line-height: normal;
-text-transform: uppercase;
+        text-transform: uppercase;
+    }
+    h3{
+        font-size: 24px;
+        font-weight: 600;
+        line-height: normal;
+        text-transform: uppercase;
     }
   }
-  
+  .card-titles-arrows{
+    display: flex;
+    justify-content: space-between;
+  }
+  .slider-btn{
+    display: flex;
+  }
   .prev,
   .next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    // // position: absolute;
+    // top: 95%;
+    // transform: translateY(-50%);
     background-color: rgba(255, 255, 255, 0.5);
     border: none;
     color: black;
     padding: 10px;
     cursor: pointer;
-    z-index: 100;
+    // z-index: 100;
   }
   
   .prev {

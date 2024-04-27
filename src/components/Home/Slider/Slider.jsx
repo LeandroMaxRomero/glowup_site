@@ -2,28 +2,33 @@ import SliderCards from './SliderCards';
 
 const cardsData = [
   {
-    image: './img/01.png',
-    title: 'Título 1',
+    image: './img/01.jpg',
+    title: 'Isaac Newton',
+    subtitle: 'CEO of Principia',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.',
   },
   {
-    image: './img/02.png',
-    title: 'Título 2',
+    image: './img/02.jpg',
+    title: 'Karl Marx',
+    subtitle: 'CEO of Das Kapital',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.',
   },
   {
-    image: './img/03.png',
-    title: 'Título 3',
+    image: './img/03.jpg',
+    title: 'Friedrich Nietzsche',
+    subtitle: 'CEO of Zarathustra',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.',
   },
   {
-    image: './img/04.png',
-    title: 'Título 4',
+    image: './img/04.jpg',
+    title: 'Sigmund Feud',
+    subtitle: 'CEO of Die Traumdeutung',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.',
   },
   {
-    image: './img/05.png',
-    title: 'Título 5',
+    image: './img/05.jpg',
+    title: 'Astor Piazzolla',
+    subtitle: 'CEO of Nonino',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.',
   },
 ];
