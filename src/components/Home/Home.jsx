@@ -1,9 +1,9 @@
 import QuestionCard from "../QuestionCard/QuestionCard";
 import { AboutUs } from "./AboutUs";
+import { BlogSpotsSlider } from "./BlogSpots/BlogSpotsSlider";
 import { Header } from "./Header";
-import { Services } from "./Services/Services";
+import { Services } from "./ServiceInfo/Services";
 import Slider from "./Slider/Slider";
-// import { Survey } from "../Survey/Survey";
 
 export const Home = () => {
   return (
@@ -12,6 +12,7 @@ export const Home = () => {
       <Services />
       <AboutUs />
       <Slider />
+      <BlogSpotsSlider />
       <QuestionCard />
     </div>
   )

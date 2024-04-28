@@ -2,6 +2,7 @@
 import { useEffect, useContext } from 'react';
 import QuestionCard from '../QuestionCard/QuestionCard';
 import { SurveyContext } from '../../Context/SurveyContext';
+import { Form } from './Form';
 
 const FormPage = () => {
   const { setShowCard } = useContext(SurveyContext);
@@ -11,7 +12,7 @@ const FormPage = () => {
     const isClosedWithoutCompletion = localStorage.getItem('surveyClosedWithoutCompletion');
 
     if (!isCompleted && isClosedWithoutCompletion) {
-      setShowCard(true); // Mostrar el cuestionario si no está completado y fue cerrado sin completarse previamente
+      setShowCard(true);
     }
   }, [setShowCard]);
 
@@ -19,7 +20,7 @@ const FormPage = () => {
     <div>
       <h1>Formulario</h1>
       <QuestionCard />
-      {/* Resto de tu página de formulario... */}
+      <Form />
     </div>
   );
 };

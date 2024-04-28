@@ -1,96 +1,105 @@
 @use '../base/variables' as v;
 
-.slider-container {
-        width: 100%;
-        max-width: 1320px;
-        padding: 0 1rem;
-        margin: 0 auto 184px;
-        position: relative;
-        overflow: hidden;
-        height: 437px;
-        display: flex;
-        justify-content: center;
-      }
-
-  .card{
-    display: none;
-  }
-  .active {
-    position: absolute;
+.container__slider{
     width: 100%;
-    max-width: 1080px;
-    height: 100%;
-    display: flex;
-    gap: 20px;
-    transition: transform 0.5s ease;
+    max-width: 1320px;
+    padding: 0 1rem;
+    margin: 0 auto 184px;
     border: 2px dashed v.$gris;
-  }
-  
-  .card img {
-    width: 420px;
-    height: 435px;
-    object-fit: cover;
-  }
-  
-  .card-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding-top: 17px;
-    background-color: rgba(255, 255, 255, 0.8);
-    overflow: hidden;
-    img{
-        width: 58px;
-        height: 58px;
-        object-fit: contain;
-    }
-    p{
-        font-size: 32px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: normal;
-        text-transform: uppercase;
-    }
     h2{
         font-size: 40px;
         font-style: normal;
         font-weight: 700;
         line-height: normal;
         text-transform: uppercase;
+        margin-bottom: 92px;
     }
-    h3{
-        font-size: 24px;
-        font-weight: 600;
-        line-height: normal;
-        text-transform: uppercase;
-    }
-  }
-  .card-titles-arrows{
-    display: flex;
-    justify-content: space-between;
-  }
-  .slider-btn{
-    display: flex;
-  }
-  .prev,
-  .next {
-    // // position: absolute;
-    // top: 95%;
-    // transform: translateY(-50%);
-    background-color: rgba(255, 255, 255, 0.5);
-    border: none;
-    color: black;
-    padding: 10px;
-    cursor: pointer;
-    // z-index: 100;
-  }
-  
-  .prev {
-    left: 0;
-  }
-  
-  .next {
-    right: 0;
-  }
-  
-  
+}
+.slider-container {
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        height: 437px;
+        display: flex;
+        justify-content: center;
+        .card{
+          display: none;
+        }
+        .active {
+          position: absolute;
+          width: 100%;
+          max-width: 1080px;
+          height: 100%;
+          display: flex;
+          gap: 20px;
+          transition: transform 0.5s ease;
+          border: 2px dashed v.$gris;
+        }
+        .card img {
+          width: 420px;
+          height: 435px;
+          object-fit: cover;
+        }
+        
+        .card-content {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          padding-top: 17px;
+          background-color: rgba(255, 255, 255, 0.8);
+          overflow: hidden;
+          img{
+              width: 58px;
+              height: 58px;
+              object-fit: contain;
+          }
+          p{
+              font-size: 32px;
+              font-style: normal;
+              font-weight: 700;
+              line-height: normal;
+              text-transform: uppercase;
+          }
+          h2{
+              font-size: 40px;
+              font-style: normal;
+              font-weight: 700;
+              line-height: normal;
+              text-transform: uppercase;
+              margin: 0;
+          }
+          h3{
+              font-size: 24px;
+              font-weight: 600;
+              line-height: normal;
+              text-transform: uppercase;
+          }
+        }
+        .card-titles-arrows{
+          display: flex;
+          justify-content: space-between;
+        }
+        .slider-btn{
+          display: flex;
+        }
+        .prev,
+        .next {
+          background-color: rgba(255, 255, 255, 0.0);
+          border: none;
+          color: black;
+          padding: 10px;
+          cursor: pointer;
+        }
+        
+        .prev {
+          left: 0;
+        }
+        
+        .next {
+          right: 0;
+        }
+}  
+
+.swiper-button-next, .swiper-button-prev{
+  color: v.$negro;
+}

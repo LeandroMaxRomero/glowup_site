@@ -35,7 +35,8 @@ const cardsData = [
 
 function Slider() {
   return (
-    <div className="App">
+    <div className='container__slider'>
+      <h2>What our clients says</h2>
       <SliderCards cardsData={cardsData} />
     </div>
   );
