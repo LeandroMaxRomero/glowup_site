@@ -42,3 +42,26 @@
         color: v.$blanco;
     }
 }
+
+.container__lang{
+    display: flex;
+    button{
+        border: none;
+        background-color: transparent;
+        color: v.$blanco;
+        font-family: v.$font;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-transform: uppercase;
+
+    }
+    .divisor{
+        background-color: transparent;
+        width: 2px;
+        height: 20px;
+        margin: 0 5px;
+        background-color: v.$blanco;
+    }
+}

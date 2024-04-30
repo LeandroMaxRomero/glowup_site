@@ -6,6 +6,20 @@
     margin-top: 189px;
 }
 
+.container__hero{
+    width: 100%;
+    min-height: 475.719px;
+    max-width: 1920px;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 0;
+    img{
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
 .container__aboutus{
     width: 100%;
     max-width: 1320px;
@@ -48,6 +62,7 @@
         gap: 20px;
     }
     h2{
+        text-align: start;
         font-size: 40px;
         font-style: normal;
         font-weight: 700;
