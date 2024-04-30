@@ -13,7 +13,7 @@ const SliderCards = ({ cardsData }) => {
   }, [cardsData.length]);
 
   useEffect(() => {
-    const intervalId = setInterval(nextSlide, 500000);
+    const intervalId = setInterval(nextSlide, 5000);
     return () => clearInterval(intervalId);
   }, [nextSlide]);
 
@@ -38,18 +38,19 @@ const SliderCards = ({ cardsData }) => {
                 
                 <div className='slider-btn'>
                     <button className="prev" onClick={prevSlide}>
-                        <svg width="90" height="34" viewBox="0 0 90 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="24.006" height="4.8012" transform="matrix(-0.70606 -0.708152 0.70606 -0.708152 16.9502 33.9999)" fill="black"/>
-                            <rect width="24.006" height="4.8012" transform="matrix(-0.70606 0.708152 -0.70606 -0.708152 20.3396 3.3999)" fill="black"/> 
-                            <rect x="31.4775" y="19.4291" width="25.7491" height="4.8083" transform="rotate(180 31.4775 19.4291)" fill="black"/>
+                        <svg width="91" height="35" viewBox="0 0 91 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect width="24.006" height="4.8012" transform="matrix(-0.70606 -0.708152 0.70606 -0.708152 16.998 34.499)" fill="white"/>
+                          <rect width="24.006" height="4.8012" transform="matrix(-0.70606 0.708152 -0.70606 -0.708152 20.3877 3.89917)" fill="white"/>
+                          <rect x="31.5259" y="19.9282" width="25.7491" height="4.8083" transform="rotate(180 31.5259 19.9282)" fill="white"/>
                         </svg>
                     </button>
 
                     <button className="next" onClick={nextSlide}>
-                        <svg width="90" height="34" viewBox="0 0 90 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="24.006" height="4.8012" transform="matrix(0.70606 0.708152 -0.70606 0.708152 73.0503 0.000366211)" fill="black"/>
-                            <rect width="24.006" height="4.8012" transform="matrix(0.70606 -0.708152 0.70606 0.708152 69.6606 30.6002)" fill="black"/>
-                            <rect x="58.5225" y="14.5712" width="25.7491" height="4.8083" fill="black"/>
+                        
+                        <svg width="91" height="35" viewBox="0 0 91 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect width="24.006" height="4.8012" transform="matrix(0.70606 0.708152 -0.70606 0.708152 73.0986 0.499756)" fill="white"/>
+                          <rect width="24.006" height="4.8012" transform="matrix(0.70606 -0.708152 0.70606 0.708152 69.7085 31.0996)" fill="white"/>
+                          <rect x="58.5703" y="15.0703" width="25.7491" height="4.8083" fill="white"/>
                         </svg>
                     </button>
                 </div>

@@ -13,7 +13,7 @@ html {
   }
 
   body{
-    background-color: v.$blanco;
+    background-color: v.$background;
   }
   a{
     text-decoration: none;
@@ -24,7 +24,7 @@ html {
   h4,
   p{
     font-family: v.$font;
-    color: v.$negro;
+    color: v.$blanco;
     margin: 0;
   }
 

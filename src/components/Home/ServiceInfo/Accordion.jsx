@@ -15,16 +15,16 @@ export const Accordion = ({tittle, contenido}) => {
                 <span onClick={() => setActive(!active)}>
                     {active === true
                     ?
-                    <svg width="47" height="47" viewBox="0 0 47 47" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    |  <rect width="47" height="9.4" fill="black"/>
-                    |  <rect x="37.6001" y="47" width="47" height="9.4" transform="rotate(-90 37.6001 47)" fill="black"/>
-                    |  <rect y="40.2839" width="50.4876" height="9.4" transform="rotate(-45 0 40.2839)" fill="black"/>
-                    |</svg>
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect x="0.0483398" y="0.499268" width="47" height="9.4" fill="white"/>
+                      <rect x="37.6484" y="47.4993" width="47" height="9.4" transform="rotate(-90 37.6484 47.4993)" fill="white"/>
+                      <rect x="0.0483398" y="40.7832" width="50.4876" height="9.4" transform="rotate(-45 0.0483398 40.7832)" fill="white"/>
+                    </svg>
                     :
-                    <svg width="47" height="47" viewBox="0 0 47 47" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <rect x="47" y="47" width="47" height="9.4" transform="rotate(-180 47 47)" fill="black"/>
-                      <rect x="9.3999" width="47" height="9.4" transform="rotate(90 9.3999 0)" fill="black"/>
-                      <rect x="47" y="6.71606" width="50.4876" height="9.4" transform="rotate(135 47 6.71606)" fill="black"/>
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect x="47.0483" y="47.4993" width="47" height="9.4" transform="rotate(-180 47.0483 47.4993)" fill="white"/>
+                      <rect x="9.44824" y="0.499268" width="47" height="9.4" transform="rotate(90 9.44824 0.499268)" fill="white"/>
+                      <rect x="47.0483" y="7.21533" width="50.4876" height="9.4" transform="rotate(135 47.0483 7.21533)" fill="white"/>
                     </svg>
                     }
                 </span>

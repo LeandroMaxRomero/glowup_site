@@ -2,25 +2,8 @@
 
 .container__home{
     height: 100%;
-}
-
-.container__services{
-    width: 100%;
-    max-width: 1320px;
-    padding: 0 1rem;
-    margin: 0 auto 206px;
-    border: 2px dashed v.$gris;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    h2{
-        font-size: 40px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: normal;
-        text-transform: uppercase;
-        text-align: end;
-    }
+    background-color: v.$background;
+    margin-top: 189px;
 }
 
 .container__aboutus{

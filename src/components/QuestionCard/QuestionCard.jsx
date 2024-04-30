@@ -166,6 +166,7 @@ const QuestionCard = () => {
         <div className='container__survey'>
             {showCard && (
                 <div className='survey--card'>
+                    
                     <button className='survey__btn--close' onClick={handleCloseSurvey}>X</button>
 
                     <h2>{questions[currentQuestionIndex].question}</h2>

@@ -1,55 +1,61 @@
 @use '../base/variables' as v;
 
 .container__header{
-    height: 508px;
-    max-width: 1320px;
+    max-width: 1000px;
     width: 100%;
     padding: 0 1rem;
-    margin: 34px auto;
-    display: flex;
-    justify-content: space-between;
-    border: 2px dashed v.$gris;
-}
-
-.header__text{
-    width: 683px;
+    margin: 0 auto 225px;
     display: flex;
     flex-direction: column;
-    gap: 80px;
-    .header-title{
-        min-height: 269px;
-        display: flex;
-        align-items: end;    }
-    h2{
-        font-size: 64px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: normal;
-        text-transform: uppercase;
+    align-items: center;
+    gap: 30px;
+}
+
+.header-title{
+    display: flex;
+    align-items: end;    }
+h2{
+    color: v.$blanco;
+    font-size: 96px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+    text-align: center;
+    span{
+        // color: v.$celeste;
+        text-decoration-line: underline;
+        background: linear-gradient(8deg, #5BD8FF 56%, #69FFB7 89.04%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
-    h4{
+}
+h4{
+    color: #ADADAD;
+    text-align: center;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+}
+.header--btn{
+    
+        width: 205.816px;
+        height: 41.253px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        border: 2px solid #5BD8FF;
+    
+    h3{
+        color: v.$blanco;
         font-size: 24px;
         font-style: normal;
         font-weight: 400;
         line-height: normal;
         text-transform: uppercase;
     }
-    .header--btn{
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        h3{
-            font-size: 24px;
-            font-style: normal;
-            font-weight: 700;
-            line-height: normal;
-            text-transform: uppercase;
-        }
-    }
-}
-
-.header__img{
-    width: 420px;
-    height: 504px;
-    background-color: v.$gris;
 }

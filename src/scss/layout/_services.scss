@@ -1,11 +1,29 @@
 @use '../base/variables' as v;
 
+.container__services{
+  width: 100%;
+  max-width: 1320px;
+  padding: 0 1rem;
+  margin: 126px auto 150px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  h2{
+      font-size: 40px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      text-transform: uppercase;
+      text-align: end;
+  }
+}
+
 .accordion{
     display: flex;
     flex-direction: column;
     width: 100%;
     padding: 0;
-    border-bottom: 2px v.$negro solid;
+    border-bottom: 2px v.$blanco solid;
 }
 
 .accordionHeading {
