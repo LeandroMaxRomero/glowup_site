@@ -2,7 +2,8 @@ import SliderCards from './SliderCards';
 
 const cardsData = [
   {
-    image: './img/01.jpg',
+    image: './img/medicobyn.png',
+    imagehover:'./img/medico.png',
     title: 'Isaac Newton',
     subtitle: 'CEO of Principia',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.',

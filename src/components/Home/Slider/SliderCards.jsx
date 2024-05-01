@@ -13,7 +13,7 @@ const SliderCards = ({ cardsData }) => {
   }, [cardsData.length]);
 
   useEffect(() => {
-    const intervalId = setInterval(nextSlide, 5000);
+    const intervalId = setInterval(nextSlide, 500000);
     return () => clearInterval(intervalId);
   }, [nextSlide]);
 
@@ -24,7 +24,11 @@ const SliderCards = ({ cardsData }) => {
           className={`card ${index === currentSlide ? 'active' : ''}`}
           key={index}
         >
-          <img src={card.image} alt="Card" className="card-image" />
+          <div className="card-image">
+            <img src={card.image} alt="Card" className='card-image-original'/>
+            <img src={card.imagehover} alt="Card" className='card-image-hover'/>
+          </div>
+          
           <div className="card-content">
             <div>
                 <img src="./img/comillas.svg" alt="comillas decorativas" />

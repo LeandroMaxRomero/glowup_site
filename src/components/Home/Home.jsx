@@ -6,16 +6,22 @@ import { Hero } from "./Hero";
 import { Services } from "./ServiceInfo/Services";
 import Slider from "./Slider/Slider";
 
+import { Background } from "./Background"
+
 export const Home = () => {
   return (
-    <div className="container__home">
-      <Header />
-      <Hero />
-      <Services />
-      <AboutUs />
-      <Slider />
-      <BlogSpotsSlider />
-      <QuestionCard />
+    <div >
+      <Background />
+
+      <div className="container__home">
+        <Header />
+        <Hero />
+        <Services />
+        <AboutUs />
+        <Slider />
+        <BlogSpotsSlider />
+        <QuestionCard />
+      </div>
     </div>
   )
 }

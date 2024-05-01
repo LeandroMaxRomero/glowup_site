@@ -5,7 +5,6 @@
     max-width: 1320px;
     padding: 0 1rem;
     margin: 0 auto 184px;
-    border: 2px dashed v.$gris;
     h2{
       text-align: left;
         font-size: 40px;
@@ -18,30 +17,57 @@
 }
 .slider-container {
         width: 100%;
-        position: relative;
+        // position: relative;
         overflow: hidden;
         height: 437px;
         display: flex;
         justify-content: center;
         .card{
           display: none;
+          width: 420px;
+          height: 435px;
         }
         .active {
           position: absolute;
           width: 100%;
           max-width: 1080px;
-          height: 100%;
           display: flex;
           gap: 20px;
           transition: transform 0.5s ease;
-          border: 2px dashed v.$gris;
+          .card-image{
+            position: relative;
+            width: 417.51px;
+            height: 440px;
+              &:after {
+                content: "";
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                right: 0;
+                background: linear-gradient(156deg, rgba(91, 216, 255, 0.10) 15.52%, rgba(0, 255, 133, 0.10) 100%);
+                backdrop-filter: blur(0.5px);
+              }
+              .card-image-hover{
+                display: none;
+              }
+              .card-image-original{
+                display: block;
+                object-fit: cover;
+                &:hover{
+                  display: none;
+                  .card-image-hover{
+                    display: block;
+                    object-fit: cover;
+                  }
+                }
+              }
+              
+              
+          }
         }
-        .card img {
-          width: 420px;
-          height: 435px;
-          object-fit: cover;
-        }
-        
+
+
         .card-content {
           display: flex;
           flex-direction: column;
@@ -52,11 +78,11 @@
               width: 58px;
               height: 58px;
               object-fit: contain;
-          }
+
           p{
               font-size: 32px;
               font-style: normal;
-              font-weight: 700;
+              font-weight: 400;
               line-height: normal;
               text-transform: uppercase;
           }
@@ -70,7 +96,7 @@
           }
           h3{
               font-size: 24px;
-              font-weight: 600;
+              font-weight: 400;
               line-height: normal;
               text-transform: uppercase;
           }
@@ -90,13 +116,13 @@
           padding: 10px;
           cursor: pointer;
         }
-        
+
         .prev {
           left: 0;
         }
-        
+
         .next {
           right: 0;
         }
-}  
-
+}
+}
