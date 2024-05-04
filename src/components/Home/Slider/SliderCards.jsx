@@ -26,13 +26,12 @@ const SliderCards = ({ cardsData }) => {
         >
           <div className="card-image">
             <img src={card.image} alt="Card" className='card-image-original'/>
-            <img src={card.imagehover} alt="Card" className='card-image-hover'/>
           </div>
           
           <div className="card-content">
-            <div>
-                <img src="./img/comillas.svg" alt="comillas decorativas" />
-                <p>{card.description}</p>
+            <div className='card-text-comillas'>
+                <p><span>{'“'}</span></p>
+                <p className='card--description'>{card.description}</p>
             </div>
             <div className='card-titles-arrows'>
                 <div>
@@ -42,20 +41,18 @@ const SliderCards = ({ cardsData }) => {
                 
                 <div className='slider-btn'>
                     <button className="prev" onClick={prevSlide}>
-                        <svg width="91" height="35" viewBox="0 0 91 35" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <rect width="24.006" height="4.8012" transform="matrix(-0.70606 -0.708152 0.70606 -0.708152 16.998 34.499)" fill="white"/>
-                          <rect width="24.006" height="4.8012" transform="matrix(-0.70606 0.708152 -0.70606 -0.708152 20.3877 3.89917)" fill="white"/>
-                          <rect x="31.5259" y="19.9282" width="25.7491" height="4.8083" transform="rotate(180 31.5259 19.9282)" fill="white"/>
-                        </svg>
+                    <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect x="18.948" y="37.9285" width="26.2584" height="4" transform="rotate(-135 18.948 37.9285)" fill="white"/>
+                      <rect x="21.7764" y="3.60449" width="26.2584" height="4" transform="rotate(135 21.7764 3.60449)" fill="white"/>
+                    </svg>
                     </button>
 
                     <button className="next" onClick={nextSlide}>
                         
-                        <svg width="91" height="35" viewBox="0 0 91 35" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <rect width="24.006" height="4.8012" transform="matrix(0.70606 0.708152 -0.70606 0.708152 73.0986 0.499756)" fill="white"/>
-                          <rect width="24.006" height="4.8012" transform="matrix(0.70606 -0.708152 0.70606 0.708152 69.7085 31.0996)" fill="white"/>
-                          <rect x="58.5703" y="15.0703" width="25.7491" height="4.8083" fill="white"/>
-                        </svg>
+                    <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect x="19.1484" y="0.776123" width="26.2584" height="4" transform="rotate(45 19.1484 0.776123)" fill="white"/>
+                      <rect x="16.3198" y="35.1001" width="26.2584" height="4" transform="rotate(-45 16.3198 35.1001)" fill="white"/>
+                    </svg>
                     </button>
                 </div>
 

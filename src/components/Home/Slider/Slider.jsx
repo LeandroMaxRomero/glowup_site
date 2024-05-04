@@ -2,36 +2,41 @@ import SliderCards from './SliderCards';
 
 const cardsData = [
   {
-    image: './img/medicobyn.png',
-    imagehover:'./img/medico.png',
-    title: 'Isaac Newton',
-    subtitle: 'CEO of Principia',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.',
+    image: './img/medico.png',
+    title: 'John Doe',
+    subtitle: 'CEO of Metric',
+    description: 'Gracias a GLOWUP, mi práctica médica ha experimentado un crecimiento significativo. Su enfoque personalizado y su atención al detalle realmente marcan la diferencia.',
+  },
+  {
+    image: './img/01.jpg',
+    title: 'John Doe',
+    subtitle: 'CEO of Metric',
+    description: 'Gracias a GLOWUP, mi práctica médica ha experimentado un crecimiento significativo. Su enfoque personalizado y su atención al detalle realmente marcan la diferencia.',
   },
   {
     image: './img/02.jpg',
-    title: 'Karl Marx',
-    subtitle: 'CEO of Das Kapital',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.',
+    title: 'John Doe',
+    subtitle: 'CEO of Metric',
+    description: 'Gracias a GLOWUP, mi práctica médica ha experimentado un crecimiento significativo. Su enfoque personalizado y su atención al detalle realmente marcan la diferencia.',
   },
   {
     image: './img/03.jpg',
-    title: 'Friedrich Nietzsche',
-    subtitle: 'CEO of Zarathustra',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.',
+    title: 'John Doe',
+    subtitle: 'CEO of Metric',
+    description: 'Gracias a GLOWUP, mi práctica médica ha experimentado un crecimiento significativo. Su enfoque personalizado y su atención al detalle realmente marcan la diferencia.',
   },
   {
     image: './img/04.jpg',
-    title: 'Sigmund Feud',
-    subtitle: 'CEO of Die Traumdeutung',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.',
+    title: 'John Doe',
+    subtitle: 'CEO of Metric',
+    description: 'Gracias a GLOWUP, mi práctica médica ha experimentado un crecimiento significativo. Su enfoque personalizado y su atención al detalle realmente marcan la diferencia.',
   },
   {
     image: './img/05.jpg',
-    title: 'Astor Piazzolla',
-    subtitle: 'CEO of Nonino',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.',
-  },
+    title: 'John Doe',
+    subtitle: 'CEO of Metric',
+    description: 'Gracias a GLOWUP, mi práctica médica ha experimentado un crecimiento significativo. Su enfoque personalizado y su atención al detalle realmente marcan la diferencia.',
+  }
 ];
 
 function Slider() {

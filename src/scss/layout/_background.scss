@@ -1,0 +1,58 @@
+@use '../base/variables' as v;
+
+.container__background{
+    background-color: v.$background;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: -10;
+    // overflow: hidden;
+    .light--one{
+        position: absolute;
+        z-index: -8;
+        top: 71px;
+        left: 0;
+    }
+    .light--two{
+        position: absolute;
+        z-index: -8;
+        top: 202px;
+        right: 0;
+    }
+    .light--three{
+        position: absolute;
+        z-index: -8;
+        left: 0;
+        top: 2790px;
+    }
+    .light--four{
+        position: absolute;
+        z-index: -8;
+        right: 0;
+        top: 2890px;
+    }
+
+    .line-one, .line-two, .line-three{
+        position: absolute;
+        z-index: -9;
+        width: 1px;
+        height: 4200px;
+        background-color: rgba(163, 163, 163, 0.10);
+    }
+    .line-one{
+        left: 27%;
+    }
+    .line-two{
+        left: 50%;
+    }
+    .line-three{
+        left: 73%;
+    }
+
+    .zigzag{
+        position: absolute;
+        top: 1380px;
+        left: 0.5px;
+    }
+
+}

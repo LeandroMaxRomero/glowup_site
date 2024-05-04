@@ -50,7 +50,7 @@
 
 .container__lang{
     display: flex;
-    button{
+    .btn-idioma{
         border: none;
         background-color: transparent;
         color: v.$blanco;
@@ -61,8 +61,11 @@
         line-height: normal;
         text-transform: uppercase;
         &:hover{
-            color: v.$celeste;
+            color: #69FFB7;
             transform: scale(1.25);
+        }
+        &.active{
+            color: v.$celeste;
         }
 
     }

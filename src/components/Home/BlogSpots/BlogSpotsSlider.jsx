@@ -40,94 +40,123 @@ export const BlogSpotsSlider = () => {
             <SwiperSlide>
                 <div className="blogs--columns">
                     <div className="container--blog">
-                        <img src="./img/gris.png" alt="Card" className="blog-img" />
+                        <div className="container--blog__img">
+                            <img src="./img/blog.png" alt="Card" className="blog-img" />
+                        </div>
                         <div className="blog-content">
-                            <h2>BLOG UNO</h2>
+                            <h2>BLOG 1</h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
                         </div>
                     </div>
 
                     <div className="container--blog">
-                        <img src="./img/gris.png" alt="Card" className="blog-img" />
+                        <div className="container--blog__img">
+                            <img src="./img/blog.png" alt="Card" className="blog-img" />
+                        </div>
                         <div className="blog-content">
-                            <h2>BLOG DOS</h2>
+                            <h2>BLOG 2</h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
                         </div>
                     </div>
                 </div>
             </SwiperSlide>
+
             <SwiperSlide>
                 <div className="blogs--columns">
                     <div className="container--blog">
-                        <img src="./img/gris.png" alt="Card" className="blog-img" />
+                        <div className="container--blog__img">
+                            <img src="./img/blog.png" alt="Card" className="blog-img" />
+                        </div>
                         <div className="blog-content">
-                            <h2>BLOG TRES</h2>
+                            <h2>BLOG 3</h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
                         </div>
                     </div>
+
                     <div className="container--blog">
-                        <img src="./img/gris.png" alt="Card" className="blog-img" />
+                        <div className="container--blog__img">
+                            <img src="./img/blog.png" alt="Card" className="blog-img" />
+                        </div>
                         <div className="blog-content">
-                            <h2>BLOG CUATRO</h2>
+                            <h2>BLOG 4</h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
                         </div>
                     </div>
                 </div>
             </SwiperSlide>
+
             <SwiperSlide>
                 <div className="blogs--columns">
                     <div className="container--blog">
-                        <img src="./img/gris.png" alt="Card" className="blog-img" />
+                        <div className="container--blog__img">
+                            <img src="./img/blog.png" alt="Card" className="blog-img" />
+                        </div>
                         <div className="blog-content">
-                            <h2>BLOG CINCO</h2>
+                            <h2>BLOG 5</h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
                         </div>
                     </div>
+
                     <div className="container--blog">
-                        <img src="./img/gris.png" alt="Card" className="blog-img" />
+                        <div className="container--blog__img">
+                            <img src="./img/blog.png" alt="Card" className="blog-img" />
+                        </div>
                         <div className="blog-content">
-                            <h2>BLOG SEIS</h2>
+                            <h2>BLOG 6</h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
                         </div>
                     </div>
                 </div>
             </SwiperSlide>
+
             <SwiperSlide>
                 <div className="blogs--columns">
                     <div className="container--blog">
-                        <img src="./img/gris.png" alt="Card" className="blog-img" />
+                        <div className="container--blog__img">
+                            <img src="./img/blog.png" alt="Card" className="blog-img" />
+                        </div>
                         <div className="blog-content">
-                            <h2>BLOG SIETE</h2>
+                            <h2>BLOG 7</h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
                         </div>
                     </div>
+
                     <div className="container--blog">
-                        <img src="./img/gris.png" alt="Card" className="blog-img" />
+                        <div className="container--blog__img">
+                            <img src="./img/blog.png" alt="Card" className="blog-img" />
+                        </div>
                         <div className="blog-content">
-                            <h2>BLOG OCHO</h2>
+                            <h2>BLOG 8</h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
                         </div>
                     </div>
                 </div>
             </SwiperSlide>
+
             <SwiperSlide>
                 <div className="blogs--columns">
                     <div className="container--blog">
-                        <img src="./img/gris.png" alt="Card" className="blog-img" />
+                        <div className="container--blog__img">
+                            <img src="./img/blog.png" alt="Card" className="blog-img" />
+                        </div>
                         <div className="blog-content">
-                            <h2>BLOG NUEVE</h2>
+                            <h2>BLOG 9</h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
                         </div>
                     </div>
+
                     <div className="container--blog">
-                        <img src="./img/gris.png" alt="Card" className="blog-img" />
+                        <div className="container--blog__img">
+                            <img src="./img/blog.png" alt="Card" className="blog-img" />
+                        </div>
                         <div className="blog-content">
-                            <h2>BLOG DIEZ</h2>
+                            <h2>BLOG 10</h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
                         </div>
                     </div>
                 </div>
             </SwiperSlide>
+            
 
         </Swiper>
     </div>

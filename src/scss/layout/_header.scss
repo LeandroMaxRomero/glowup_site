@@ -13,22 +13,23 @@
 
 .header-title{
     display: flex;
-    align-items: end;    }
-h2{
-    color: v.$blanco;
-    font-size: 96px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    text-transform: uppercase;
-    text-align: center;
-    span{
-        // color: v.$celeste;
-        text-decoration-line: underline;
-        background: linear-gradient(8deg, #5BD8FF 56%, #69FFB7 89.04%);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+    align-items: end;
+    h2{
+        color: v.$blanco;
+        font-size: 96px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        text-transform: uppercase;
+        text-align: center;
+        span{
+            text-decoration-line: underline;
+            text-decoration-color:#5BD8FF;
+            background: linear-gradient(8deg, #5BD8FF 56%, #69FFB7 89.04%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
     }
 }
 h4{
@@ -40,18 +41,37 @@ h4{
     line-height: normal;
     text-transform: uppercase;
 }
+
 .header--btn{
-    
         width: 205.816px;
         height: 41.253px;
         display: flex;
         align-items: center;
         justify-content: center;
         gap: 10px;
-        border: 2px solid #5BD8FF;
+
+        --b: 2px;   /* thickness of the border */
+        --c: #5BD8FF;   /* color of the border */
+        --w: 11px;  /* width of border */
+        
+        
+        border: var(--b) solid #0000; /* space for the border */
+        --_g: #0000 90deg,var(--c) 0;
+        --_p: var(--w) var(--w) border-box no-repeat;
+        background:
+          conic-gradient(from 90deg  at top    var(--b) left  var(--b),var(--_g)) 0    0    / var(--_p),
+          conic-gradient(from 180deg at top    var(--b) right var(--b),var(--_g)) 100% 0    / var(--_p),
+          conic-gradient(from 0deg   at bottom var(--b) left  var(--b),var(--_g)) 0    100% / var(--_p),
+          conic-gradient(from -90deg at bottom var(--b) right var(--b),var(--_g)) 100% 100% / var(--_p);
+        
         &:hover{
-            cursor: pointer;
+        cursor: pointer;
+        border: 2px solid #5BD8FF;
+        background: rgba(91, 216, 255, 0.20);
+        transition: 0.5s;
         }
+}
+        
     
     h3{
         color: v.$blanco;
@@ -60,5 +80,5 @@ h4{
         font-weight: 400;
         line-height: normal;
         text-transform: uppercase;
+        padding-top: 6px;
     }
-}

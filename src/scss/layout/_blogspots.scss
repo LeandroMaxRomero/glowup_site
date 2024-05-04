@@ -1,10 +1,10 @@
 @use '../base/variables' as v;
-// .container__blogspot
+
 .container__BlogSpotsSlider{
     width: 100%;
     max-width: 1320px;
-    padding: 0 1rem 158px;
-    margin: 0 auto;
+    padding: 0 1rem;
+    margin: 0 auto 75px;
     h2{
       text-align: start;
       font-size: 40px;
@@ -15,7 +15,9 @@
       margin-bottom: 50px;
     }
 }
-
+ .swiper{
+  padding-bottom: 60px !important;
+ }
 .blogs--columns{
   display: flex;
   flex-direction: column;
@@ -26,30 +28,65 @@
   display: flex;
   width: 624px;
   gap: 20px;
-  .blog-img{
+
+
+  .container--blog__img{
     display: flex;
     height: 188px;
-    width: 310px;
+    min-width: 310px;
     object-fit: cover;
+    position: relative;
+    overflow: hidden;
+    &:hover{
+      .blog-img{
+        filter: grayscale(0);
+        transform: scale(1.15);
+        transition: 0.8s ease-in-out;
+      }
+      &::after{
+        content: "";
+        width: 0%;
+        height: 0%;
+      }
+    }
+    &:after {
+      content: "";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      background: linear-gradient(156deg, #5bd8ff1a 15.52%, #00ff851a 100%);
+    }
   }
-  img{
+  .blog-img{
+    filter: grayscale(1);
     width: 100%;
     height: 100%;
   }
+
+
   h2{
     font-size: 24px;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
     text-transform: uppercase;
+    width: fit-content;
     margin: 0;
+    background: linear-gradient(90deg, #5BD8FF 0%, #69FFB7 100%);
+    background-clip: border-box;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
   p{
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    text-transform: uppercase;
+    color: #ADADAD;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+text-transform: uppercase;
   }
 }
 
@@ -62,8 +99,18 @@
 
 .swiper-button-next, .swiper-button-prev{
   color: v.$blanco;
+  top: 95%;
+  &:hover{
+    color: v.$celeste;
+  }
 }
 
+.swiper-button-next{
+  right: 45%;
+}
+.swiper-button-prev{
+  left: 45%;
+}
   
 
   

@@ -4,7 +4,7 @@
   width: 100%;
   max-width: 1320px;
   padding: 0 1rem;
-  margin: 126px auto 150px;
+  margin: 126px auto 240px;
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -24,7 +24,6 @@
     flex-direction: column;
     width: 100%;
     padding: 0;
-    // border-bottom: 2px v.$blanco solid;
 }
 .divisor--accordion{
   width: 1300px;
@@ -40,10 +39,6 @@
         font-style: normal;
         font-weight: 400;
         line-height: normal;
-        line-height: 80%;
-      &:hover {
-        cursor: pointer;
-      }
     }
     span {
       cursor: pointer;
@@ -57,6 +52,16 @@
     margin: auto;
     align-items: center;
     gap: 3.5rem;
+    cursor: pointer;
+    &:hover {
+      h3{
+        background: linear-gradient(90deg, #5BD8FF 0%, #69FFB7 100%);
+        background-clip: border-box;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
   }
 
   .accordionContent {
@@ -68,11 +73,13 @@
     transition: all 600ms ease-in-out;
     .cont-despl {
         margin-top: 40px;
+        color: #ADADAD;
+        text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.09);
         font-size: 20px;
         font-style: normal;
-        font-weight: 600;
+        font-weight: 400;
         line-height: normal;
-        text-transform: uppercase;
+        padding-bottom: 12px;
     }
     &.show {
       height: fit-content;
@@ -84,25 +91,12 @@
       transition: all 1000ms ease-in-out;
     }
   }
-  .containerText{
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-    text-transform: uppercase;
-    padding-bottom: 12px;
-  }
-
-  
-
   .accordion--arrow{
-    cursor: pointer;
     &.open{
       transform: rotate(180deg);
       transition: all 600ms ease-in-out;
     }
     &.close{
-      // transform: rotate(-180deg);
       transition: all 600ms ease-in-out;
     }
   }
