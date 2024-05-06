@@ -4,11 +4,11 @@ Link
 export const NavLinks = () => {
   return (
     <div className="container__navlinks">
-        <Link to="/">Home</Link>
-        <Link to="/">Services</Link>
-        <Link to="/">Why us?</Link>
-        <Link to="/">Testimonials</Link>
-        <Link to="/form">Blogs</Link>
+        <a href="/#home">Home</a>
+        <a href="/#services">Services</a>
+        <a href="/#whyus">Why us?</a>
+        <a href="/#testimonials">Testimonials</a>
+        <a href="/#blogs">Blogs</a>
         <Link to="/form">Contact</Link>
     </div>
   )

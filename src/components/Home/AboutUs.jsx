@@ -1,6 +1,6 @@
 export const AboutUs = () => {
   return (
-    <div className="container__aboutus">
+    <div className="container__aboutus" id="whyus">
         <div className="box box1">
 
           <img src="./img/fondo-card.svg" alt="" className="img-card"/>

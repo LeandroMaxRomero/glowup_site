@@ -41,7 +41,7 @@ const cardsData = [
 
 function Slider() {
   return (
-    <div className='container__slider'>
+    <div className='container__slider' id='testimonials'>
       <h2>What our clients says</h2>
       <SliderCards cardsData={cardsData} />
     </div>

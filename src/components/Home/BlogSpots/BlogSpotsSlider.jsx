@@ -10,7 +10,7 @@ import { Keyboard, Scrollbar, Navigation } from "swiper/modules";
 
 export const BlogSpotsSlider = () => {
   return (
-    <div className="container__BlogSpotsSlider">
+    <div className="container__BlogSpotsSlider" id="blogs">
 
         <h2>Stay Informed</h2>
 

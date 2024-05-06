@@ -6,7 +6,6 @@ import { SurveyProvider } from "./Context/SurveyContext";
 import FormPage from "./components/Form/FormPage";
 import { Navbar } from "./components/NavBar/Navbar";
 
-
 function App() {
   return (
     <React.Fragment>

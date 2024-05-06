@@ -22,7 +22,7 @@ export const Services = () => {
   ]
 
   return (
-    <div className="container__services">
+    <div className="container__services" id="services">
         <h2>What we do</h2>
         <Accordion tittle={texto[0].titulo1} contenido={texto[1].conte1} active={active} setActive={setActive} />
         <Accordion tittle={texto[0].titulo2} contenido={texto[1].conte2} active={active} setActive={setActive} />

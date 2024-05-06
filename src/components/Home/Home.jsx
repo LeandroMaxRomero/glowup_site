@@ -13,7 +13,7 @@ export const Home = () => {
     <div >
       <Background />
 
-      <div className="container__home">
+      <div className="container__home" id="home">
         <Header />
         <Hero />
         <Services />
@@ -23,6 +23,7 @@ export const Home = () => {
         <QuestionCard />
         <Footer />
       </div>
+
     </div>
   )
 }
