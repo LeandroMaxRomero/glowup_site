@@ -1,13 +1,18 @@
 @use '../base/variables' as v;
+@use '../base/mixins' as m;
 
 .container__services{
   width: 100%;
   max-width: 1320px;
   padding: 126px 1rem 0;
-  margin: 0 auto 150px;
+  margin: 0 auto 75px;
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 16px;
+  @include m.tablet {
+    padding-top: 100px;
+    max-width: 838px;
+  }
   h2{
       font-size: 40px;
       font-style: normal;
@@ -15,7 +20,7 @@
       line-height: normal;
       text-transform: uppercase;
       text-align: end;
-
+      padding-bottom: 50px;
   }
 }
 
@@ -34,11 +39,15 @@
 .accordionHeading {
     padding: 0;
     margin-left: 0;
+    padding-bottom: 18px;
     h3 {
         font-size: 40px;
         font-style: normal;
         font-weight: 400;
         line-height: normal;
+        @include m.tablet {
+          font-size: 28px;
+        }
     }
     span {
       cursor: pointer;
@@ -66,20 +75,19 @@
 
   .accordionContent {
     height: 0;
-    width: 585px;
+    width: 92%;
     opacity: 0;
     display: flex;
     overflow: hidden;
     transition: all 600ms ease-in-out;
     .cont-despl {
-        margin-top: 40px;
         color: #ADADAD;
         text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.09);
         font-size: 20px;
         font-style: normal;
         font-weight: 400;
         line-height: normal;
-        padding-bottom: 12px;
+        padding-bottom: 18px;
     }
     &.show {
       height: fit-content;

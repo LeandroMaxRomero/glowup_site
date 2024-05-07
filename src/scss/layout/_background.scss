@@ -1,4 +1,5 @@
 @use '../base/variables' as v;
+@use '../base/mixins' as m;
 
 .container__background{
     background-color: v.$background;
@@ -35,23 +36,41 @@
         position: absolute;
         z-index: -9;
         width: 1px;
-        height: 4200px;
+        height:3800px;
         background-color: rgba(163, 163, 163, 0.10);
+        @include m.mobile {
+            height: 4000px;
+        }
     }
     .line-one{
         left: 27%;
+        @include m.tablet {
+            left: 16.33%;
+        }
+        @include m.mobile {
+            left: 4.55%;
+        }
     }
     .line-two{
         left: 50%;
     }
     .line-three{
         left: 73%;
+        @include m.tablet {
+            left: 83.67%;
+        }
+        @include m.mobile {
+            left: 95.45%;
+        }
     }
 
     .zigzag{
         position: absolute;
-        top: 1380px;
+        top: 1560px;
         left: 0.5px;
+        @include m.tablet {
+            top: 1200px;
+        }
     }
 
 }

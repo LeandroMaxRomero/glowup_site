@@ -4,7 +4,7 @@ import { BlogSpotsSlider } from "./BlogSpots/BlogSpotsSlider";
 import { Header } from "./Header";
 import { Hero } from "./Hero";
 import { Services } from "./ServiceInfo/Services";
-import Slider from "./Slider/Slider";
+// import Slider from "./Slider/Slider";
 import { Footer } from "../Footer/Footer";
 import { Background } from "./Background";
 
@@ -18,7 +18,7 @@ export const Home = () => {
         <Hero />
         <Services />
         <AboutUs />
-        <Slider />
+        {/* <Slider /> */}
         <BlogSpotsSlider />
         <QuestionCard />
         <Footer />

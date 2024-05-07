@@ -15,6 +15,7 @@ export const BlogSpotsSlider = () => {
         <h2>Stay Informed</h2>
 
         <Swiper
+        
         slidesPerView={2}
         spaceBetween={36}
         centeredSlides={false}

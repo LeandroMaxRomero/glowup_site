@@ -1,14 +1,19 @@
 @use '../base/variables' as v;
+@use '../base/mixins' as m;
 
 .container__header{
     max-width: 1000px;
     width: 100%;
     padding: 0 1rem;
-    margin: 0 auto 225px;
+    margin: 0 auto 200px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 30px;
+    @include m.tablet {
+        max-width: 900px;
+        margin-bottom: 112px;
+    }
 }
 
 .header-title{
@@ -22,13 +27,17 @@
         line-height: normal;
         text-transform: uppercase;
         text-align: center;
+        @include m.tablet {
+            font-size: 90px;
+        }
         span{
             text-decoration-line: underline;
             text-decoration-color:#5BD8FF;
-            background: linear-gradient(8deg, #5BD8FF 56%, #69FFB7 89.04%);
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: v.$celeste;
+            // background: linear-gradient(8deg, #5BD8FF 56%, #69FFB7 89.04%);
+            // background-clip: text;
+            // -webkit-background-clip: text;
+            // -webkit-text-fill-color: transparent;
         }
     }
 }
