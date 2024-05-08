@@ -1,6 +1,10 @@
 @use '../base/variables' as v;
 
 .container__navbar{
+    width: 100%;
+}
+
+.navbar--desktop{
     height: 64px;
     width: 100%;
     padding: 0 80px;
@@ -17,6 +21,9 @@
     z-index: 50;
     svg{
         position: relative;
+    }
+    @media (max-width: 920px){
+        display: none;
     }
 }
 
@@ -43,7 +50,7 @@
         color: v.$blanco;
         &:hover{
             color: v.$celeste;
-            transform: scale(1.25);
+            transition: ease-out 300ms;
         }
     }
 }
@@ -55,14 +62,14 @@
         background-color: transparent;
         color: v.$blanco;
         font-family: v.$font;
-        font-size: 18px;
+        font-size: 16px;
         font-style: normal;
         font-weight: 400;
         line-height: normal;
         text-transform: uppercase;
         &:hover{
             color: #69FFB7;
-            transform: scale(1.25);
+            transition: ease-out 300ms;
         }
         &.active{
             color: v.$celeste;
@@ -75,4 +82,101 @@
         margin: 0 5px;
         background-color: v.$blanco;
     }
+}
+
+
+
+.navbar--mobile{
+    display: none;
+    @media (max-width: 920px){
+        display: flex;
+    }
+    position: fixed;
+    z-index: 80;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    flex-direction: column;
+    
+    
+    
+    .navbar--fixed{
+        background-color: rgba(27, 27, 27, 0.5);
+        backdrop-filter: blur(5px);
+        height: 76px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 26px 20px 27px 20px;
+
+    }
+    button{
+        background-color: transparent;
+        border: none;
+    }
+    img{
+        background-color: transparent;
+    }
+} 
+
+.navbar--desp{
+    display: none;
+    position: absolute;
+    height: 1200px;
+    background-color: v.$background;
+    padding: 130px 10px 0;
+    top: 0;
+    right: 0;
+    transition: width 1s ease-in-out;
+    margin-top: 76px;
+    &.hidden{
+        width: 1px;
+    }
+    &.show{
+        display: flex;
+        flex-direction: column;
+        width: 920px;
+        
+    }
+    .container__navlinks--mobile{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        a{
+            font-size: 25px;
+            font-family: v.$font;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            color: v.$blanco;
+            width: 100%;
+            text-align: center;
+            padding: 20px 0;
+        }
+    }
+    .container__lang{
+        display: flex;
+        justify-content: center;
+        margin-top: 180px;
+        .btn-idioma{
+            font-size: 25px;
+            &:hover{
+                color: #69FFB7;
+                transition: ease-out 300ms;
+            }
+            &.active{
+                color: v.$celeste;
+            }
+    
+        }
+        .divisor{
+            width: 2px;
+            height: 20px;
+            margin: 0 5px;
+            background-color: v.$blanco;
+        }
+    }
+
 }

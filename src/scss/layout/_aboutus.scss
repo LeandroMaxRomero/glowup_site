@@ -1,0 +1,158 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.container__aboutus{
+    width: 100%;
+    max-width: 1320px;
+    padding: 90px 1rem 0;
+    margin: 0 auto;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+    grid-template-areas: "b1 b2 text text"
+                         "b3 b4 b5 b6";
+
+    @media (max-width: 1320px){
+        
+        grid-template-rows: 1fr 2.5fr 2.5fr;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: "text text text"
+                             "b1 b2 b3"
+                             "b4 b5 b6";
+        
+    }
+    @include m.tablet {
+        max-width: 980px;
+        grid-template-rows: 1fr 2.5fr 2.5fr;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: "text text text"
+                             "b1 b2 b3"
+                             "b4 b5 b6";
+    }
+    @media (max-width: 815px) {
+        
+        grid-template-rows: 1fr 2fr 2fr 2fr;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "text text"
+                            "b1 b2"
+                            "b3 b4"
+                            "b5 b6";
+    }
+    .box{
+        width: 310px;
+        height: 310px;
+        position: relative;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.10) 0%, rgba(0, 0, 0, 0.40) 100%);
+        backdrop-filter: blur(0.5px);
+        display: flex;
+        &:hover{
+            transform: scale(1.1);
+            h3{
+                    transition: ease-out 350ms;
+                    background: linear-gradient(90deg, #5BD8FF 0%, #69FFB7 100%);
+                    background-clip: border-box;
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    transform: scale(1.1);
+            }
+            .box--text p{
+                color: v.$blanco;
+            }
+        }
+        @include m.tablet {
+            width: 260px;
+            height: 260px;
+        }
+        .img-card{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            // backdrop-filter: blur(0.5px);
+            // width: 275px;
+            // height: 188px;
+            // transform: rotate(-29.489deg);
+            filter: blur(39.400001525878906px) drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+        }
+        .box--text{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            align-items: center;
+            h3{
+                text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.09);
+                font-size: 32px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+                width: 100%;
+                text-align: center;
+                @include m.tablet {
+                    font-size: 30px;
+                }
+            }
+            p{
+                color: #ADADAD;
+                text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.09);
+                font-size: 15px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                width: 90%;
+            }
+        }
+    }
+    .box1{
+        grid-area: b1;
+    }
+    .box2{
+        grid-area: b2;
+    }
+    .box3{
+        grid-area: b3;
+    }
+    .box4{
+        grid-area: b4;
+    }
+    .box5{
+        grid-area: b5;
+    }
+    .box6{
+        grid-area: b6;
+    }
+    .text{
+        grid-area: text;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 40px 10px 0;
+        @include m.tablet {
+            padding-top: 0;
+        }
+    }
+    h2{
+        text-align: start;
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        text-transform: uppercase;
+    }
+    h3{
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-transform: uppercase;
+        width: 530px;
+        @media (max-width: 1320px){
+            width: 100%;
+        }
+    }
+}

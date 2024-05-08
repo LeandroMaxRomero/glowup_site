@@ -15,13 +15,13 @@
       margin-bottom: 50px;
     }
 }
-//  .swiper{
-//   padding-bottom: 60px !important;
-//  }
+ .swiper{
+  padding-bottom: 60px !important;
+ }
 .blogs--columns{
   display: flex;
   flex-direction: column;
-  gap: 100px;
+  gap: 40px;
 }
 
 .container--blog{
@@ -99,18 +99,18 @@ text-transform: uppercase;
 
 .swiper-button-next, .swiper-button-prev{
   color: v.$blanco;
-  // top: 95%;
+  top: 95%;
   &:hover{
     color: v.$celeste;
   }
 }
 
-// .swiper-button-next{
-//   right: 45%;
-// }
-// .swiper-button-prev{
-//   left: 45%;
-// }
+.swiper-button-next{
+  right: 45%;
+}
+.swiper-button-prev{
+  left: 45%;
+}
   
 
   

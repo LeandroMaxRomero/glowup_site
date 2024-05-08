@@ -10,7 +10,7 @@ export const Header = () => {
 
   
   return (
-    <div className="container__header">
+    <div className={(lang==='castellano'?"castellano":"") + " container__header"}>
 
           <div className="header-title">
             {

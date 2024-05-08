@@ -1,11 +1,13 @@
 import { Lang } from "./Lang"
 import { NavList } from "./NavList"
 import { Link } from "react-router-dom"
+import { NavbarMobile } from "./NavbarMobile"
 
 export const Navbar = () => {
   return (
     <div className="container__navbar">
 
+      <div className="navbar--desktop">
         <Link to="/">
           <svg width="119" height="22" viewBox="0 0 119 22" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M15.8517 20.8529C14.6415 21.5 12.3685 22 9.85937 22C3.57181 22 0 17.5 0 11C0 4.47059 3.867 0 10.3022 0C12.5161 0 14.671 0.500001 15.7632 1.14706L14.2282 5.05882C13.4017 4.58824 12.1323 4.2353 10.5088 4.2353C7.37977 4.2353 5.01824 6.38235 5.01824 10.9706C5.01824 15.5294 7.17314 17.8235 9.50514 17.8235C10.2726 17.8235 10.8335 17.7059 11.1582 17.5882V12.5588H8.59005V8.82353H15.8517V20.8529Z" fill="white"/>
@@ -23,6 +25,10 @@ export const Navbar = () => {
         </Link>
         <NavList />
         <Lang />
+      </div>
+
+      <NavbarMobile />
+
     </div>
   )
 }

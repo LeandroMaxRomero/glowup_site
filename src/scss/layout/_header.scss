@@ -10,6 +10,9 @@
     flex-direction: column;
     align-items: center;
     gap: 30px;
+    &.castellano{
+        max-width: 1200px;
+    }
     @include m.tablet {
         max-width: 900px;
         margin-bottom: 112px;

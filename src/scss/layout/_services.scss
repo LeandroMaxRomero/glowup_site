@@ -64,6 +64,7 @@
     cursor: pointer;
     &:hover {
       h3{
+        transition: ease-out 300ms;
         background: linear-gradient(90deg, #5BD8FF 0%, #69FFB7 100%);
         background-clip: border-box;
         background-clip: text;
