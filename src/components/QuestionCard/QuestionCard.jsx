@@ -123,7 +123,12 @@ const QuestionCard = () => {
             {showCard && (
                 <div className='survey--card'>
                     
-                    <button className='survey__btn--close' onClick={handleCloseSurvey}>X</button>
+                    <button className='survey__btn--close' onClick={handleCloseSurvey}>
+                        <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect y="22.6274" width="32" height="3" transform="rotate(-45 0 22.6274)" fill="white"/>
+                          <rect x="2.12109" width="32" height="3" transform="rotate(45 2.12109 0)" fill="white"/>
+                        </svg>
+                    </button>
 
                     <h2>{questions[currentQuestionIndex].question}</h2>
 
@@ -141,6 +146,7 @@ const QuestionCard = () => {
                                                     onChange={() => handleOptionSelect(option)}
                                                     className='checkboxes'
                                                 />
+                                                <span className='checkboxes'></span>
                                                 <p>{option}</p>
                                             </label>
                                         ) : (
@@ -153,11 +159,12 @@ const QuestionCard = () => {
                             </ul>
                         )
                         : (
-                            <textarea value={userInput} onChange={handleUserInput} />
+                            <textarea className='textarea--card'value={userInput} onChange={handleUserInput} />
                         )}
 
                     {currentQuestionIndex === 1 && selectedOptions.has("Other (please specify)") && (
                         <textarea
+                            className='textarea--card'
                             value={userInput}
                             onChange={handleUserInput}
                             placeholder="Ingrese su respuesta aquí..."
@@ -166,11 +173,23 @@ const QuestionCard = () => {
 
                     <div className='survey__btn--nav'>
                         {currentQuestionIndex > 0 && (
-                            <button className='survey__btn--anterior' onClick={handlePreviousQuestion}>Anterior</button>
+                            <button className='survey__btn--anterior' onClick={handlePreviousQuestion}>
+                                <svg width="39" height="14" viewBox="0 0 39 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M38.9082 7.3099C38.9082 6.76316 38.465 6.31995 37.9183 6.31995H4.0323C3.48557 6.31995 3.04235 6.76316 3.04235 7.3099C3.04235 7.85663 3.48557 8.29984 4.0323 8.29984H37.9183C38.465 8.29984 38.9082 7.85663 38.9082 7.3099Z" fill="white"/>
+                                  <path d="M0.908203 7.38029C1.68779 8.15492 2.94651 8.15491 3.72609 7.38027L8.65288 2.4847C9.04369 2.09637 9.04369 1.46412 8.65287 1.07579C8.26556 0.690938 7.64021 0.690941 7.2529 1.0758L0.908203 7.38029Z" fill="white"/>
+                                  <path d="M3.72609 7.38027C2.9465 6.60564 1.68779 6.60565 0.908203 7.38029L7.25297 13.6847C7.64028 14.0696 8.26563 14.0696 8.65294 13.6847C9.04375 13.2964 9.04375 12.6641 8.65293 12.2758L3.72609 7.38027Z" fill="white"/>
+                                </svg>
+                                Back
+                            </button>
                         )}
                         {(selectedOptions.size > 0 || userInput) && (
                             <button className='survey__btn--siguiente' onClick={handleNextQuestion}>
-                                {currentQuestionIndex === questions.length - 1 ? 'Finalizar' : 'Siguiente pregunta'}
+                                {currentQuestionIndex === questions.length - 1 ? 'Finish' : 'Next'}
+                                <svg width="39" height="15" viewBox="0 0 39 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M0.336914 7.3092C0.336914 6.75692 0.784629 6.3092 1.33691 6.3092H35.3369C35.8892 6.3092 36.3369 6.75692 36.3369 7.3092C36.3369 7.86149 35.8892 8.3092 35.3369 8.3092H1.33691C0.78463 8.3092 0.336914 7.86149 0.336914 7.3092Z" fill="white"/>
+                                  <path d="M38.479 7.38031C37.698 8.16135 36.4317 8.16135 35.6506 7.38029L30.7009 2.43052C30.3104 2.03999 30.3104 1.40683 30.7009 1.01631C31.0914 0.625785 31.7246 0.625788 32.1151 1.01631L38.479 7.38031Z" fill="white"/>
+                                  <path d="M35.6506 7.38029C36.4317 6.59925 37.698 6.59926 38.479 7.38031L32.1151 13.7442C31.7245 14.1348 31.0914 14.1348 30.7008 13.7442C30.3103 13.3537 30.3103 12.7205 30.7008 12.33L35.6506 7.38029Z" fill="white"/>
+                                </svg>
                             </button>
                         )}
                     </div>
