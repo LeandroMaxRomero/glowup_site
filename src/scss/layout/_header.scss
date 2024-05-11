@@ -17,6 +17,11 @@
         max-width: 900px;
         margin-bottom: 112px;
     }
+    @include m.mobile {
+        max-width: 423px;
+        margin-bottom: 180px;
+        gap: 50px;
+    }
 }
 
 .header-title{
@@ -32,6 +37,18 @@
         text-align: center;
         @include m.tablet {
             font-size: 90px;
+        }
+        @include m.mobile {
+            font-size: 60px;
+        }
+        @media(max-width:422px){
+            font-size: 48px;
+        }
+        @media(max-width:360px){
+            font-size: 45px;
+        }
+        @media(max-width:320px){
+            font-size: 42px;
         }
         span{
             text-decoration-line: underline;

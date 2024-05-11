@@ -1,4 +1,5 @@
 @use '../base/variables' as v;
+@use '../base/mixins' as m;
 
 .container__footer{
     width: 100%;
@@ -69,4 +70,32 @@
         font-weight: 400;
         line-height: normal;
     }
+}
+@include m.mobile {
+    .container__footer{
+        padding-bottom: 30px;
+    }
+    .footer{
+        max-width: 440px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-areas: "contact contact"
+                            "nav social";
+    }
+    .footer__contact{
+        grid-area: contact;
+        width: 100%;
+    }
+    .footer__nav{
+        grid-area: nav;
+    }
+    .footer__social{
+        grid-area: social;
+        align-items: end;
+    }
+    .footer__social--links{
+        align-self: center;
+    }
+    
 }

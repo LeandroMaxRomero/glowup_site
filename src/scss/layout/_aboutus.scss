@@ -41,23 +41,28 @@
                             "b3 b4"
                             "b5 b6";
     }
+    @include m.mobile {
+        display: none;
+    }
     .box{
         width: 310px;
         height: 310px;
         position: relative;
         background: linear-gradient(180deg, rgba(0, 0, 0, 0.10) 0%, rgba(0, 0, 0, 0.40) 100%);
+        background-color: v.$background;
         backdrop-filter: blur(0.5px);
         display: flex;
+        transition: all 0.5s ease-in-out;
         &:hover{
-            transform: scale(1.1);
+            transform: scale(1.05);
             h3{
-                    transition: ease-out 350ms;
+                    transition: ease-out 0.35s;
                     background: linear-gradient(90deg, #5BD8FF 0%, #69FFB7 100%);
                     background-clip: border-box;
                     background-clip: text;
                     -webkit-background-clip: text;
                     -webkit-text-fill-color: transparent;
-                    transform: scale(1.1);
+                    transform: scale(1.05);
             }
             .box--text p{
                 color: v.$blanco;
@@ -154,5 +159,106 @@
         @media (max-width: 1320px){
             width: 100%;
         }
+    }
+}
+
+.container__aboutus--mobile{
+    display: none;
+    @include m.mobile {
+        display: flex;
+        justify-content: center;
+        flex-direction: column; 
+        max-width: 440px;
+        width: 100%;
+        padding: 75px 1rem 0;
+        margin: 0 auto;
+        .mySwiper--AboutUs{
+            display: block;
+        }
+    }
+    .text{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin-bottom: 20px;
+
+        h2{
+            text-align: start;
+            font-size: 40px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            text-transform: uppercase;
+        }
+        h3{
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            text-transform: uppercase;
+            padding: 0;
+            width: 100%;
+        }
+    }
+    .box{
+        width: 100%;
+        height: 100%;
+        position: relative;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.10) 0%, rgba(0, 0, 0, 0.40) 100%);
+        background-color: v.$background;
+        backdrop-filter: blur(0.5px);
+        display: flex;
+    }
+    .img-card{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        // backdrop-filter: blur(0.5px);
+        // width: 275px;
+        // height: 188px;
+        // transform: rotate(-29.489deg);
+        filter: blur(39.400001525878906px) drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    }
+    .box--text{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+        align-items: center;
+        h3{
+            text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.09);
+            font-size: 32px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            width: 100%;
+            text-align: center;
+            @include m.tablet {
+                font-size: 30px;
+            }
+        }
+        p{
+            color: #ADADAD;
+            text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.09);
+            font-size: 15px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            width: 90%;
+        }
+    }
+    .swiper-wrapper{
+        height: 420px !important;
+    }
+    .swiper-pagination-bullet-active{
+        background: #FFF !important;
+    }
+    .swiper-pagination-bullet{
+        background: rgb(217, 217, 217);
+    }
+    .swiper-slide{
+        height: 90%;
     }
 }

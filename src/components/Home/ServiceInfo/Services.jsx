@@ -11,7 +11,7 @@ export const Services = () => {
   const texto = [
     {
       titulo1: "Consultoría de Estrategia de Marketing Digital",
-      titulo2: "Diseño de Landing Page Personalizadas",
+      titulo2: "Diseño de Landing Pages Personalizadas",
       titulo3: "Campañas de Anuncios y Contenido de Anuncios Personalizados",
       titulo4: "Optimización de la Tasa de Conversión (CRO) y SEO",
       titulo5: "Integración con CRM",

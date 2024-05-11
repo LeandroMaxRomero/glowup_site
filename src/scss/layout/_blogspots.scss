@@ -1,4 +1,5 @@
 @use '../base/variables' as v;
+@use '../base/mixins' as m;
 
 .container__BlogSpotsSlider{
     width: 100%;
@@ -17,6 +18,15 @@
 }
  .swiper{
   padding-bottom: 60px !important;
+  @media(max-width: 985px){
+    height: 375px !important;
+  }
+  @media(max-width: 805px){
+    height: 400px !important;
+  }
+  @include m.mobile {
+    display: none;
+  }
  }
 .blogs--columns{
   display: flex;
@@ -26,17 +36,22 @@
 
 .container--blog{
   display: flex;
-  width: 624px;
   gap: 20px;
+  @media (max-width:985px){
+    height: 130px;
+}
 
 
   .container--blog__img{
     display: flex;
-    height: 188px;
-    min-width: 310px;
-    object-fit: cover;
+    flex:50;
+    // height: 188px;
+    // width: 310px;
     position: relative;
     overflow: hidden;
+    @media(max-width:780px){
+      flex: 40;
+    }
     &:hover{
       .blog-img{
         filter: grayscale(0);
@@ -63,6 +78,7 @@
     filter: grayscale(1);
     width: 100%;
     height: 100%;
+    object-fit: cover;
   }
 
 
@@ -95,6 +111,13 @@ text-transform: uppercase;
   flex-direction: column;
   padding-top: 21px;
   gap: 6px;
+  flex:50;
+  @include m.tablet {
+    padding-top: 11px;
+  }
+  @media(max-width:780px){
+    flex: 60;
+  }
 }
 
 .swiper-button-next, .swiper-button-prev{
@@ -106,10 +129,55 @@ text-transform: uppercase;
 }
 
 .swiper-button-next{
-  right: 45%;
+  right: 42%;
+  @include m.tablet {
+    right: 40%;
+  }
 }
 .swiper-button-prev{
-  left: 45%;
+  left: 42%;
+  @include m.tablet {
+    left: 40%;
+  }
+}
+
+.swiper-wrapper{
+  @include m.tablet {
+    height: 282px !important;
+  }
+}
+
+.mySwiperMobile{
+  display: none;
+  @include m.mobile {
+    display: block;
+    max-width: 440px;
+    min-height: 480px;
+    .container--blog{
+      display: flex;
+      flex-direction: column;
+    }
+    .container--blog__img{
+      flex: 1;
+      min-height: 250px;
+      max-width: 440px;
+    }
+    .blog-content{
+      flex: 1;
+      h2{
+        font-size: 32px;
+      }
+      p{
+        font-size: 24px;
+      }
+    }
+    .swiper-pagination-bullet-active{
+      background-color: v.$blanco;
+    }
+    .swiper-pagination-bullet{
+      background-color: rgb(217,217,217);
+    }
+  }
 }
   
 

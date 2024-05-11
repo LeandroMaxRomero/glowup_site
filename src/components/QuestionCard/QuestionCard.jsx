@@ -26,57 +26,12 @@ const QuestionCard = () => {
         setShowCard(false); // Siempre cerramos el cuestionario al hacer clic en "Cerrar cuestionario"
     };
 
-    // useEffect(() => {
-    //     const isCompleted = localStorage.getItem('surveyCompleted');
-    //     if (isCompleted) {
-    //         setShowCard(false);
-    //     } else if (closedWithoutCompletion) { // Si el cuestionario fue cerrado sin completarse, volvemos a mostrarlo
-    //         setShowCard(true);
-    //     }
-    // }, [setShowCard, closedWithoutCompletion]);
-
-    // useEffect(() => {
-    //     const isCompleted = localStorage.getItem('surveyCompleted');
-    //     if (isCompleted) {
-    //         setShowCard(false);
-    //     }
-    // }, [setShowCard]);
-
-    // const handleCloseSurvey = () => {
-    //     if (!completed) { // Si el cuestionario no se ha completado
-    //         setClosedWithoutCompletion(true); // Marcamos que el cuestionario fue cerrado sin completarse
-    //     }
-    //     setShowCard(false); // Siempre cerramos el cuestionario al hacer clic en "Cerrar cuestionario"
-    // };
-
-    // useEffect(() => {
-    //     if (closedWithoutCompletion) {
-    //         setShowCard(true); // Si el cuestionario fue cerrado sin completarse, volvemos a mostrarlo
-    //     }
-    // }, [closedWithoutCompletion, setShowCard]);
-
-
-    // useEffect(() => {
-    //     const isCompleted = localStorage.getItem('surveyCompleted');
-    //     if (isCompleted) {
-    //         setShowCard(false);
-    //     }
-    // }, [setShowCard]);
-
-
     useEffect(() => {
         if (Object.keys(userResponses).length > 0) {
             localStorage.setItem('userResponses', JSON.stringify(userResponses));
         }
     }, [userResponses]);
 
-    // const handleCloseSurvey = () => {
-    //     setShowCard(false);
-    // };
-    // const handleCloseSurvey = () => {
-    //     setClosedWithoutCompletion(true); // Marcamos que el cuestionario fue cerrado sin completarse
-    //     setShowCard(false); // No necesitamos establecer showCard en false directamente aquí
-    // };
 
     const handleOptionSelect = (option) => {
         if (currentQuestionIndex === 1) {
@@ -164,6 +119,7 @@ const QuestionCard = () => {
 
     return (
         <div className='container__survey'>
+
             {showCard && (
                 <div className='survey--card'>
                     
@@ -185,8 +141,7 @@ const QuestionCard = () => {
                                                     onChange={() => handleOptionSelect(option)}
                                                     className='checkboxes'
                                                 />
-                                                <br></br>
-                                                {option}
+                                                <p>{option}</p>
                                             </label>
                                         ) : (
                                             <button onClick={() => handleOptionSelect(option)} disabled={selectedOptions.has(option)}>

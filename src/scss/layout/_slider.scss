@@ -51,7 +51,7 @@
         }
         .card-image-original{
           filter: grayscale(1);
-          
+
         }
           &:after {
             content: "";
@@ -62,7 +62,7 @@
             right: 0;
             background: linear-gradient(156deg, #5bd8ff1a 15.52%, #00ff851a 100%);
           }
-         
+
       }
 
 
@@ -130,16 +130,16 @@
               border-right: dotted 0.3px v.$verde;
             }
           }
-  
+
           .next {
             right: 0;
             &:hover{
               border-right: solid 2px v.$celeste;
               border-left: dotted 0.3px v.$verde;
-              border-radius: 0% 50% 50% 0%; 
+              border-radius: 0% 50% 50% 0%;
             }
           }
         }
-      } 
+      }
     }
 }

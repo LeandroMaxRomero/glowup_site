@@ -17,8 +17,8 @@
 
 .container__hero{
     width: 100%;
-    min-height: 475.719px;
-    max-width: 1920px;
+    height: 250px;
+    max-width: 1440px;
     display: flex;
     justify-content: center;
     margin: 0 auto;
@@ -30,6 +30,9 @@
     img{
         width: 100%;
         object-fit: cover;
+    }
+    @include m.mobile {
+        height: 193px;
     }
 }
 

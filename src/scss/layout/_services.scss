@@ -13,6 +13,9 @@
     padding-top: 100px;
     max-width: 838px;
   }
+  @include m.mobile {
+    max-width: 423px;
+  }
   h2{
       font-size: 40px;
       font-style: normal;

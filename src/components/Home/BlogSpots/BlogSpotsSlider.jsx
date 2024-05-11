@@ -5,7 +5,7 @@ import 'swiper/css/scrollbar';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-import { Keyboard, Scrollbar, Navigation } from "swiper/modules";
+import { Keyboard, Scrollbar, Navigation, Pagination } from "swiper/modules";
 
 
 export const BlogSpotsSlider = () => {
@@ -16,16 +16,16 @@ export const BlogSpotsSlider = () => {
 
         <Swiper
         
-        slidesPerView={2}
+        slidesPerView={1}
         spaceBetween={36}
         centeredSlides={false}
-        slidesPerGroupSkip={2}
+        slidesPerGroupSkip={1}
         grabCursor={false}
         keyboard={{
           enabled: true,
         }}
         breakpoints={{
-          650: {
+          780: {
             slidesPerView: 2,
             slidesPerGroup: 2,
           },
@@ -158,8 +158,130 @@ export const BlogSpotsSlider = () => {
                 </div>
             </SwiperSlide>
             
-
         </Swiper>
+
+        <Swiper pagination={true} modules={[Pagination]} className="mySwiperMobile">
+        <SwiperSlide>
+            <div className="container--blog">
+                <div className="container--blog__img">
+                    <img src="./img/blog.png" alt="Card" className="blog-img" />
+                </div>
+                <div className="blog-content">
+                    <h2>BLOG 1</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                </div>
+            </div>
+        </SwiperSlide>
+        
+        <SwiperSlide>
+            <div className="container--blog">
+                <div className="container--blog__img">
+                    <img src="./img/blog.png" alt="Card" className="blog-img" />
+                </div>
+                <div className="blog-content">
+                    <h2>BLOG 2</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                </div>
+            </div>
+        </SwiperSlide>
+        
+        <SwiperSlide>
+            <div className="container--blog">
+                <div className="container--blog__img">
+                    <img src="./img/blog.png" alt="Card" className="blog-img" />
+                </div>
+                <div className="blog-content">
+                    <h2>BLOG 3</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                </div>
+            </div>
+        </SwiperSlide>
+        
+        <SwiperSlide>
+            <div className="container--blog">
+                <div className="container--blog__img">
+                    <img src="./img/blog.png" alt="Card" className="blog-img" />
+                </div>
+                <div className="blog-content">
+                    <h2>BLOG 4</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                </div>
+            </div>
+        </SwiperSlide>
+        
+        <SwiperSlide>
+            <div className="container--blog">
+                <div className="container--blog__img">
+                    <img src="./img/blog.png" alt="Card" className="blog-img" />
+                </div>
+                <div className="blog-content">
+                    <h2>BLOG 5</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                </div>
+            </div>
+        </SwiperSlide>
+        
+        <SwiperSlide>
+            <div className="container--blog">
+                <div className="container--blog__img">
+                    <img src="./img/blog.png" alt="Card" className="blog-img" />
+                </div>
+                <div className="blog-content">
+                    <h2>BLOG 6</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                </div>
+            </div>
+        </SwiperSlide>
+        
+        <SwiperSlide>
+            <div className="container--blog">
+                <div className="container--blog__img">
+                    <img src="./img/blog.png" alt="Card" className="blog-img" />
+                </div>
+                <div className="blog-content">
+                    <h2>BLOG 7</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                </div>
+            </div>
+        </SwiperSlide>
+        
+        <SwiperSlide>
+            <div className="container--blog">
+                <div className="container--blog__img">
+                    <img src="./img/blog.png" alt="Card" className="blog-img" />
+                </div>
+                <div className="blog-content">
+                    <h2>BLOG 8</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                </div>
+            </div>
+        </SwiperSlide>
+        
+        <SwiperSlide>
+            <div className="container--blog">
+                <div className="container--blog__img">
+                    <img src="./img/blog.png" alt="Card" className="blog-img" />
+                </div>
+                <div className="blog-content">
+                    <h2>BLOG 9</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                </div>
+            </div>
+        </SwiperSlide>
+        
+        <SwiperSlide>
+            <div className="container--blog">
+                <div className="container--blog__img">
+                    <img src="./img/blog.png" alt="Card" className="blog-img" />
+                </div>
+                <div className="blog-content">
+                    <h2>BLOG 10</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                </div>
+            </div>
+        </SwiperSlide>
+        
+      </Swiper>
     </div>
   )
 }
