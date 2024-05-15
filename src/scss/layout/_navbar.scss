@@ -123,9 +123,9 @@
 .navbar--desp{
     display: none;
     position: absolute;
-    height: 1200px;
+    // height: 1200px;
     background-color: v.$background;
-    padding: 130px 10px 0;
+    padding: 20px 10px 0;
     top: 0;
     right: 0;
     transition: width 1s ease-in-out;
@@ -136,6 +136,7 @@
     &.show{
         display: flex;
         flex-direction: column;
+        justify-content: space-between;
         width: 920px;
         
     }
@@ -159,7 +160,9 @@
     .container__lang{
         display: flex;
         justify-content: center;
-        margin-top: 180px;
+        justify-self: center;
+        margin: 40px auto 0;
+        padding: 40px 0;
         .btn-idioma{
             font-size: 25px;
             &:hover{

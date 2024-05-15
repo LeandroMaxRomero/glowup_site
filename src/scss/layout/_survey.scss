@@ -13,21 +13,30 @@
     position: fixed;
     top: 50%;
     left: 50%;
-    // max-width: 1098px;
-    // max-height: 495px;
     width: fit-content;
     height: 100%;
     transform: translate(-50%, -50%);
     background-color: #1B1B1B;
     box-shadow: 4px 4px 2px 2px rgba(217, 217, 217, 0.25);
-    // width: 1098px;
     min-height: 495px;
-    max-height: 500px;
+    max-height: 560px;
     flex-direction: column;
     justify-content: space-between;
     z-index: 100;
     padding: 30px;
     gap: 40px;
+    @media (max-width:920px){
+        max-height: 660px;
+        min-width: 650px;
+    }
+    @media (max-width:650px) {
+        min-width: 440px;
+        max-height: 700px;
+    }
+    @media (max-width:400px) {
+        min-width: 320px;
+        max-height: 800px;
+    }
     .survey__btn--close{
         background-color: transparent;
         color: v.$negro;
@@ -48,7 +57,15 @@
         line-height: normal;
         text-transform: uppercase;
         text-align: center;
+        @include m.mobile {
+            font-size: 22px;
+        }
     }
+}
+.survey--sup{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .answers--list{
@@ -56,8 +73,10 @@
     gap: 10px;
     padding: 0;
     justify-content: space-between;
-    max-width: 840px;
     align-self: center;
+    @media (max-width:920px) {
+        flex-direction: column;
+    }
     li{
         display: flex;
     }
@@ -65,7 +84,8 @@
         background-color: transparent;
         border: 2px solid #5BD8FF !important;
         color: v.$blanco;
-        height: fit-content;
+        height: 46px;
+        width: fit-content;
         font-weight: 600;
         border: none;
         border-radius: 2.5px;
@@ -84,6 +104,9 @@
         font-style: normal;
         font-weight: 400;
         line-height: normal;
+        @include m.mobile {
+            font-size: 16px;
+        }
 
         &:hover{
             color: v.$verde;
@@ -99,6 +122,9 @@
         height: fit-content;
         display: flex;
         gap: 5px;
+        @include m.mobile {
+            font-size: 16px;
+        }
         cursor: pointer;
         input{
             display: none;
@@ -139,7 +165,7 @@
 .textarea--card{
     align-self: center;
     background-color: transparent;
-    border: 1px solid #5BD8FF;
+    border: 2px solid #5BD8FF;
     height: 122px;
     width: 100%;
     min-width: 450px;
@@ -151,6 +177,10 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    @include m.mobile {
+        font-size: 16px;
+        min-width: 300px;
+    }
 
     ::placeholder{
         color: #ADADAD;
@@ -172,12 +202,13 @@
     width: 177px;
     height: 42px;
     background-color: transparent;
-    border: 1px solid #5BD8FF;
+    border: 2px solid #5BD8FF;
 
     display: flex;
     gap: 10px;
     justify-content: center;
     align-items: center;
+    padding: 0;
 
 
     color: #FFF;
@@ -187,6 +218,10 @@
     font-weight: 400;
     line-height: normal;
     text-transform: uppercase;
+    @include m.mobile {
+        width: 150px;
+        font-size: 18px;
+    }
 
     &:hover{
         color: rgb(175, 175, 175);

@@ -3,6 +3,9 @@ import { useEffect, useContext } from 'react';
 import QuestionCard from '../QuestionCard/QuestionCard';
 import { SurveyContext } from '../../Context/SurveyContext';
 import { Form } from './Form';
+import { Footer } from '../Footer/Footer';
+import { BackgroundForm } from './BackgroundForm';
+
 
 const FormPage = () => {
   const { setShowCard } = useContext(SurveyContext);
@@ -17,10 +20,16 @@ const FormPage = () => {
   }, [setShowCard]);
 
   return (
-    <div>
-      <h1>Formulario</h1>
-      <QuestionCard />
-      <Form />
+    <div className='container__formpage'>
+
+      <BackgroundForm />
+      
+      <div>
+        <QuestionCard />
+        <Form />
+        <Footer />
+      </div>
+      
     </div>
   );
 };

@@ -1,4 +1,6 @@
 import { Swiper, SwiperSlide } from "swiper/react";
+import { useContext } from "react";
+import { LenguaContext } from "../../../Context/LangProvider";
 
 import 'swiper/css';
 import 'swiper/css/scrollbar';
@@ -9,10 +11,14 @@ import { Keyboard, Scrollbar, Navigation, Pagination } from "swiper/modules";
 
 
 export const BlogSpotsSlider = () => {
+
+    const useLengua = () => useContext(LenguaContext);
+  const { lang } = useLengua();
+
   return (
     <div className="container__BlogSpotsSlider" id="blogs">
 
-        <h2>Stay Informed</h2>
+        <h2>{lang==='castellano'?"Mantente informado/a":"Stay Informed"}</h2>
 
         <Swiper
         
@@ -46,7 +52,12 @@ export const BlogSpotsSlider = () => {
                         </div>
                         <div className="blog-content">
                             <h2>BLOG 1</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                            {lang==='castellano'
+                            ?
+                            <p>Español: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                            :
+                            <p>English: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                            }
                         </div>
                     </div>
 
@@ -56,7 +67,12 @@ export const BlogSpotsSlider = () => {
                         </div>
                         <div className="blog-content">
                             <h2>BLOG 2</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                            {lang==='castellano'
+                            ?
+                            <p>Español: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                            :
+                            <p>English: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                            }
                         </div>
                     </div>
                 </div>
@@ -70,8 +86,13 @@ export const BlogSpotsSlider = () => {
                         </div>
                         <div className="blog-content">
                             <h2>BLOG 3</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
-                        </div>
+                            {lang==='castellano'
+                            ?
+                            <p>Español: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                            :
+                            <p>English: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                            }
+                            </div>
                     </div>
 
                     <div className="container--blog">
@@ -80,7 +101,12 @@ export const BlogSpotsSlider = () => {
                         </div>
                         <div className="blog-content">
                             <h2>BLOG 4</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                            {lang==='castellano'
+                            ?
+                            <p>Español: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                            :
+                            <p>English: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                            }
                         </div>
                     </div>
                 </div>
@@ -94,7 +120,12 @@ export const BlogSpotsSlider = () => {
                         </div>
                         <div className="blog-content">
                             <h2>BLOG 5</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                            {lang==='castellano'
+                            ?
+                            <p>Español: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                            :
+                            <p>English: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                            }
                         </div>
                     </div>
 
@@ -104,7 +135,12 @@ export const BlogSpotsSlider = () => {
                         </div>
                         <div className="blog-content">
                             <h2>BLOG 6</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                            {lang==='castellano'
+                            ?
+                            <p>Español: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                            :
+                            <p>English: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                            }
                         </div>
                     </div>
                 </div>
@@ -118,7 +154,12 @@ export const BlogSpotsSlider = () => {
                         </div>
                         <div className="blog-content">
                             <h2>BLOG 7</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                            {lang==='castellano'
+                            ?
+                            <p>Español: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                            :
+                            <p>English: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                            }
                         </div>
                     </div>
 
@@ -128,7 +169,12 @@ export const BlogSpotsSlider = () => {
                         </div>
                         <div className="blog-content">
                             <h2>BLOG 8</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                            {lang==='castellano'
+                            ?
+                            <p>Español: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                            :
+                            <p>English: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                            }
                         </div>
                     </div>
                 </div>
@@ -142,7 +188,12 @@ export const BlogSpotsSlider = () => {
                         </div>
                         <div className="blog-content">
                             <h2>BLOG 9</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                            {lang==='castellano'
+                            ?
+                            <p>Español: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                            :
+                            <p>English: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                            }
                         </div>
                     </div>
 
@@ -152,7 +203,12 @@ export const BlogSpotsSlider = () => {
                         </div>
                         <div className="blog-content">
                             <h2>BLOG 10</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                            {lang==='castellano'
+                            ?
+                            <p>Español: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                            :
+                            <p>English: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                            }
                         </div>
                     </div>
                 </div>
@@ -168,7 +224,12 @@ export const BlogSpotsSlider = () => {
                 </div>
                 <div className="blog-content">
                     <h2>BLOG 1</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                    {lang==='castellano'
+                    ?
+                    <p>Español: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                    :
+                    <p>English: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                    }
                 </div>
             </div>
         </SwiperSlide>
@@ -180,7 +241,12 @@ export const BlogSpotsSlider = () => {
                 </div>
                 <div className="blog-content">
                     <h2>BLOG 2</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                    {lang==='castellano'
+                    ?
+                    <p>Español: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                    :
+                    <p>English: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                    }
                 </div>
             </div>
         </SwiperSlide>
@@ -192,7 +258,12 @@ export const BlogSpotsSlider = () => {
                 </div>
                 <div className="blog-content">
                     <h2>BLOG 3</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                    {lang==='castellano'
+                    ?
+                    <p>Español: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                    :
+                    <p>English: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                    }
                 </div>
             </div>
         </SwiperSlide>
@@ -204,7 +275,12 @@ export const BlogSpotsSlider = () => {
                 </div>
                 <div className="blog-content">
                     <h2>BLOG 4</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                    {lang==='castellano'
+                    ?
+                    <p>Español: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                    :
+                    <p>English: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                    }
                 </div>
             </div>
         </SwiperSlide>
@@ -216,7 +292,12 @@ export const BlogSpotsSlider = () => {
                 </div>
                 <div className="blog-content">
                     <h2>BLOG 5</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                    {lang==='castellano'
+                    ?
+                    <p>Español: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                    :
+                    <p>English: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                    }
                 </div>
             </div>
         </SwiperSlide>
@@ -228,7 +309,12 @@ export const BlogSpotsSlider = () => {
                 </div>
                 <div className="blog-content">
                     <h2>BLOG 6</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                    {lang==='castellano'
+                    ?
+                    <p>Español: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                    :
+                    <p>English: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                    }
                 </div>
             </div>
         </SwiperSlide>
@@ -240,7 +326,12 @@ export const BlogSpotsSlider = () => {
                 </div>
                 <div className="blog-content">
                     <h2>BLOG 7</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                    {lang==='castellano'
+                    ?
+                    <p>Español: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                    :
+                    <p>English: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                    }
                 </div>
             </div>
         </SwiperSlide>
@@ -252,7 +343,12 @@ export const BlogSpotsSlider = () => {
                 </div>
                 <div className="blog-content">
                     <h2>BLOG 8</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                    {lang==='castellano'
+                    ?
+                    <p>Español: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                    :
+                    <p>English: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                    }
                 </div>
             </div>
         </SwiperSlide>
@@ -264,7 +360,12 @@ export const BlogSpotsSlider = () => {
                 </div>
                 <div className="blog-content">
                     <h2>BLOG 9</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                    {lang==='castellano'
+                    ?
+                    <p>Español: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                    :
+                    <p>English: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                    }
                 </div>
             </div>
         </SwiperSlide>
@@ -276,7 +377,12 @@ export const BlogSpotsSlider = () => {
                 </div>
                 <div className="blog-content">
                     <h2>BLOG 10</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                    {lang==='castellano'
+                    ?
+                    <p>Español: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                    :
+                    <p>English: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                    }
                 </div>
             </div>
         </SwiperSlide>
