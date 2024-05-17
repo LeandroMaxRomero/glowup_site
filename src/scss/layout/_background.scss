@@ -2,6 +2,10 @@
 @use '../base/mixins' as m;
 
 .container__background{
+    &.blur{
+        backdrop-filter: blur(5px);
+        opacity: 0.25;
+    }
     background-color: v.$background;
     width: 100%;
     height: 100%;

@@ -1,7 +1,11 @@
+import { useContext } from 'react';
+import { SurveyContext } from '../../Context/SurveyContext';
 
 export const BackgroundForm = () => {
+  const { showCard } = useContext(SurveyContext);
+
   return (
-    <div className='container__background--form'>
+    <div className={(showCard===true?'blur':'')+' container__background--form'}>
           <svg width="923" height="936" viewBox="0 0 923 936" fill="none" xmlns="http://www.w3.org/2000/svg" className="light--one">
             <g filter="url(#filter0_f_188_181)">
               <path d="M822.957 474.402C822.957 673.764 661.342 835.379 461.98 835.379C262.617 835.379 -165.46 592.818 -165.46 393.456C-165.46 194.094 6.70685 -22.1452 461.98 113.425C800.855 214.334 822.957 275.04 822.957 474.402Z" fill="url(#paint0_linear_188_181)" fillOpacity="0.15"/>

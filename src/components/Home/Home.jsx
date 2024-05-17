@@ -9,23 +9,31 @@ import { Background } from "./Background";
 import { AboutUs } from "./AboutUs/AboutUs";
 import { AboutUsMobile } from "./AboutUs/AboutUsMobile";
 
+import { useContext } from 'react';
+import { SurveyContext } from '../../Context/SurveyContext';
+
 export const Home = () => {
+
+  const { showCard } = useContext(SurveyContext);
+  
   return (
-    <div >
-      <Background />
+    <>
+    <QuestionCard />
+      <div >
+        <Background />
 
-      <div className="container__home" id="home">
-        <Header />
-        <Hero />
-        <Services />
-        <AboutUs />
-        <AboutUsMobile />
-        {/* <Slider /> */}
-        <BlogSpotsSlider />
-        <QuestionCard />
-        <Footer />
+        <div className={(showCard===true?'blur':'')+" container__home"} id="home">
+          <Header />
+          <Hero />
+          <Services />
+          <AboutUs />
+          <AboutUsMobile />
+          {/* <Slider /> */}
+          <BlogSpotsSlider />
+          <Footer />
+        </div>
+
       </div>
-
-    </div>
+    </>
   )
 }

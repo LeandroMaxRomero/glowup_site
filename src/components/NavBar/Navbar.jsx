@@ -2,10 +2,14 @@ import { Lang } from "./Lang"
 import { NavList } from "./NavList"
 import { Link } from "react-router-dom"
 import { NavbarMobile } from "./NavbarMobile"
+import { useContext } from 'react';
+import { SurveyContext } from '../../Context/SurveyContext';
 
 export const Navbar = () => {
+  const { showCard } = useContext(SurveyContext);
+  
   return (
-    <div className="container__navbar">
+    <div className={(showCard===true?'blur':'')+" container__navbar"}>
 
       <div className="navbar--desktop">
         <Link to="/">

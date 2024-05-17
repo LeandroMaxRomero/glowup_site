@@ -2,6 +2,10 @@
 @use '../base/mixins' as m;
 
 .container__home{
+    &.blur{
+        backdrop-filter: blur(5px);
+        opacity: 0.25;
+    }
     // position: absolute;
     // z-index: 1;
     width: 100%;

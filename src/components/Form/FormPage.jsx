@@ -8,29 +8,33 @@ import { BackgroundForm } from './BackgroundForm';
 
 
 const FormPage = () => {
-  const { setShowCard } = useContext(SurveyContext);
+  const { setShowCard, showCard } = useContext(SurveyContext);
 
   useEffect(() => {
     const isCompleted = localStorage.getItem('surveyCompleted');
     const isClosedWithoutCompletion = localStorage.getItem('surveyClosedWithoutCompletion');
 
+
     if (!isCompleted && isClosedWithoutCompletion) {
       setShowCard(true);
     }
+    
   }, [setShowCard]);
 
   return (
-    <div className='container__formpage'>
+    <>
+        <QuestionCard />
+    <div className={(showCard===true?'blur':'')+' container__formpage'}>
 
       <BackgroundForm />
       
       <div>
-        <QuestionCard />
         <Form />
         <Footer />
       </div>
       
     </div>
+    </>
   );
 };
 

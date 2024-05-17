@@ -2,6 +2,10 @@
 
 .container__navbar{
     width: 100%;
+    &.blur{
+        backdrop-filter: blur(5px);
+        opacity: 0.25;
+    }
 }
 
 .navbar--desktop{

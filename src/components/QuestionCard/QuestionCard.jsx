@@ -9,114 +9,44 @@ const QuestionCard = () => {
     const { lang } = useLengua();
     
     const useSurvey = () =>  useContext(SurveyContext);
-    const { showCard, setShowCard, setCompleted, completed } = useSurvey();
+    const { showCard, setShowCard, setCompleted, completed, setClosedDef } = useSurvey();
     
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [selectedOptions, setSelectedOptions] = useState(new Set());
     const [userInput, setUserInput] = useState('');
     const [userResponses, setUserResponses] = useState({});
-    // const [closedWithoutCompletion, setClosedWithoutCompletion] = useState(false);
     
-
     useEffect(() => {
         const isCompleted = localStorage.getItem('surveyCompleted');
         const isClosedWithoutCompletion = localStorage.getItem('surveyClosedWithoutCompletion');
-
+        
         if (isCompleted) {
             setShowCard(false); //* Si el cuestionario se ha completado, no lo mostramos
         } else if (isClosedWithoutCompletion) {
             setShowCard(true); //* Si el cuestionario fue cerrado sin completarse, lo mostramos nuevamente
         }
-    }, [setShowCard]);
+    }, [ setShowCard ]);
 
     const handleCloseSurvey = () => {
         if (!completed) {
             localStorage.setItem('surveyClosedWithoutCompletion', 'true'); //* Guardamos el registro en el almacenamiento local
+            setClosedDef(prev => {
+                const newClosedDef = prev + 1;
+                if (newClosedDef >= 2) {
+                    setCompleted(true);
+                    localStorage.setItem('surveyCompleted', 'true');
+                }
+                return newClosedDef;
+            });
         }
         setShowCard(false); //* Siempre cerramos el cuestionario al hacer clic en "Cerrar cuestionario"
     };
-
+    
     useEffect(() => {
         if (Object.keys(userResponses).length > 0) {
             localStorage.setItem('userResponses', JSON.stringify(userResponses));
         }
     }, [userResponses]);//* Función que actualiza el userResponses y lo guarda en el localStorage
-
-
-    // useEffect(() => {
-    //     const isCompleted = localStorage.getItem('surveyCompleted');
-    //     let closeCount = localStorage.getItem('surveyCloseCount') || 0;
-
-    //     if (isCompleted || closeCount >= 2) {
-    //         setShowCard(false); // Si el cuestionario se ha completado o se ha cerrado dos veces, no lo mostramos
-    //     }
-    // }, [setShowCard]);
-
-    // const handleCloseSurvey = () => {
-    //     let closeCount = localStorage.getItem('surveyCloseCount') || 0;
-        
-    //     if (!completed) {
-    //         closeCount++;
-    //         localStorage.setItem('surveyCloseCount', closeCount); // Incrementar el contador de cierre
-    //     }
-
-    //     if (closeCount >= 2) {
-    //         setShowCard(false); // Si el cuestionario ha sido cerrado dos veces, no lo mostramos
-    //     } else {
-    //         setShowCard(true); // Mostrar el cuestionario nuevamente
-    //     }
-    // };
-
-    // useEffect(() => {
-    //     const isCompleted = localStorage.getItem('surveyCompleted');
-
-    //     if (isCompleted) {
-    //         setShowCard(false); //* Si el cuestionario se ha completado, no lo mostramos
-    //     } else if (closedWithoutCompletion) {
-    //         setShowCard(true); //* Si el cuestionario fue cerrado sin completarse, lo mostramos nuevamente
-    //     }
-    // }, [setShowCard, closedWithoutCompletion]);
-
-    // const handleCloseSurvey = () => {
-    //     if (!completed) {
-    //         if (!closedWithoutCompletion) {
-    //             setClosedWithoutCompletion(true);
-    //         } else {
-    //             setCompleted(true);
-    //             localStorage.setItem('surveyCompleted', 'true');
-    //         }
-    //     }
-    //     setShowCard(false); //* Siempre cerramos el cuestionario al hacer clic en "Cerrar cuestionario"
-    // };
-
-    // useEffect(() => {
-    //     const isCompleted = localStorage.getItem('surveyCompleted');
-    //     const isClosedWithoutCompletion = localStorage.getItem('surveyClosedWithoutCompletion');
-
-    //     if (isCompleted) {
-    //         setShowCard(false); //* Si el cuestionario se ha completado, no lo mostramos
-    //     } else if (isClosedWithoutCompletion) {
-    //         setShowCard(true); //* Si el cuestionario fue cerrado sin completarse, lo mostramos nuevamente
-    //     }
-    // }, [setShowCard]);
-
-    // const handleCloseSurvey = () => {
-    //     if (!completed) {
-    //         if (!closedWithoutCompletion) {
-    //             setClosedWithoutCompletion(true);
-    //         } else {
-    //             setCompleted(true);
-    //             localStorage.setItem('surveyCompleted', 'true');
-    //         }
-    //     }
-    //     setShowCard(false); //* Siempre cerramos el cuestionario al hacer clic en "Cerrar cuestionario"
-    // };
-
-    // useEffect(() => {
-    //     if (Object.keys(userResponses).length > 0) {
-    //         localStorage.setItem('userResponses', JSON.stringify(userResponses));
-    //     }
-    // }, [userResponses]);
 
 
     const handleOptionSelect = (option) => {
@@ -221,7 +151,7 @@ const QuestionCard = () => {
     
 
     return (
-        <div className='container__survey'>
+        <div className= 'container__survey'>
 
             {showCard && (
                 <div className='survey--card'>
