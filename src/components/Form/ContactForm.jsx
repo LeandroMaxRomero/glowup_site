@@ -48,11 +48,15 @@ const ContactForm = () => {
     // Guardar los datos combinados en el localStorage
     localStorage.setItem('combinedData', JSON.stringify(combinedData));
 
-    const YOUR_SERVICE_ID = 'service_uyqk2tk';
-    const YOUR_TEMPLATE_ID = 'template_8yxznu7';
-    const YOUR_USER_ID = 'Iowmf_zIT-drLgNXc';
+    const SERVICE_ID = import.meta.env.VITE_SERVICE_ID;
+    const TEMPLATE_ID = import.meta.env.VITE_TEMPLATE_ID;
+    const USER_ID = import.meta.env.VITE_USER_ID;
 
-    emailjs.send(YOUR_SERVICE_ID, YOUR_TEMPLATE_ID, {combinedData: combinedData}, YOUR_USER_ID)
+    // const SERVICE_ID = 'service_uyqk2tk';
+    // const TEMPLATE_ID = 'template_8yxznu7';
+    // const USER_ID = 'Iowmf_zIT-drLgNXc';
+
+    emailjs.send(SERVICE_ID, TEMPLATE_ID, {combinedData: combinedData}, USER_ID)
       .then((response) => {
         console.log('Correo enviado exitosamente:', response.status, response.text);
         alert(lang === 'castellano' ? 'Datos enviados correctamente' : 'Data submitted successfully');
