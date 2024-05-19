@@ -1,20 +1,20 @@
 import { useState, useContext } from 'react';
 import { LenguaContext } from "../../Context/LangProvider";
+import emailjs from 'emailjs-com';
 
 const ContactForm = () => {
 
   const useLengua = () => useContext(LenguaContext);
   const { lang } = useLengua();
 
-
-const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
     email: '',
     phone: '',
     message: ''
-  });
-
+  })
+  
   // Función para manejar el cambio en los campos del formulario
   const handleChange = (e) => {
     setFormData({
@@ -29,35 +29,45 @@ const [formData, setFormData] = useState({
 
     // Obtener datos de la encuesta del localStorage
     const userResponses = JSON.parse(localStorage.getItem('userResponses')) || {};
+   
+    // Renombrar claves y convertir arrays a strings
+    const formattedUserResponses = {};
+    Object.keys(userResponses).forEach((key) => {
+      if (Array.isArray(userResponses[key])) {
+        formattedUserResponses[`respuesta_${key}`] = userResponses[key].join(', ');
+      } else {
+        formattedUserResponses[key] = userResponses[key];
+      }
+    });
 
-    // Combinar los datos de la encuesta con los del formulario
     const combinedData = {
-      ...userResponses,
+      ...formattedUserResponses,
       ...formData
     };
-
+    console.log(combinedData);
     // Guardar los datos combinados en el localStorage
     localStorage.setItem('combinedData', JSON.stringify(combinedData));
 
-    // Lógica adicional para enviar el correo electrónico, si es necesario
-    sendEmail(combinedData);
-    setFormData({
-        firstName: '',
-        lastName: '',
-        email: '',
-        phone: '',
-        message: ''
+    const YOUR_SERVICE_ID = 'service_uyqk2tk';
+    const YOUR_TEMPLATE_ID = 'template_8yxznu7';
+    const YOUR_USER_ID = 'Iowmf_zIT-drLgNXc';
+
+    emailjs.send(YOUR_SERVICE_ID, YOUR_TEMPLATE_ID, {combinedData: combinedData}, YOUR_USER_ID)
+      .then((response) => {
+        console.log('Correo enviado exitosamente:', response.status, response.text);
+        alert(lang === 'castellano' ? 'Datos enviados correctamente' : 'Data submitted successfully');
+        setFormData({
+          firstName: '',
+          lastName: '',
+          email: '',
+          phone: '',
+          message: ''
+        });
+      })
+      .catch((err) => {
+        console.error('Error al enviar el correo:', err);
       });
   };
-
-  // Función para enviar el correo electrónico
-  const sendEmail = (data) => {
-    // Aquí puedes agregar la lógica para enviar el correo electrónico con los datos combinados
-    console.log('Datos combinados:', data);
-  };
-
-  
-
 
   return (
     <>
