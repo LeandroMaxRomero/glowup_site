@@ -5,6 +5,8 @@ import { LangProvider } from "./Context/LangProvider";
 import { SurveyProvider } from "./Context/SurveyContext";
 import FormPage from "./components/Form/FormPage";
 import { Navbar } from "./components/NavBar/Navbar";
+import { TermsOfUse } from "./components/TermsAndCond.jsx/TermsOfUse";
+import { PrivacyPolicy } from "./components/TermsAndCond.jsx/PrivacyPolicy";
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
               <Routes>
                 <Route path="/" element={<Home/>} />
                 <Route path="form" element={<FormPage/>} />
+                <Route path="terms" element={<TermsOfUse/>} />
+                <Route path="privpolicy" element={<PrivacyPolicy/>} />
                 <Route path="*" element={<h1>404 NOT FOUND</h1>} />
               </Routes>
           </SurveyProvider>

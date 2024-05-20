@@ -1,6 +1,7 @@
 import { useState, useContext } from 'react';
 import { LenguaContext } from "../../Context/LangProvider";
 import emailjs from 'emailjs-com';
+import Swal from 'sweetalert2'
 
 const ContactForm = () => {
 
@@ -23,8 +24,22 @@ const ContactForm = () => {
     });
   };
 
+  const Toast = Swal.mixin({
+    toast: true,
+    position: 'center',
+    iconColor: 'white',
+    customClass: {
+      popup: 'colored-toast',
+    },
+    showConfirmButton: false,
+    timer: 1500,
+    timerProgressBar: true,
+  })
+
+  
+
   // Función para manejar el envío del formulario
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     // Obtener datos de la encuesta del localStorage
@@ -52,25 +67,38 @@ const ContactForm = () => {
     const TEMPLATE_ID = import.meta.env.VITE_TEMPLATE_ID;
     const USER_ID = import.meta.env.VITE_USER_ID;
 
-    // const SERVICE_ID = 'service_uyqk2tk';
-    // const TEMPLATE_ID = 'template_8yxznu7';
-    // const USER_ID = 'Iowmf_zIT-drLgNXc';
+    try {
+      const response = await emailjs.send(SERVICE_ID, TEMPLATE_ID, {combinedData: combinedData}, USER_ID);
+      console.log('Correo enviado exitosamente:', response.status, response.text);
 
-    emailjs.send(SERVICE_ID, TEMPLATE_ID, {combinedData: combinedData}, USER_ID)
-      .then((response) => {
-        console.log('Correo enviado exitosamente:', response.status, response.text);
-        alert(lang === 'castellano' ? 'Datos enviados correctamente' : 'Data submitted successfully');
-        setFormData({
-          firstName: '',
-          lastName: '',
-          email: '',
-          phone: '',
-          message: ''
-        });
-      })
-      .catch((err) => {
-        console.error('Error al enviar el correo:', err);
+
+      await Swal.fire({
+        title: 'Formulario enviado',
+        icon: 'success',
+        showConfirmButton: false,
+        timer: 1500,
+        timerProgressBar: true,
+        position: 'center',
+        background: '#000',
+        iconColor:'#5BD8FF',
+        color:'#fff'
       });
+
+      setFormData({
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: '',
+        message: ''
+      });
+
+    } catch (err) {
+      console.error('Error al enviar el correo:', err);
+      await Toast.fire({
+        icon: 'error',
+        title: 'Error',
+      });
+    }
   };
 
   return (
