@@ -63,9 +63,13 @@ const ContactForm = () => {
     // Guardar los datos combinados en el localStorage
     localStorage.setItem('combinedData', JSON.stringify(combinedData));
 
-    const SERVICE_ID = import.meta.env.VITE_SERVICE_ID;
-    const TEMPLATE_ID = import.meta.env.VITE_TEMPLATE_ID;
-    const USER_ID = import.meta.env.VITE_USER_ID;
+    // const SERVICE_ID = import.meta.env.VITE_SERVICE_ID;
+    // const TEMPLATE_ID = import.meta.env.VITE_TEMPLATE_ID;
+    // const USER_ID = import.meta.env.VITE_USER_ID;
+
+    const USER_ID = 'Iowmf_zIT-drLgNXc';
+    const SERVICE_ID = 'service_uyqk2tk';
+    const TEMPLATE_ID = 'template_8yxznu7';
 
     try {
       const response = await emailjs.send(SERVICE_ID, TEMPLATE_ID, {combinedData: combinedData}, USER_ID);
