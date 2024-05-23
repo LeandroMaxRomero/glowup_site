@@ -1,17 +1,20 @@
 import { useState, useContext } from 'react';
 import { LenguaContext } from "../../Context/LangProvider";
 import emailjs from 'emailjs-com';
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
 
-const ContactForm = () => {
+export const ContactForm = () => {
 
   const useLengua = () => useContext(LenguaContext);
   const { lang } = useLengua();
+
+  const [showMenu, setShowMenu] = useState(false);
 
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
     email: '',
+    speciality:'',
     phone: '',
     message: ''
   })
@@ -22,6 +25,14 @@ const ContactForm = () => {
       ...formData,
       [e.target.id]: e.target.value
     });
+  };
+
+  const handleSelect = (speciality) => {
+    setFormData({
+      ...formData,
+      speciality: speciality
+    });
+    setShowMenu(false);
   };
 
   const Toast = Swal.mixin({
@@ -92,6 +103,7 @@ const ContactForm = () => {
         firstName: '',
         lastName: '',
         email: '',
+        speciality:'',
         phone: '',
         message: ''
       });
@@ -147,6 +159,68 @@ const ContactForm = () => {
             placeholder={lang==='castellano'?"Correo Electrónico *":"Email *"}
             required
             />
+        </div>
+
+        {/* <div className='form--input select--form-wrapper'>
+           <select
+            id="speciality"
+            name='speciality'
+            className='select--form'
+            value={formData.speciality}
+            onChange={handleChange}
+            required
+            placeholder={lang === 'castellano' ? "Selecciona tu especialidad médica" : "Select your medical specialty"}
+          >
+
+            <option className='option--form' value='' disabled>{lang === 'castellano' ? "Selecciona tu especialidad médica" : "Select your medical specialty"}</option>
+            <option className='option--form' value="Dental Clinics">{lang === 'castellano' ? "Clínicas dentales" : "Dental Clinics"}</option>
+            <option className='option--form' value="Plastic Surgery Centers">{lang === 'castellano' ? "Centros de Cirugía Plástica" : "Plastic Surgery Centers"}</option>
+            <option className='option--form' value="Orthopedic Clinics">{lang === 'castellano' ? "Clínicas Ortopédicas" : "Orthopedic Clinics"}</option>
+            <option className='option--form' value="Dermatology Practices">{lang === 'castellano' ? "Prácticas de Dermatología" : "Dermatology Practices"}</option>
+            <option className='option--form' value="Fertility Clinics">{lang === 'castellano' ? "Clínicas de fertilidad" : "Fertility Clinics"}</option>
+            <option className='option--form' value="Mental Health Clinics">{lang === 'castellano' ? "Clínicas de salud mental" : "Mental Health Clinics"}</option>
+            <option className='option--form' value="Chiropractic Clinics">{lang === 'castellano' ? "Clínicas Quiroprácticas" : "Chiropractic Clinics"}</option>
+            <option className='option--form' value="Other (specify below)">{lang === 'castellano' ? "Otro (especifique a continuación)" : "Other (specify below)"}</option>
+          
+          </select>
+        </div> */}
+
+        <div className='form--input'>
+
+          <div className={(showMenu===true ? 'hidden' : 'show')+ ' disable-option'} >
+            <div className='title-select' onClick={()=>setShowMenu(!showMenu)}>
+
+              {formData.speciality === ''
+              ?
+              <p id='predeterminado'>{lang === 'castellano' ? "Selecciona tu especialidad médica" : "Select your medical specialty"}</p>
+              :
+              <p id='selected'>{formData.speciality}</p>
+              }
+
+
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fillRule="evenodd" clipRule="evenodd" d="M4.00008 4.66663L8.00008 8.66663L12.0001 4.66663L13.3334 5.99996L8.00008 11.3333L2.66675 5.99996L4.00008 4.66663Z" fill="white"/>
+              </svg>
+            </div>
+            <div 
+          className={(showMenu===true ? 'show' : '')+ ' optionsform'}
+          >
+            
+              <div className='option--form' onClick={()=>handleSelect("Dental Clinics")} >{lang === 'castellano' ? "Clínicas dentales" : "Dental Clinics"}</div>
+              <div className='option--form' onClick={()=>handleSelect("Plastic Surgery Centers")} >{lang === 'castellano' ? "Centros de Cirugía Plástica" : "Plastic Surgery Centers"}</div>
+              <div className='option--form' onClick={()=>handleSelect("Orthopedic Clinics")} >{lang === 'castellano' ? "Clínicas Ortopédicas" : "Orthopedic Clinics"}</div>
+              <div className='option--form' onClick={()=>handleSelect("Dermatology Practices")} >{lang === 'castellano' ? "Prácticas de Dermatología" : "Dermatology Practices"}</div>
+              <div className='option--form' onClick={()=>handleSelect("Fertility Clinics")} >{lang === 'castellano' ? "Clínicas de fertilidad" : "Fertility Clinics"}</div>
+              <div className='option--form' onClick={()=>handleSelect("Mental Health Clinics")} >{lang === 'castellano' ? "Clínicas de salud mental" : "Mental Health Clinics"}</div>
+              <div className='option--form' onClick={()=>handleSelect("Chiropractic Clinics")} >{lang === 'castellano' ? "Clínicas Quiroprácticas" : "Chiropractic Clinics"}</div>
+              <div className='option--form' onClick={()=>handleSelect("Other (specify below)")} >{lang === 'castellano' ? "Otro (especifique a continuación)" : "Other (specify below)"}</div>
+            
+          </div>
+          </div>
+
+          
+
+
         </div>
 
         <div className='form--input'>

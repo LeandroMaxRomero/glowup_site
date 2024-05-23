@@ -20,11 +20,12 @@
     @include m.tablet {
         max-width: 840px;
     }
-    @include m.mobile {
+    @media (max-width: 680px){
         flex-direction: column;
         max-width: 440px;
         gap: 50px;
         padding-bottom: 47px;
+
     }
 }
 .column__invitation{
@@ -52,6 +53,21 @@
 .form__logos--social{
     display: flex;
     gap: 20px;
+}
+.logo__redesform--hover{
+    display: none;
+}
+.logo__redesform{
+    filter: contrast(0);
+    filter: saturate(0);
+    transform: scale(1.2);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    &:hover{
+          filter: contrast(1);
+          filter: saturate(1);
+          transform: scale(1.3);
+    }
 }
 .column__form{
     flex: 1;
@@ -95,9 +111,56 @@
         line-height: normal;
     }
 }
+// .form--input--select{
+//     background-color: transparent;
+// }
+
+
+.select--form{
+    width: 100%;
+    border: 1px solid #5BD8FF;
+    background-color: transparent;
+    padding: 13px 10px;
+
+    color: v.$blanco;
+    font-family: v.$font;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    &:disabled{
+        color: v.$placeholder;
+    }
+    appearance: none; /* Remover estilos nativos del navegador */
+    -webkit-appearance: none; /* Remover estilos nativos en Safari */
+    -moz-appearance: none; /* Remover estilos nativos en Firefox */
+}
+
+.select--form:focus {
+    outline: none;
+}
+
+.option--form{
+    color: v.$blanco;
+    width: 100%;
+    background-color: transparent !important;
+    border: none;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    &:hover{
+        background-color: v.$celeste;
+    }
+    &:disabled{
+        color: v.$placeholder;
+    }
+}
+
+
 .form--textarea{
     width: 100%;
     textarea{
+        resize: none;
         width: 100%;
         min-height: 228px;
         border: 1px solid #5BD8FF;
@@ -125,4 +188,90 @@
     font-weight: 400;
     line-height: normal;
     text-transform: uppercase;
+}
+
+.disable-option{
+    display:flex;
+    width: 100%;
+    border: 1px solid #5BD8FF;
+    padding: 13px 10px;
+    position: relative;
+    background-color: transparent;
+    transition: all 0.3s ease-in;
+    p{
+        font-family: v.$font;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+    svg{
+        transition: all 0.3s ease-in-out;
+    }
+    &.show{
+        p{
+            &#predeterminado{
+                color: v.$placeholder;
+            }
+            &#selected{
+                color: v.$blanco;
+            }
+        }
+    }
+    &.hidden{
+        background-color: rgba(255, 255, 255, 0.1);
+        svg{
+            transform: rotate(180deg);
+        }
+    }
+}
+.title-select{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    &.selected{
+        p{
+            color: v.$blanco;  
+        }
+    }
+}
+
+.optionsform{
+    position: absolute;
+    left: 0;
+    top: 43px;
+    display: none;    
+    width: 100%;
+    border: 1px solid #5BD8FF;
+    background-color: transparent;
+    padding: 13px 10px;
+    &::after{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: rgba(255, 255, 255, 0.2);
+        filter: blur(5px);
+    }
+    &.show{
+        display:flex;
+    flex-direction: column;
+
+    }
+
+}
+
+.option--form{
+    z-index: 1;
+    cursor: pointer;
+    padding: 13px 10px;
+    font-family: v.$font;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    border-bottom: 1px solid rgba(53, 123, 146, 0.12);
 }

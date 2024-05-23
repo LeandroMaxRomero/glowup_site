@@ -100,8 +100,10 @@
 
     .zigzag{
         position: absolute;
-        top: 1560px;
-        left: 0.5px;
+        top: 1145px;
+        width: 100%;
+        height: 481px;
+        // left: 0.5px;
         @include m.tablet {
             top: 1200px;
         }
@@ -116,6 +118,10 @@
     height: 100%;
     position: relative;
     z-index: -10;
+    &.blur{
+        backdrop-filter: blur(5px);
+        opacity: 0.25;
+    }
     .light--one{
         position: absolute;
         z-index: -8;
@@ -149,24 +155,67 @@
         background-color: rgba(163, 163, 163, 0.10);
 
 
-    //     @media (max-width:1100px){
-    //         height: 3600px;
-    //     }
-    //     @media (max-width:985px){
-    //         height: 3200px;
-    //     }
-    //     @media (max-width:815px){
-    //         height: 3500px;
-    //     }
-    //     @media (max-width:790px){
-    //         height: 3700px;
-    //     }
-    //     @include m.mobile {
-    //         height: 3400px;
-    //     }
-    //     @media (max-width:400px){
-    //         height: 3600px;
-    //     }
+    }
+    .line-one{
+        left: 27%;
+        @include m.tablet {
+            left: 16.33%;
+        }
+        @include m.mobile {
+            left: 4.55%;
+        }
+    }
+    .line-two{
+        left: 50%;
+    }
+    .line-three{
+        left: 73%;
+        @include m.tablet {
+            left: 83.67%;
+        }
+        @include m.mobile {
+            left: 95.45%;
+        }
+    }
+}
+
+.container__background--terms{
+    background-color: v.$background;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: -10;
+    &.blur{
+        backdrop-filter: blur(5px);
+        opacity: 0.25;
+    }
+    .line-one, .line-two, .line-three{
+        position: absolute;
+        z-index: -20;
+        width: 1px;
+        height:2300px;
+        background-color: rgba(163, 163, 163, 0.10);
+
+        @media (max-width:900px){
+            height: 2400px;
+        }
+
+        @media (max-width:720px){
+            height: 2700px;
+        }
+        @media (max-width:600px){
+            height: 3000px;
+        }
+        @media (max-width:475px){
+            height: 3400px;
+        }
+        @media (max-width:386px){
+            height: 3800px;
+        }
+        @media (max-width:325px){
+            height: 4000px;
+        }
+        
 
     }
     .line-one{
@@ -188,6 +237,44 @@
         }
         @include m.mobile {
             left: 95.45%;
+        }
+    }
+
+    .zigzag{
+        position: absolute;
+        top: 920px;
+        left: 0.5px;
+        @include m.tablet {
+            top: 900px;
+        }
+    }
+
+    &.bg--privpolicy{
+        .line-one, .line-two, .line-three{
+            height:2600px;
+            background-color: rgba(163, 163, 163, 0.10);
+    
+            @media (max-width:900px){
+                height: 2400px;
+            }
+    
+            @media (max-width:720px){
+                height: 2700px;
+            }
+            @media (max-width:600px){
+                height: 3000px;
+            }
+            @media (max-width:475px){
+                height: 3400px;
+            }
+            @media (max-width:386px){
+                height: 3800px;
+            }
+            @media (max-width:325px){
+                height: 4000px;
+            }
+            
+    
         }
     }
 }

@@ -3,7 +3,7 @@ import { SurveyContext } from '../../Context/SurveyContext';
 import { LenguaContext } from "../../Context/LangProvider";
 import { Lang } from '../NavBar/Lang';
 
-const QuestionCard = () => {
+export const QuestionCard = () => {
     
     const useLengua = () => useContext(LenguaContext);
     const { lang } = useLengua();

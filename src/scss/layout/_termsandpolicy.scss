@@ -1,0 +1,40 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.terms__content{
+    padding: 210px 10px 150px;
+    margin: 0 auto;
+    max-width: 1080px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    &.blur{
+        backdrop-filter: blur(5px);
+        opacity: 0.25;
+    }
+    h2{
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-transform: uppercase;
+    }
+    h3{
+        padding-top: 25px;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-transform: uppercase;
+    }
+    p{
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-transform: uppercase;
+        span{
+            font-weight: 700;
+        }
+    }
+}
