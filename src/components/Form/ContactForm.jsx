@@ -14,7 +14,8 @@ export const ContactForm = () => {
     firstName: '',
     lastName: '',
     email: '',
-    speciality:'',
+    speciality_es:'',
+    speciality_en:'',
     phone: '',
     message: ''
   })
@@ -30,24 +31,12 @@ export const ContactForm = () => {
   const handleSelect = (speciality) => {
     setFormData({
       ...formData,
-      speciality: speciality
+      speciality_es: speciality.select_es,
+      speciality_en: speciality.select_en,
+      
     });
     setShowMenu(false);
   };
-
-  const Toast = Swal.mixin({
-    toast: true,
-    position: 'center',
-    iconColor: 'white',
-    customClass: {
-      popup: 'colored-toast',
-    },
-    showConfirmButton: false,
-    timer: 1500,
-    timerProgressBar: true,
-  })
-
-  
 
   // Función para manejar el envío del formulario
   const handleSubmit = async (e) => {
@@ -68,7 +57,8 @@ export const ContactForm = () => {
 
     const combinedData = {
       ...formattedUserResponses,
-      ...formData
+      ...formData,
+      speciality: lang==='castellano' ? formData.speciality_es : formData.speciality_en
     };
     console.log(combinedData);
     // Guardar los datos combinados en el localStorage
@@ -81,6 +71,18 @@ export const ContactForm = () => {
     const USER_ID = 'Iowmf_zIT-drLgNXc';
     const SERVICE_ID = 'service_uyqk2tk';
     const TEMPLATE_ID = 'template_8yxznu7';
+
+    const Toast = Swal.mixin({
+      toast: true,
+      position: 'center',
+      iconColor: 'white',
+      customClass: {
+        popup: 'colored-toast',
+      },
+      showConfirmButton: false,
+      timer: 1500,
+      timerProgressBar: true,
+    })
 
     try {
       const response = await emailjs.send(SERVICE_ID, TEMPLATE_ID, {combinedData: combinedData}, USER_ID);
@@ -103,7 +105,8 @@ export const ContactForm = () => {
         firstName: '',
         lastName: '',
         email: '',
-        speciality:'',
+        speciality_es:'',
+        speciality_en:'',
         phone: '',
         message: ''
       });
@@ -116,6 +119,50 @@ export const ContactForm = () => {
       });
     }
   };
+
+  const optionsForm = [
+    {
+      id: 0,
+      select_es: "Clínicas dentales",
+      select_en: "Dental Clinics",
+    },
+    {
+      id: 1,
+      select_es:"Centros de Cirugía Plástica",
+      select_en: "Plastic Surgery Centers"
+    },
+    {
+      id: 2,
+      select_es:"Clínicas Ortopédicas",
+      select_en: "Orthopedic Clinics"
+    },
+    {
+      id: 3,
+      select_es:"Prácticas de Dermatología",
+      select_en: "Dermatology Practices"
+    },
+    {
+      id: 4,
+      select_es:"Clínicas de fertilidad",
+      select_en: "Fertility Clinics"
+    },
+    {
+      id: 5,
+      select_es:"Clínicas de salud mental",
+      select_en: "Mental Health Clinics"
+    },
+    {
+      id: 6,
+      select_es:"Clínicas Quiroprácticas",
+      select_en: "Chiropractic Clinics"
+    },
+    {
+      id: 7,
+      select_es:"Otro (especifique a continuación)",
+      select_en: "Other (specify below)"
+    },
+
+  ]
 
   return (
     <>
@@ -161,40 +208,17 @@ export const ContactForm = () => {
             />
         </div>
 
-        {/* <div className='form--input select--form-wrapper'>
-           <select
-            id="speciality"
-            name='speciality'
-            className='select--form'
-            value={formData.speciality}
-            onChange={handleChange}
-            required
-            placeholder={lang === 'castellano' ? "Selecciona tu especialidad médica" : "Select your medical specialty"}
-          >
-
-            <option className='option--form' value='' disabled>{lang === 'castellano' ? "Selecciona tu especialidad médica" : "Select your medical specialty"}</option>
-            <option className='option--form' value="Dental Clinics">{lang === 'castellano' ? "Clínicas dentales" : "Dental Clinics"}</option>
-            <option className='option--form' value="Plastic Surgery Centers">{lang === 'castellano' ? "Centros de Cirugía Plástica" : "Plastic Surgery Centers"}</option>
-            <option className='option--form' value="Orthopedic Clinics">{lang === 'castellano' ? "Clínicas Ortopédicas" : "Orthopedic Clinics"}</option>
-            <option className='option--form' value="Dermatology Practices">{lang === 'castellano' ? "Prácticas de Dermatología" : "Dermatology Practices"}</option>
-            <option className='option--form' value="Fertility Clinics">{lang === 'castellano' ? "Clínicas de fertilidad" : "Fertility Clinics"}</option>
-            <option className='option--form' value="Mental Health Clinics">{lang === 'castellano' ? "Clínicas de salud mental" : "Mental Health Clinics"}</option>
-            <option className='option--form' value="Chiropractic Clinics">{lang === 'castellano' ? "Clínicas Quiroprácticas" : "Chiropractic Clinics"}</option>
-            <option className='option--form' value="Other (specify below)">{lang === 'castellano' ? "Otro (especifique a continuación)" : "Other (specify below)"}</option>
-          
-          </select>
-        </div> */}
-
         <div className='form--input'>
 
           <div className={(showMenu===true ? 'hidden' : 'show')+ ' disable-option'} >
+            
             <div className='title-select' onClick={()=>setShowMenu(!showMenu)}>
 
-              {formData.speciality === ''
+              {formData.speciality_es === '' && formData.speciality_en===''
               ?
               <p id='predeterminado'>{lang === 'castellano' ? "Selecciona tu especialidad médica" : "Select your medical specialty"}</p>
               :
-              <p id='selected'>{formData.speciality}</p>
+              <p id='selected'>{lang==='castellano'? formData.speciality_es : formData.speciality_en }</p>
               }
 
 
@@ -202,20 +226,22 @@ export const ContactForm = () => {
                 <path fillRule="evenodd" clipRule="evenodd" d="M4.00008 4.66663L8.00008 8.66663L12.0001 4.66663L13.3334 5.99996L8.00008 11.3333L2.66675 5.99996L4.00008 4.66663Z" fill="white"/>
               </svg>
             </div>
-            <div 
-          className={(showMenu===true ? 'show' : '')+ ' optionsform'}
-          >
-            
-              <div className='option--form' onClick={()=>handleSelect("Dental Clinics")} >{lang === 'castellano' ? "Clínicas dentales" : "Dental Clinics"}</div>
-              <div className='option--form' onClick={()=>handleSelect("Plastic Surgery Centers")} >{lang === 'castellano' ? "Centros de Cirugía Plástica" : "Plastic Surgery Centers"}</div>
-              <div className='option--form' onClick={()=>handleSelect("Orthopedic Clinics")} >{lang === 'castellano' ? "Clínicas Ortopédicas" : "Orthopedic Clinics"}</div>
-              <div className='option--form' onClick={()=>handleSelect("Dermatology Practices")} >{lang === 'castellano' ? "Prácticas de Dermatología" : "Dermatology Practices"}</div>
-              <div className='option--form' onClick={()=>handleSelect("Fertility Clinics")} >{lang === 'castellano' ? "Clínicas de fertilidad" : "Fertility Clinics"}</div>
-              <div className='option--form' onClick={()=>handleSelect("Mental Health Clinics")} >{lang === 'castellano' ? "Clínicas de salud mental" : "Mental Health Clinics"}</div>
-              <div className='option--form' onClick={()=>handleSelect("Chiropractic Clinics")} >{lang === 'castellano' ? "Clínicas Quiroprácticas" : "Chiropractic Clinics"}</div>
-              <div className='option--form' onClick={()=>handleSelect("Other (specify below)")} >{lang === 'castellano' ? "Otro (especifique a continuación)" : "Other (specify below)"}</div>
-            
-          </div>
+
+            <div className={(showMenu===true ? 'show' : '')+ ' optionsform'}>
+
+              {optionsForm.map((select) => (
+                
+                <div 
+                className='option--form'
+                key={select.id}
+                onClick={()=>handleSelect(select)}
+                >
+                  {lang === 'castellano' ? select.select_es : select.select_en }
+                </div>
+              )
+              )}
+    
+            </div>
           </div>
 
           

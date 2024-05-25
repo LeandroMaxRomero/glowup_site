@@ -50,7 +50,7 @@ export const QuestionCard = () => {
 
 
     const handleOptionSelect = (option) => {
-        if (currentQuestionIndex === 1) {
+        if (currentQuestionIndex === 3) {
             const updatedSelectedOptions = new Set(selectedOptions);
             if (updatedSelectedOptions.has(option)) {
                 updatedSelectedOptions.delete(option);
@@ -117,35 +117,39 @@ export const QuestionCard = () => {
             id: 1,
             question_es: '¿Qué tan satisfecho estás con tus esfuerzos de marketing actuales?',
             question_en: 'How satisfied are you with your current marketing efforts?',
-            options_es: ['Muy satisfecho', 'Satisfecho', 'Neutral', 'Insatisfecho', 'Muy insatisfecho'],
-            options_en: ['Very satisfied', 'Satisfied', 'Neutral', 'Dissatisfied', 'Very Dissatisfied']
+            options_es: ['1 (Más bajo)', '2', '3', '4', '5', '6 (Más alto)'],
+            options_en: ['1 (Lowest)', '2', '3', '4', '5', '6 (Highest)']
         },
         {
             id: 2,
+            question_es: '¿Qué tan importante es para ti abordar estos desafíos y mejorar tu estrategia de marketing?',
+            question_en: 'How important is it for you to address these challenges and improve your marketing strategy?',
+            options_es: ['1 (Más bajo)', '2', '3', '4', '5', '6 (Más alto)'],
+            options_en: ['1 (Lowest)', '2', '3', '4', '5', '6 (Highest)']
+
+            
+            
+        },
+        {
+            id: 3,
+            question_es: '¿Qué tan probable es que consideres asociarte con una agencia de marketing para abordar estos desafíos?',
+            question_en: 'How likely are you to consider partnering with a marketing agency to address these challenges?',
+            options_es: ['1 (Más bajo)', '2', '3', '4', '5', '6 (Más alto)'],
+            options_en: ['1 (Lowest)', '2', '3', '4', '5', '6 (Highest)']
+            
+        },
+        {
+            id: 4,
             question_es: "¿Cuáles son tus principales objetivos para mejorar el marketing de tu práctica?",
             options_es: ['Aumentar las consultas de pacientes', 'Mejorar la visibilidad en línea', 'Aumentar las reservas de citas', 'Mejorar el conocimiento de la marca', 'Generar más clientes potenciales', 'Otro (especificar)'],
             question_en: "What are your main goals for improving your practice's marketing?",
             options_en: ['Increase patient inquiries', 'Enhance online visibility', 'Boost appointment bookings', 'Improve brand awareness', 'Generate more leads', 'Other (please specify)'],
         },
         {
-            id: 3,
+            id: 5,
             question_es: '¿Qué desafíos u obstáculos enfrentas actualmente con tus esfuerzos de marketing?',
             question_en: 'What challenges or obstacles are you currently facing with your marketing efforts?',
             input: true
-        },
-        {
-            id: 4,
-            question_es: '¿Qué tan importante es para ti abordar estos desafíos y mejorar tu estrategia de marketing?',
-            options_es: ['No importante', 'Algo importante', 'Neutral', 'Importante', 'Muy importante'],
-            question_en: 'How important is it for you to address these challenges and improve your marketing strategy?',
-            options_en: ['Not Important', 'Somewhat Important', 'Neutral ', 'Important', 'Very Important']
-        },
-        {
-            id: 5,
-            question_es: '¿Qué tan probable es que consideres asociarte con una agencia de marketing para abordar estos desafíos?',
-            options_es: ['Muy poco probable', 'Poco probable', 'Neutral', 'Probable', 'Muy probable'],
-            question_en: 'How likely are you to consider partnering with a marketing agency to address these challenges?',
-            options_en: ['Very Unlikely', 'Unlikely', 'Neutral', 'Likely', 'Very Likely']
         }
     ];
     
@@ -171,12 +175,12 @@ export const QuestionCard = () => {
 
                     <h2>{lang==='castellano' ? questions[currentQuestionIndex].question_es : questions[currentQuestionIndex].question_en}</h2>
 
-                    {questions[currentQuestionIndex].options_es
+                    {questions[currentQuestionIndex].options_en
                         ? (
                             <ul className='answers--list'>
-                                {questions[currentQuestionIndex].options_es.map((option, index) => (
+                                {questions[currentQuestionIndex].options_en.map((option, index) => (
                                     <li key={index}>
-                                        {currentQuestionIndex === 1 ? (
+                                        {currentQuestionIndex === 3 ? (
                                             <label>
                                                 <input
                                                     type="checkbox"
@@ -186,11 +190,12 @@ export const QuestionCard = () => {
                                                     className='checkboxes'
                                                 />
                                                 <span className='checkboxes'></span>
-                                                <p>{lang === 'castellano' ? option : questions[currentQuestionIndex].options_en[index]}</p>
+                                                <p>{lang === 'castellano' ? questions[currentQuestionIndex].options_es[index] : option }</p>
                                             </label>
                                         ) : (
                                             <button onClick={() => handleOptionSelect(option)} disabled={selectedOptions.has(option)}>
-                                                {lang === 'castellano' ? option : questions[currentQuestionIndex].options_en[index]}
+                                                <span className='checkoption'></span>
+                                                {lang === 'castellano' ? questions[currentQuestionIndex].options_es[index]: option}
                                             </button>
                                         )}
                                     </li>
@@ -201,7 +206,7 @@ export const QuestionCard = () => {
                             <textarea className='textarea--card'value={userInput} onChange={handleUserInput} />
                         )}
 
-                    {currentQuestionIndex === 1 && (selectedOptions.has("Other (please specify)") || selectedOptions.has("Otro (especificar)")) && (
+                    {currentQuestionIndex === 3 && (selectedOptions.has("Other (please specify)") || selectedOptions.has("Otro (especificar)")) && (
                         <textarea
                             className='textarea--card'
                             value={userInput}
@@ -218,12 +223,16 @@ export const QuestionCard = () => {
                                   <path d="M0.908203 7.38029C1.68779 8.15492 2.94651 8.15491 3.72609 7.38027L8.65288 2.4847C9.04369 2.09637 9.04369 1.46412 8.65287 1.07579C8.26556 0.690938 7.64021 0.690941 7.2529 1.0758L0.908203 7.38029Z" fill="white"/>
                                   <path d="M3.72609 7.38027C2.9465 6.60564 1.68779 6.60565 0.908203 7.38029L7.25297 13.6847C7.64028 14.0696 8.26563 14.0696 8.65294 13.6847C9.04375 13.2964 9.04375 12.6641 8.65293 12.2758L3.72609 7.38027Z" fill="white"/>
                                 </svg>
-                                {lang==='castellano'?"Atras":"Back"}
+                                <p>
+                                    {lang==='castellano'?"Atras":"Back"}
+                                </p>
                             </button>
                         )}
                         {(selectedOptions.size > 0 || userInput) && (
                             <button className='survey__btn--siguiente' onClick={handleNextQuestion}>
-                                {currentQuestionIndex === questions.length - 1 ? (lang==='castellano'?"Terminar":"Finish") : (lang==='castellano'?"Siguiente":"Next")}
+                                <p>
+                                    {currentQuestionIndex === questions.length - 1 ? (lang==='castellano'?"Finalizar":"Finish") : (lang==='castellano'?"Siguiente":"Next")}
+                                </p>
                                 <svg width="39" height="15" viewBox="0 0 39 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                                   <path d="M0.336914 7.3092C0.336914 6.75692 0.784629 6.3092 1.33691 6.3092H35.3369C35.8892 6.3092 36.3369 6.75692 36.3369 7.3092C36.3369 7.86149 35.8892 8.3092 35.3369 8.3092H1.33691C0.78463 8.3092 0.336914 7.86149 0.336914 7.3092Z" fill="white"/>
                                   <path d="M38.479 7.38031C37.698 8.16135 36.4317 8.16135 35.6506 7.38029L30.7009 2.43052C30.3104 2.03999 30.3104 1.40683 30.7009 1.01631C31.0914 0.625785 31.7246 0.625788 32.1151 1.01631L38.479 7.38031Z" fill="white"/>

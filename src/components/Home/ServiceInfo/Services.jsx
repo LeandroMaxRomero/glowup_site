@@ -16,7 +16,8 @@ export const Services = () => {
       titulo4: "Optimización de la Tasa de Conversión (CRO) y SEO",
       titulo5: "Integración con CRM",
       titulo6: "Gestión de Redes Sociales",
-      titulo7: "Seguimiento del Rendimiento y Analítica"
+      titulo7: "Seguimiento del Rendimiento y Analítica",
+      titulo8: "¿Con quién trabajamos?"
     },
     {
       conte1: " Comenzamos por entender los objetivos de tu negocio y tu audiencia objetivo para desarrollar una estrategia de marketing digital a medida que se alinee con tus metas.",
@@ -25,7 +26,8 @@ export const Services = () => {
       conte4: "Optimizamos tus páginas de aterrizaje y campañas de anuncios para maximizar las tasas de conversión y mejorar la visibilidad y clasificaciones de tu sitio web en las páginas de resultados de motores de búsqueda, impulsando el tráfico orgánico y aumentando tu presencia en línea.",
       conte5: "Integramos nuestras soluciones con tu sistema de CRM para gestionar leads de manera eficiente y automatizar comunicaciones de seguimiento, asegurando que no se pierda ninguna oportunidad.",
       conte6: "Gestionamos tu presencia en redes sociales en plataformas como Facebook, Instagram y Twitter para aumentar el reconocimiento de marca, interactuar con seguidores y generar leads para tu práctica.",
-      conte7: "Proporcionamos análisis y reportes completos sobre el rendimiento de tus campañas de anuncios, rastreando métricas clave como el costo por lead, la tasa de conversión y el retorno de la inversión en publicidad (ROAS) para medir el éxito e informar futuras estrategias."
+      conte7: "Proporcionamos análisis y reportes completos sobre el rendimiento de tus campañas de anuncios, rastreando métricas clave como el costo por lead, la tasa de conversión y el retorno de la inversión en publicidad (ROAS) para medir el éxito e informar futuras estrategias.",
+      conte8: "Trabajamos en clínicas enfocadas en: Clínicas Dentales, Centros de Cirugía Plástica, Clínicas Ortopédicas, Consultorios de Dermatología, Clínicas de Fertilidad Clínicas de Salud Mental, Clínicas Quiroprácticas"
     },
     {
       titulo1: "Digital Marketing Strategy Consultation",
@@ -34,7 +36,8 @@ export const Services = () => {
       titulo4: "Conversion Rate Optimization (CRO) and SEO",
       titulo5: "CRM Integration",
       titulo6: "Social Media Management",
-      titulo7: "Performance Tracking and Analytics"
+      titulo7: "Performance Tracking and Analytics",
+      titulo8: "Who do we work on?"
     },
     {
       conte1: "We start by understanding your business objectives and target audience to develop a tailored digital marketing strategy that aligns with your goals.",
@@ -43,7 +46,8 @@ export const Services = () => {
       conte4: "We optimize your landing pages and ad campaigns to maximize conversion rates and improve the visibility and rankings of your website on search engine results pages, driving organic traffic and increasing your online presence.",
       conte5: "We integrate our solutions with your CRM system to manage leads efficiently and automate follow-up communications, ensuring that no opportunity falls through the cracks.",
       conte6: "We manage your social media presence on platforms like Facebook, Instagram, and Twitter to increase brand awareness, engage with followers, and generate leads for your practice.",
-      conte7: "We provide comprehensive analytics and reporting on the performance of your ad campaigns, tracking key metrics like cost per lead, conversion rate, and return on ad spend (ROAS) to measure success and inform future strategies."
+      conte7: "We provide comprehensive analytics and reporting on the performance of your ad campaigns, tracking key metrics like cost per lead, conversion rate, and return on ad spend (ROAS) to measure success and inform future strategies.",
+      conte8: "We work in clinics focused on: Dental Clinics, Plastic Surgery Centers, Orthopedic Clinics, Dermatology Practices, Fertility Clinics Mental Health Clinics, Chiropractic Clinics"
     }
   ]
 
@@ -68,6 +72,7 @@ export const Services = () => {
         <Accordion tittle={texto[0].titulo5} contenido={texto[1].conte5} active={active} setActive={setActive} />
         <Accordion tittle={texto[0].titulo6} contenido={texto[1].conte6} active={active} setActive={setActive} />
         <Accordion tittle={texto[0].titulo7} contenido={texto[1].conte7} active={active} setActive={setActive} />
+        <Accordion tittle={texto[0].titulo8} contenido={texto[1].conte8} active={active} setActive={setActive} />
         </>
         :
         <>
@@ -78,6 +83,7 @@ export const Services = () => {
         <Accordion tittle={texto[2].titulo5} contenido={texto[3].conte5} active={active} setActive={setActive} />
         <Accordion tittle={texto[2].titulo6} contenido={texto[3].conte6} active={active} setActive={setActive} />
         <Accordion tittle={texto[2].titulo7} contenido={texto[3].conte7} active={active} setActive={setActive} />
+        <Accordion tittle={texto[2].titulo8} contenido={texto[3].conte8} active={active} setActive={setActive} />
         </>
       }
     </div>
