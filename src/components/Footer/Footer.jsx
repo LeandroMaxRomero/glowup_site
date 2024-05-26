@@ -37,7 +37,6 @@ export const Footer = () => {
             <Link to="/form">{lang==="castellano"?"Contacto":"Contact"}</Link>
           </div>
 
-
         </div>
 
         <div className="footer__social">
@@ -53,8 +52,13 @@ export const Footer = () => {
 
         </div>
 
+
       </div>
 
+        <div className="container--terms">
+            <Link to="/terms">{lang==="castellano" ? "Términos de uso" : "Terms of use" }</Link>
+            <Link to="/privpolicy">{lang==='castellano'?"Políticas de privacidad": "Privacy policy"}</Link>
+          </div>
       
     </div>
   )
