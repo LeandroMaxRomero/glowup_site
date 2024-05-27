@@ -7,13 +7,19 @@ import { Footer } from "../Footer/Footer";
 import { Background } from "./Background";
 import { AboutUs } from "./AboutUs/AboutUs";
 import { AboutUsMobile } from "./AboutUs/AboutUsMobile";
-
-import { useContext } from 'react';
+import * as Scroll from "react-scroll";
+import { useContext, useEffect } from 'react';
 import { SurveyContext } from '../../Context/SurveyContext';
 
 export const Home = () => {
 
   const { showCard } = useContext(SurveyContext);
+
+  let scroll = Scroll.animateScroll;
+
+  useEffect(() => {
+    scroll.scrollToTop();
+  });
   
   return (
     <>

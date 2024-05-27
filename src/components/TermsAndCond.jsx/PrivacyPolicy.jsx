@@ -1,9 +1,9 @@
 import { useEffect, useContext } from "react";
 import QuestionCard from '../QuestionCard/QuestionCard';
 import { SurveyContext } from '../../Context/SurveyContext';
-import { LenguaContext } from "../../Context/LangProvider";
-import { BackGroundTerms } from "./BackGroundTerms";
-import { Footer } from "../Footer/Footer";
+import { LenguaContext } from "../../Context/LangProvider";import { Footer } from "../Footer/Footer";
+import { BackgroundPriv } from './BackgroundPriv';
+import * as Scroll from "react-scroll";
 
 
 export const PrivacyPolicy = () => {
@@ -22,11 +22,17 @@ export const PrivacyPolicy = () => {
     
   }, [setShowCard]);
 
+  let scroll = Scroll.animateScroll;
+
+  useEffect(() => {
+    scroll.scrollToTop();
+  });
+
   return (
 
     <div>
       <QuestionCard />
-      <BackGroundTerms />
+      <BackgroundPriv />
       {lang!=='castellano'
       ?
         <div className={(showCard===true?'blur':'')+" terms__content"}>

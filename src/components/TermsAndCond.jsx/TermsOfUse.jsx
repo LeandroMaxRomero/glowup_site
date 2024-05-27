@@ -4,6 +4,7 @@ import { SurveyContext } from '../../Context/SurveyContext';
 import { LenguaContext } from "../../Context/LangProvider";
 import { BackGroundTerms } from "./BackGroundTerms";
 import { Footer } from "../Footer/Footer";
+import * as Scroll from "react-scroll";
 
 
 export const TermsOfUse = () => {
@@ -22,6 +23,12 @@ export const TermsOfUse = () => {
     }
     
   }, [setShowCard]);
+
+  let scroll = Scroll.animateScroll;
+
+  useEffect(() => {
+    scroll.scrollToTop();
+  });
 
   return (
     <div>

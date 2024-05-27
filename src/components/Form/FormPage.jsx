@@ -5,6 +5,8 @@ import { SurveyContext } from '../../Context/SurveyContext';
 import { Form } from './Form';
 import { Footer } from '../Footer/Footer';
 import { BackgroundForm } from './BackgroundForm';
+import * as Scroll from "react-scroll";
+
 
 
 const FormPage = () => {
@@ -20,6 +22,12 @@ const FormPage = () => {
     }
     
   }, [setShowCard]);
+
+  let scroll = Scroll.animateScroll;
+
+  useEffect(() => {
+    scroll.scrollToTop();
+  });
 
   return (
     <>

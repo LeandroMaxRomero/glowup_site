@@ -11,8 +11,15 @@ const LangProvider = ({ children }) => {
   });
 
   useEffect(() => {
-    localStorage.setItem("lang", lang);
-  }, [lang]);
+    // Si no hay un idioma en localStorage, se configura el idioma inicial como "ingles"
+    if (!localStorage.getItem("lang")) {
+      setLang("ingles");
+    }
+  }, []);
+
+  // useEffect(() => {
+  //   localStorage.setItem("lang", lang);
+  // }, [lang]);
 
   /* funcion que cambia de lengua */
   const changeLang = (lang) => {
