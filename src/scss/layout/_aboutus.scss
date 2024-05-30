@@ -12,35 +12,43 @@
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 1fr);
     gap: 20px;
-    grid-template-areas: "b1 b2 text text"
-                         "b3 b4 b5 b6";
+    grid-template-areas: "b1 text text text"
+                         "b2 b3 b4 b5";
 
     @media (max-width: 1320px){
-        
-        grid-template-rows: 1fr 2.5fr 2.5fr;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-areas: "text text text"
-                             "b1 b2 b3"
-                             "b4 b5 b6";
-        
+        max-width: 986px;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-areas: "text text text text text text"
+                             "b1 b1 b1 b2 b2 b2"
+                             "b3 b3 b4 b4 b5 b5";
+        .box1{
+            justify-self: right;
+        }
+        .box2{
+            justify-self: left;
+        }
     }
-    @include m.tablet {
-        max-width: 980px;
-        grid-template-rows: 1fr 2.5fr 2.5fr;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-areas: "text text text"
-                             "b1 b2 b3"
-                             "b4 b5 b6";
-    }
-    @media (max-width: 815px) {
-        
-        grid-template-rows: 1fr 2fr 2fr 2fr;
+    @media (max-width: 986px){
+        // max-width: 986px;
+        grid-template-rows:  1fr 1fr 1fr;
         grid-template-columns: 1fr 1fr;
-        grid-template-areas: "text text"
-                            "b1 b2"
-                            "b3 b4"
-                            "b5 b6";
+        grid-template-areas:
+                            "b1 text"
+                             "b2 b3"
+                             "b4 b5"; 
+        .box1, .box2{
+            justify-self: center;
+        }
+        // .box2, .box4{
+        //     justify-self: right;
+        // }
+        // .box3, .box5{
+        //     justify-self: left;
+        // }
     }
+    
+
     @include m.mobile {
         display: none;
     }
@@ -68,19 +76,11 @@
                 color: v.$blanco;
             }
         }
-        @include m.tablet {
-            width: 260px;
-            height: 260px;
-        }
         .img-card{
             position: absolute;
             width: 100%;
             height: 100%;
             z-index: -1;
-            // backdrop-filter: blur(0.5px);
-            // width: 275px;
-            // height: 188px;
-            // transform: rotate(-29.489deg);
             filter: blur(39.400001525878906px) drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
         }
         .box--text{
@@ -98,6 +98,7 @@
                 line-height: normal;
                 width: 100%;
                 text-align: center;
+                text-transform: none;
                 @include m.tablet {
                     font-size: 30px;
                 }
@@ -128,9 +129,6 @@
     .box5{
         grid-area: b5;
     }
-    .box6{
-        grid-area: b6;
-    }
     .text{
         grid-area: text;
         display: flex;
@@ -154,10 +152,12 @@
         font-style: normal;
         font-weight: 400;
         line-height: normal;
-        text-transform: uppercase;
-        width: 530px;
+        color: #ADADAD; 
         @media (max-width: 1320px){
             width: 100%;
+        }
+        @media (max-width: 950px){
+            font-size: 16px;
         }
     }
 }
@@ -191,11 +191,11 @@
             text-transform: uppercase;
         }
         h3{
-            font-size: 20px;
+            font-size: 16.5px;
             font-style: normal;
             font-weight: 400;
             line-height: normal;
-            text-transform: uppercase;
+            text-transform: none;
             padding: 0;
             width: 100%;
         }
@@ -214,10 +214,6 @@
         width: 100%;
         height: 100%;
         z-index: -1;
-        // backdrop-filter: blur(0.5px);
-        // width: 275px;
-        // height: 188px;
-        // transform: rotate(-29.489deg);
         filter: blur(39.400001525878906px) drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     }
     .box--text{

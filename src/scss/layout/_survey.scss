@@ -18,7 +18,7 @@
     background-color: #1B1B1B;
     box-shadow: 5px 5px 50px 20px rgba(217, 217, 217, 0.25);
     min-height: 495px;
-    max-height: 560px;
+    max-height: 780px;
     flex-direction: column;
     justify-content: space-between;
     z-index: 100;
@@ -47,8 +47,15 @@
             scale: (1.1);
         }
     }
+}
+.encabezado--survey{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: 0 auto;
+    padding: 0 1rem;
+    gap: 18px;
     h2{
-        padding: 0.5rem 1rem;
         color: v.$blanco;
         font-family: v.$font;
         font-size: 25px;
@@ -56,9 +63,21 @@
         font-weight: 400;
         line-height: normal;
         text-transform: uppercase;
-        text-align: center;
         @include m.mobile {
             font-size: 20px;
+        }
+    }
+    h3{
+        color: v.$blanco;
+        font-family: v.$font;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-transform: uppercase;
+        @include m.mobile {
+            font-size: 16px;
+        
         }
     }
 }
@@ -70,8 +89,10 @@
 
 .answers--list{
     display: flex;
-    gap: 40px;
-    padding: 0;
+    flex-direction: column;
+    width: 60%;
+    gap: 18px;
+    padding: 0 1rem;
     justify-content: space-between;
     align-self: center;
     margin: 0;
@@ -90,12 +111,12 @@
         height: 46px;
         width: fit-content;
         font-weight: 600;
-        border: none;
+        border: 2px solid #5BD8FF;
         border-radius: 2.5px;
+        width: 100%;
 
         display: flex;
-        padding: 0;
-        justify-content: center;
+        padding: 10px;
         align-items: center;
         gap: 10px; 
 
@@ -106,6 +127,10 @@
         font-style: normal;
         font-weight: 400;
         line-height: normal;
+        &:disabled{
+            background-color: #5BD8FF;
+            color: v.$negro;
+        }
         
         .checkoption{
             display: inline-block;
@@ -146,7 +171,7 @@
             }
                 
             }
-            color: v.$celeste;
+            
         }
     }
     label{

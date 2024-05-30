@@ -63,16 +63,6 @@ export const SliderAboutUs =({cardsBoxes})=> {
           </div>
         </SwiperSlide>
 
-        <SwiperSlide>
-          <div className="box box1">
-              <img src="./img/fondo-card.svg" alt="" className="img-card"/>
-              <div className="box--text">
-                  <h3>{cardsBoxes[5].title}</h3>
-                  <p>{cardsBoxes[5].desc}</p>
-              </div>
-          </div>
-        </SwiperSlide>
-
       </Swiper>
     </>
   );

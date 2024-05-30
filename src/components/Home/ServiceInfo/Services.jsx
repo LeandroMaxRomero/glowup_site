@@ -10,44 +10,48 @@ export const Services = () => {
 
   const texto = [
     {
-      titulo1: "Consultoría de Estrategia de Marketing Digital",
-      titulo2: "Diseño de Landing Pages Personalizadas",
-      titulo3: "Campañas de Anuncios y Contenido de Anuncios Personalizados",
-      titulo4: "Optimización de la Tasa de Conversión (CRO) y SEO",
-      titulo5: "Integración con CRM",
-      titulo6: "Gestión de Redes Sociales",
-      titulo7: "Seguimiento del Rendimiento y Analítica",
-      titulo8: "¿Con quién trabajamos?"
+      titulo1: "Landing pages Personalizadas de Alta Conversión",
+      titulo2: "Diseño de Campañas Publicitarias Personalizadas",
+      titulo3: "Campañas Publicitarias y Creación de Contenidos Personalizados",
+      titulo4: "Creación de Funnels y Email Marketing",
+      titulo5: "Redacción Profesional",
+      titulo6: "Servicios de SEO y CRO Orientados a la Conversión",
+      titulo7: "Sistemas de Generación de Leads y Ventas",
+      titulo8: "Soluciones de Integración CRM Sin Interrupciones",
+      titulo9: "Rastreo y Análisis de Desempeño Perspicaz"
     },
     {
-      conte1: " Comenzamos por entender los objetivos de tu negocio y tu audiencia objetivo para desarrollar una estrategia de marketing digital a medida que se alinee con tus metas.",
-      conte2: "Nuestro equipo crea páginas de aterrizaje visualmente impresionantes y optimizadas para la conversión que capturan la atención de pacientes potenciales y los animan a tomar acción.",
-      conte3: "Desarrollamos campañas de anuncios personalizadas y contenido creativo que resuene con tu audiencia objetivo, utilizando visuales llamativos, redacción persuasiva y elementos interactivos para impulsar la participación y las conversiones. Además, ofrecemos servicios de marketing por correo electrónico, marketing de contenido y gestión de redes sociales.",
-      conte4: "Optimizamos tus páginas de aterrizaje y campañas de anuncios para maximizar las tasas de conversión y mejorar la visibilidad y clasificaciones de tu sitio web en las páginas de resultados de motores de búsqueda, impulsando el tráfico orgánico y aumentando tu presencia en línea.",
-      conte5: "Integramos nuestras soluciones con tu sistema de CRM para gestionar leads de manera eficiente y automatizar comunicaciones de seguimiento, asegurando que no se pierda ninguna oportunidad.",
-      conte6: "Gestionamos tu presencia en redes sociales en plataformas como Facebook, Instagram y Twitter para aumentar el reconocimiento de marca, interactuar con seguidores y generar leads para tu práctica.",
-      conte7: "Proporcionamos análisis y reportes completos sobre el rendimiento de tus campañas de anuncios, rastreando métricas clave como el costo por lead, la tasa de conversión y el retorno de la inversión en publicidad (ROAS) para medir el éxito e informar futuras estrategias.",
-      conte8: "Trabajamos en clínicas enfocadas en: Clínicas Dentales, Centros de Cirugía Plástica, Clínicas Ortopédicas, Consultorios de Dermatología, Clínicas de Fertilidad Clínicas de Salud Mental, Clínicas Quiroprácticas"
+      conte1: "Eleva tu presencia en línea con nuestras Páginas de Aterrizaje Personalizadas de Alta Conversión. Captiva a tu audiencia y aumenta las conversiones con diseños visualmente impresionantes y centrados en el usuario.",
+      conte2: "Campañas publicitarias a medida diseñadas para elevar tu marca y obtener resultados. Colabora con nosotros para crear campañas estratégicas que resuenen con tu audiencia y logren tus objetivos.",
+      conte3: "Destácate de la multitud con nuestras Campañas Publicitarias y Creación de Contenidos Personalizados. Aprovecha el poder de los mensajes personalizados y las campañas creativas para alcanzar tus objetivos.",
+      conte4: "Optimiza tu funnel de ventas y engagement a tu audiencia con nuestros servicios de Creación de Funnels y Email Marketing. Desde la captura de leads hasta la conversión, te ayudaremos a entregar mensajes dirigidos y a generar ingresos a través de campañas de email efectivas.",
+      conte5: "Eleva los mensajes de tu marca con nuestros servicios de Redacción Profesional. Nuestros expertos redactores crean contenido convincente y persuasivo que resuena con tu audiencia y motiva a la acción, asegurando que tu marca se destaque en el saturado panorama digital.",
+      conte6: "Aumenta tu visibilidad en línea y maximiza las conversiones con nuestros Servicios de SEO y CRO Orientados a la Conversión. Genera tráfico dirigido y optimiza la experiencia del usuario para obtener resultados inigualables.",
+      conte7: "Impulsa el crecimiento y aumenta los ingresos con nuestros Sistemas de Generación de Leads y Ventas. Te ayudamos a implementar procesos automatizados de generación de leads y sistemas de ventas para atraer, nutrir y convertir leads en clientes leales, maximizando el potencial de tu negocio.",
+      conte8: "Optimiza tus operaciones y mejora la participación del cliente con nuestras Soluciones de Integración CRM Sin Interrupciones. Desbloquea el potencial completo de tus esfuerzos de marketing con una gestión de datos integrada.",
+      conte9: "Obtén información procesable y rastrea tu éxito con nuestro Rastreo y Análisis de Desempeño Perspicaz. Aprovecha el poder de la toma de decisiones basada en datos para una mejora continua."
     },
     {
-      titulo1: "Digital Marketing Strategy Consultation",
-      titulo2: "Custom Landing Page Design",
-      titulo3: "Custom Ad Campaigns and Ad Content",
-      titulo4: "Conversion Rate Optimization (CRO) and SEO",
-      titulo5: "CRM Integration",
-      titulo6: "Social Media Management",
-      titulo7: "Performance Tracking and Analytics",
-      titulo8: "Who do we work on?"
+      titulo1: "Custom High-Conversion Landing Pages",
+      titulo2: "Custom Ad Campaign Design",
+      titulo3: "Personalized Ad Campaigns and Content Creation",
+      titulo4: "Funnel Building and Email Marketing",
+      titulo5: "Professional Copywriting",
+      titulo6: "Conversion-Driven SEO and CRO Services",
+      titulo7: "Lead Generation Sales Systems",
+      titulo8: "Seamless CRM Integration Solutions",
+      titulo9: "Insightful Performance Tracking and Analytics"
     },
     {
-      conte1: "We start by understanding your business objectives and target audience to develop a tailored digital marketing strategy that aligns with your goals.",
-      conte2: "Our team creates visually stunning and conversion-optimized landing pages that capture the attention of potential patients and encourage them to take action.",
-      conte3: "We develop customized ad campaigns and creative ad content that resonates with your target audience, utilizing eye-catching visuals, persuasive copywriting, and interactive elements to drive engagement and conversions. Additionally, we offer email marketing, content marketing, and social media management services.",
-      conte4: "We optimize your landing pages and ad campaigns to maximize conversion rates and improve the visibility and rankings of your website on search engine results pages, driving organic traffic and increasing your online presence.",
-      conte5: "We integrate our solutions with your CRM system to manage leads efficiently and automate follow-up communications, ensuring that no opportunity falls through the cracks.",
-      conte6: "We manage your social media presence on platforms like Facebook, Instagram, and Twitter to increase brand awareness, engage with followers, and generate leads for your practice.",
-      conte7: "We provide comprehensive analytics and reporting on the performance of your ad campaigns, tracking key metrics like cost per lead, conversion rate, and return on ad spend (ROAS) to measure success and inform future strategies.",
-      conte8: "We work in clinics focused on: Dental Clinics, Plastic Surgery Centers, Orthopedic Clinics, Dermatology Practices, Fertility Clinics Mental Health Clinics, Chiropractic Clinics"
+      conte1: "Elevate your online presence with our Custom High-Conversion Landing Pages. Captivate your audience and drive conversions with visually stunning, user-centric designs.",
+      conte2: "Tailor-made ad campaigns crafted to elevate your brand and drive results. Partner with us to create strategic campaigns that resonate with your audience and achieve your objectives.",
+      conte3: "Stand out from the crowd with our Personalized Ad Campaigns and Content Creation. Harness the power of customized messaging and creative campaigns to achieve your objectives.",
+      conte4: "Optimize your sales funnel and engage your audience with our Funnel Building and Email Marketing services. From lead capture to conversion, we'll help you deliver targeted messages and drive revenue through effective email campaigns.",
+      conte5: "Elevate your brand's messaging with our Professional Copywriting services. Our expert copywriters craft compelling, persuasive content that resonates with your audience and drives action, ensuring your brand stands out in the crowded digital landscape.",
+      conte6: "Boost your online visibility and maximize conversions with our Conversion-Driven SEO and CRO Services. Drive targeted traffic and optimize user experience for unparalleled results.",
+      conte7: "Drive growth and increase revenue with our Lead Generation Sales Systems. We'll help you implement automated lead generation processes and sales systems to attract, nurture, and convert leads into loyal customers, maximizing your business's potential.",
+      conte8: "Streamline your operations and enhance customer engagement with our Seamless CRM Integration Solutions. Unlock the full potential of your marketing efforts with integrated data management.",
+      conte9: "Gain actionable insights and track your success with our Insightful Performance Tracking and Analytics. Harness the power of data-driven decision-making for continuous improvement."
     }
   ]
 
@@ -57,10 +61,19 @@ export const Services = () => {
       {
         lang === 'castellano'
         ?
-        <h2>Lo que hacemos</h2>
+        <h2>Nuestras soluciones</h2>
         :
-        <h2>What we do</h2>
+        <h2>Our solution</h2>
       }
+      {
+        lang === 'castellano'
+        ?
+        <h4><span>Consultoría Estratégica de Marketing Digital: </span>Nuestra Consultoría Estratégica de Marketing Digital sienta las bases para tu éxito. Obtén información valiosa y estrategias personalizadas para impulsar tu marca hacia adelante.</h4>
+        :
+        <h4><span>Strategic Digital Marketing Consultation: </span>Our Strategic Digital Marketing Consultation lays the groundwork for your success. Gain invaluable insights and tailored strategies to propel your brand forward.</h4>
+
+      }
+
       {
         lang === 'castellano'
         ?
@@ -73,6 +86,7 @@ export const Services = () => {
         <Accordion tittle={texto[0].titulo6} contenido={texto[1].conte6} active={active} setActive={setActive} />
         <Accordion tittle={texto[0].titulo7} contenido={texto[1].conte7} active={active} setActive={setActive} />
         <Accordion tittle={texto[0].titulo8} contenido={texto[1].conte8} active={active} setActive={setActive} />
+        <Accordion tittle={texto[0].titulo9} contenido={texto[1].conte9} active={active} setActive={setActive} />
         </>
         :
         <>
@@ -84,6 +98,7 @@ export const Services = () => {
         <Accordion tittle={texto[2].titulo6} contenido={texto[3].conte6} active={active} setActive={setActive} />
         <Accordion tittle={texto[2].titulo7} contenido={texto[3].conte7} active={active} setActive={setActive} />
         <Accordion tittle={texto[2].titulo8} contenido={texto[3].conte8} active={active} setActive={setActive} />
+        <Accordion tittle={texto[2].titulo9} contenido={texto[3].conte9} active={active} setActive={setActive} />
         </>
       }
     </div>

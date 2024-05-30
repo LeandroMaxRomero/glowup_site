@@ -46,22 +46,141 @@ export const QuestionCard = () => {
         if (Object.keys(userResponses).length > 0) {
             localStorage.setItem('userResponses', JSON.stringify(userResponses));
         }
+        //! USER RESPONSES
+        console.log(userResponses)
     }, [userResponses]);//* Función que actualiza el userResponses y lo guarda en el localStorage
 
+   
+      
+
+    // const handleOptionSelect = (option) => {
+    //     if (currentQuestionIndex === 1 || currentQuestionIndex === 3 || currentQuestionIndex === 4) {
+    //         const updatedSelectedOptions = new Set(selectedOptions);
+    //         if (updatedSelectedOptions.has(option)) {
+    //             updatedSelectedOptions.delete(option);
+    //         } else {
+    //             updatedSelectedOptions.add(option);
+    //         }
+    //         setSelectedOptions(updatedSelectedOptions);
+    //     } else {
+    //         setSelectedOptions(new Set([option]));
+    //     }
+    // };
+
+    // const handleOptionSelect = (option) => {
+    //     const updatedSelectedOptions = new Set(selectedOptions);
+    //     console.log(updatedSelectedOptions);
+      
+    //     // Verificar si la opción "E. Other" está seleccionada
+    //     const otherOption = lang === 'castellano' ? 'E. Otro' : 'E. Other';
+    //     if (option === otherOption) {
+    //       // Si se selecciona "E. Other", limpiar el userInput
+    //       setUserInput('');
+    //     }
+      
+    //     // Determinar si la pregunta acepta múltiples respuestas
+    //     const currentQuestion = questions[currentQuestionIndex];
+      
+    //     // Índices de preguntas que aceptan múltiples respuestas
+    //     const multiResponseQuestionIndexes = [0, 1, 3, 4];
+      
+    //     if (multiResponseQuestionIndexes.includes(currentQuestion.id - 1)) {
+    //       // Toggle de opciones seleccionadas para preguntas de múltiple respuesta
+    //       if (updatedSelectedOptions.has(option)) {
+    //         updatedSelectedOptions.delete(option);
+    //       } else {
+    //         updatedSelectedOptions.add(option);
+    //       }
+    //     } else {
+    //       // Selección única para preguntas de respuesta única
+    //       updatedSelectedOptions.clear();
+    //       updatedSelectedOptions.add(option);
+    //     }
+    //     //! UPDATED SELECTED OPTIONS
+    //     console.log(updatedSelectedOptions)
+      
+    //     setSelectedOptions(updatedSelectedOptions);
+        
+    //     //! SELECTED OPTIONS
+    //     console.log(selectedOptions);
+    //   };
+
+    // const handleOptionSelect = (option) => {
+    //     const updatedSelectedOptions = new Set(selectedOptions);
+    //     console.log(updatedSelectedOptions);
+    
+    //     // Verificar si la opción "E. Other" está seleccionada
+    //     const otherOption = lang === 'castellano' ? 'E. Otro' : 'E. Other';
+    //     if (option === otherOption) {
+    //         // Si se selecciona "E. Other", limpiar el userInput
+    //         setUserInput('');
+    //     }
+    
+    //     // Determinar si la pregunta acepta múltiples respuestas
+    //     const currentQuestion = questions[currentQuestionIndex];
+    
+    //     // Índices de preguntas que aceptan múltiples respuestas
+    //     const multiResponseQuestionIndexes = [0, 1, 3, 4];
+    
+    //     if (multiResponseQuestionIndexes.includes(currentQuestion.id - 1)) {
+    //         // Toggle de opciones seleccionadas para preguntas de múltiple respuesta
+    //         if (updatedSelectedOptions.has(option)) {
+    //             updatedSelectedOptions.delete(option);
+    //         } else {
+    //             updatedSelectedOptions.add(option);
+    //         }
+    //     } else {
+    //         // Selección única para preguntas de respuesta única
+    //         updatedSelectedOptions.clear();
+    //         updatedSelectedOptions.add(option);
+    //     }
+    //     //! UPDATED SELECTED OPTIONS
+    //     console.log(updatedSelectedOptions);
+    
+    //     setSelectedOptions(new Set(updatedSelectedOptions));
+    // };
 
     const handleOptionSelect = (option) => {
-        if (currentQuestionIndex === 3) {
-            const updatedSelectedOptions = new Set(selectedOptions);
+        const updatedSelectedOptions = new Set(selectedOptions);
+    
+        // Verificar si la opción "E. Other" está seleccionada
+        const otherOption = lang === 'castellano' ? 'E. Otro' : 'E. Other';
+        if (option === otherOption) {
+            // Si se selecciona "E. Other", limpiar el userInput
+            setUserInput('');
+        }
+    
+        // Determinar si la pregunta acepta múltiples respuestas
+        const currentQuestion = questions[currentQuestionIndex];
+        const multiResponseQuestionIndexes = [0, 1, 3, 4];
+    
+        if (multiResponseQuestionIndexes.includes(currentQuestion.id - 1)) {
+            // Toggle de opciones seleccionadas para preguntas de múltiple respuesta
             if (updatedSelectedOptions.has(option)) {
                 updatedSelectedOptions.delete(option);
             } else {
                 updatedSelectedOptions.add(option);
             }
-            setSelectedOptions(updatedSelectedOptions);
         } else {
-            setSelectedOptions(new Set([option]));
+            // Selección única para preguntas de respuesta única
+            updatedSelectedOptions.clear();
+            updatedSelectedOptions.add(option);
         }
+    
+        setSelectedOptions(new Set(updatedSelectedOptions));
     };
+    
+    useEffect(() => {
+        // Ver el estado actualizado de selectedOptions
+        console.log(selectedOptions);
+    }, [selectedOptions]);
+    
+    
+    useEffect(() => {
+        //! SELECTED OPTIONS
+        console.log(selectedOptions);
+    }, [selectedOptions]);
+    
 
     const handleUserInput = (event) => {
         setUserInput(event.target.value);
@@ -71,86 +190,197 @@ export const QuestionCard = () => {
         setCurrentQuestionIndex(Math.max(currentQuestionIndex - 1, 0));
     };
 
+    // const handleNextQuestion = () => {
+    //   const currentQuestion = questions[currentQuestionIndex];
+    //   let response;
+    //   //* Determinación del tipo de respuesta esperada
+    //   let optionsKey;
+    //   if (lang === 'castellano' && currentQuestion.options_es) {
+    //       optionsKey = 'options_es';
+    //   } else if (lang === 'english' && currentQuestion.options_en) {
+    //       optionsKey = 'options_en';
+    //   }
+
+    //   if (optionsKey) {
+    //       //* La pregunta tiene opciones
+    //       response = [...selectedOptions];
+
+    //       //* Verificar si la opción "E. Other" está seleccionada
+    //       if (selectedOptions.has("E. Other") || selectedOptions.has("E. Otro")) {
+    //           response.push(userInput.trim());
+    //       }
+    //   } else {
+    //       //* La pregunta es abierta y requiere entrada de texto
+    //       response = userInput;
+    //   }
+
+    //   setUserResponses((prevResponses) => ({
+    //       ...prevResponses,
+    //       [currentQuestionIndex]: response,
+    //   }));
+
+    //   setSelectedOptions(new Set());
+    //   setUserInput('');
+
+    //   if (currentQuestionIndex < questions.length - 1) {
+    //       setCurrentQuestionIndex(currentQuestionIndex + 1);
+    //   } else {
+    //       setShowCard(false);
+    //       setCompleted(true);
+    //       localStorage.setItem('surveyCompleted', 'true');
+    //   }
+    // };
+
     const handleNextQuestion = () => {
-      const currentQuestion = questions[currentQuestionIndex];
-      let response;
-      //* Determinación del tipo de respuesta esperada
-      let optionsKey;
-      if (lang === 'castellano' && currentQuestion.options_es) {
-          optionsKey = 'options_es';
-      } else if (lang === 'english' && currentQuestion.options_en) {
-          optionsKey = 'options_en';
-      }
-
-      if (optionsKey) {
-          //* La pregunta tiene opciones
-          response = [...selectedOptions];
-
-          //* Verificar si la opción "Other (please specify)" está seleccionada
-          if (selectedOptions.has("Other (please specify)") || selectedOptions.has("Otro (especificar)")) {
-              response.push(userInput.trim());
-          }
-      } else {
-          //* La pregunta es abierta y requiere entrada de texto
-          response = userInput;
-      }
-
-      setUserResponses((prevResponses) => ({
-          ...prevResponses,
-          [currentQuestionIndex]: response,
-      }));
-
-      setSelectedOptions(new Set());
-      setUserInput('');
-
-      if (currentQuestionIndex < questions.length - 1) {
-          setCurrentQuestionIndex(currentQuestionIndex + 1);
-      } else {
-          setShowCard(false);
-          setCompleted(true);
-          localStorage.setItem('surveyCompleted', 'true');
-      }
+        const currentQuestion = questions[currentQuestionIndex];
+        let response;
+        
+        // Verificar la clave de las opciones según el idioma
+        let optionsKey;
+        if (lang === 'castellano' && currentQuestion.options_es) {
+            optionsKey = 'options_es';
+        } else if (lang !== 'castellano' && currentQuestion.options_en) {
+            optionsKey = 'options_en';
+        }
+    
+        // Validar si optionsKey fue establecido
+        if (optionsKey) {
+            // La pregunta tiene opciones
+            response = [...selectedOptions];
+    
+            // Verificar si la opción "E. Other" está seleccionada
+            const otherOption = lang === 'castellano' ? 'E. Otro' : 'E. Other';
+            if (selectedOptions.has(otherOption)) {
+                response.push(userInput.trim());
+            }
+        } else {
+            // La pregunta es abierta y requiere entrada de texto
+            response = userInput.trim();
+        }
+    
+        // Actualizar userResponses
+        setUserResponses((prevResponses) => ({
+            ...prevResponses,
+            [currentQuestionIndex]: response,
+        }));
+    
+        // Limpiar estados
+        setSelectedOptions(new Set());
+        setUserInput('');
+    
+        // Continuar a la siguiente pregunta o finalizar la encuesta
+        if (currentQuestionIndex < questions.length - 1) {
+            setCurrentQuestionIndex(currentQuestionIndex + 1);
+        } else {
+            setShowCard(false);
+            setCompleted(true);
+            localStorage.setItem('surveyCompleted', 'true');
+        }
     };
+    
+
+    // const handleNextQuestion = () => {
+    //     const currentQuestion = questions[currentQuestionIndex];
+    //     let response;
+      
+    //     // Determinar la clave de las opciones según el idioma
+    //     let optionsKey;
+    //     if (lang === 'castellano' && currentQuestion.options_es) {
+    //       optionsKey = 'options_es';
+    //     } else if (lang === 'english' && currentQuestion.options_en) {
+    //       optionsKey = 'options_en';
+    //     }
+      
+    //     if (optionsKey) {
+    //       // La pregunta tiene opciones
+    //       response = [...selectedOptions];
+      
+    //       // Verificar si la opción "E. Other" está seleccionada
+    //       const otherOption = lang === 'castellano' ? 'E. Otro' : 'E. Other';
+    //       if (selectedOptions.has(otherOption)) {
+    //         response.push(userInput.trim());
+    //       }
+    //     }
+      
+    //     // Actualizar userResponses
+    //     setUserResponses((prevResponses) => ({
+    //       ...prevResponses,
+    //       [currentQuestionIndex]: response,
+    //     }));
+      
+    //     // Limpiar estados
+    //     setSelectedOptions(new Set());
+    //     setUserInput('');
+      
+    //     // Continuar a la siguiente pregunta o finalizar la encuesta
+    //     if (currentQuestionIndex < questions.length - 1) {
+    //       setCurrentQuestionIndex(currentQuestionIndex + 1);
+    //     } else {
+    //       setShowCard(false);
+    //       setCompleted(true);
+    //       localStorage.setItem('surveyCompleted', 'true');
+    //     }
+    //   };
+      
+    
+    
 
     const questions = [
         {
             id: 1,
-            question_es: '¿Qué tan satisfecho estás con tus esfuerzos de marketing actuales?',
-            question_en: 'How satisfied are you with your current marketing efforts?',
-            options_es: ['1 (Más bajo)', '2', '3', '4', '5', '6 (Más alto)'],
-            options_en: ['1 (Lowest)', '2', '3', '4', '5', '6 (Highest)']
+            question_es: 'Tipo de Práctica Médica',
+            question_en: 'Type of Medical Practice',
+            sub_es:'Pregunta: ¿Qué tipo de práctica médica opera?',
+            sub_en:'Question: What type of medical practice do you operate?',
+            options_en: ['A. Solo Practice', 'B. Group Practice', 'C. Clinic', 'D. Hospital', 'E. Other'],
+            options_es: ['A. Práctica Individual', 'B. Práctica en Grupo', 'C. Clínica', 'D. Hospital', 'E. Otro']
         },
         {
             id: 2,
-            question_es: '¿Qué tan importante es para ti abordar estos desafíos y mejorar tu estrategia de marketing?',
-            question_en: 'How important is it for you to address these challenges and improve your marketing strategy?',
-            options_es: ['1 (Más bajo)', '2', '3', '4', '5', '6 (Más alto)'],
-            options_en: ['1 (Lowest)', '2', '3', '4', '5', '6 (Highest)']
-
-            
-            
+            question_es: 'Objetivo Principal de Marketing',
+            question_en: 'Primary Marketing Objective',
+            sub_es:'Pregunta: ¿Cuál es su objetivo principal de marketing?',
+            sub_en:'Question: What is your primary marketing objective?',
+            options_es: ['A. Aumentar las Citas de Pacientes', 'B. Mejorar la Presencia en Línea', 'C. Incrementar la Participación de los Pacientes', 'D. Mejorar la Retención de Pacientes', 'E. Otro'],
+            options_en: ['A. Increase Patient Appointments', 'B. Enhance Online Presence', 'C. Boost Patient Engagement', 'D. Improve Patient Retention', 'E. Other']
         },
         {
             id: 3,
-            question_es: '¿Qué tan probable es que consideres asociarte con una agencia de marketing para abordar estos desafíos?',
-            question_en: 'How likely are you to consider partnering with a marketing agency to address these challenges?',
-            options_es: ['1 (Más bajo)', '2', '3', '4', '5', '6 (Más alto)'],
-            options_en: ['1 (Lowest)', '2', '3', '4', '5', '6 (Highest)']
-            
+            question_es: 'Presupuesto Mensual Actual de Marketing',
+            question_en: 'Current Monthly Marketing Budget',
+            sub_es:'Pregunta: ¿Cuál es su presupuesto mensual actual de marketing?',
+            sub_en:'Question: What is your current monthly marketing budget?',
+            options_es: ['A. $500-$1,000', 'B. $1,000-$3,000', 'C. $3,000-$5,000', 'D. $5,000-$10,000', 'E. $10,000+'],
+            options_en: ['A. $500-$1,000', 'B. $1,000-$3,000', 'C. $3,000-$5,000', 'D. $5,000-$10,000', 'E. $10,000+']
         },
         {
             id: 4,
-            question_es: "¿Cuáles son tus principales objetivos para mejorar el marketing de tu práctica?",
-            options_es: ['Aumentar las consultas de pacientes', 'Mejorar la visibilidad en línea', 'Aumentar las reservas de citas', 'Mejorar el conocimiento de la marca', 'Generar más clientes potenciales', 'Otro (especificar)'],
-            question_en: "What are your main goals for improving your practice's marketing?",
-            options_en: ['Increase patient inquiries', 'Enhance online visibility', 'Boost appointment bookings', 'Improve brand awareness', 'Generate more leads', 'Other (please specify)'],
+            question_es: 'Audiencia Objetivo Principal',
+            question_en: 'Primary Target Audience',
+            sub_es:'Pregunta: ¿Quién es su audiencia objetivo principal?',
+            sub_en:'Question: Who is your primary target audience?',
+            options_es: ['A. Pacientes Locales', 'B. Pacientes Regionales', 'C. Pacientes Nacionales', 'D. Pacientes Internacionales'],
+            options_en: ['A. Local Patients', 'B. Regional Patients', 'C. National Patients', 'D. International Patients']
         },
         {
             id: 5,
-            question_es: '¿Qué desafíos u obstáculos enfrentas actualmente con tus esfuerzos de marketing?',
-            question_en: 'What challenges or obstacles are you currently facing with your marketing efforts?',
-            input: true
-        }
+            question_es: 'Mayor Desafío de Marketing',
+            question_en: 'Biggest Marketing Challenge:',
+            sub_es:'Pregunta: ¿Cuál es su mayor desafío de marketing en este momento?',
+            sub_en:'Question: What is your biggest marketing challenge right now?',
+            options_es: ['A. Generar Prospectos', 'B. Convertir Prospectos', 'C. Retener Pacientes', 'D. Medir el ROI', 'E. Otro'],
+            options_en: ['A. Generating Leads', 'B. Converting Leads', 'C. Retaining Patients', 'D. Measuring ROI', 'E. Other']
+        },
+        {
+            id: 6,
+            question_es: 'Plazo para Iniciar Esfuerzos de Marketing',
+            question_en: 'Timeline for Starting Marketing Efforts:',
+            sub_es:'Pregunta: ¿Cuándo planea iniciar sus esfuerzos de marketing?',
+            sub_en:'Question: How soon are you looking to start your marketing efforts?',
+            options_es: ['A. Inmediatamente', 'B. Dentro de los próximos 1-3 meses', 'C. Dentro de los próximos 3-6 meses', 'D. No estoy seguro'],
+            options_en: ['A. Immediately', 'B. Within the next 1-3 months', 'C. Within the next 3-6 months', 'D. Not sure']
+        },
+        
     ];
     
 
@@ -171,16 +401,17 @@ export const QuestionCard = () => {
                         </button>
 
                     </div>
+
+                    <div className='encabezado--survey'>
+                        <h2>{lang==='castellano' ? questions[currentQuestionIndex].question_es : questions[currentQuestionIndex].question_en}</h2>
+                        <h3>{lang==='castellano' ? questions[currentQuestionIndex].sub_es : questions[currentQuestionIndex].sub_en}</h3>
+                    </div>
+
                     
-
-                    <h2>{lang==='castellano' ? questions[currentQuestionIndex].question_es : questions[currentQuestionIndex].question_en}</h2>
-
-                    {questions[currentQuestionIndex].options_en
-                        ? (
-                            <ul className='answers--list'>
+                            {/* <ul className='answers--list'>
                                 {questions[currentQuestionIndex].options_en.map((option, index) => (
                                     <li key={index}>
-                                        {currentQuestionIndex === 3 ? (
+                                        {(currentQuestionIndex === 0 || currentQuestionIndex === 1 || currentQuestionIndex === 3 || currentQuestionIndex === 4)  ? (
                                             <label>
                                                 <input
                                                     type="checkbox"
@@ -194,19 +425,41 @@ export const QuestionCard = () => {
                                             </label>
                                         ) : (
                                             <button onClick={() => handleOptionSelect(option)} disabled={selectedOptions.has(option)}>
-                                                <span className='checkoption'></span>
                                                 {lang === 'castellano' ? questions[currentQuestionIndex].options_es[index]: option}
                                             </button>
                                         )}
                                     </li>
                                 ))}
-                            </ul>
-                        )
-                        : (
-                            <textarea className='textarea--card'value={userInput} onChange={handleUserInput} />
-                        )}
+                            </ul> */}
 
-                    {currentQuestionIndex === 3 && (selectedOptions.has("Other (please specify)") || selectedOptions.has("Otro (especificar)")) && (
+<ul className='answers--list'>
+    {(lang === 'castellano' ? questions[currentQuestionIndex].options_es : questions[currentQuestionIndex].options_en).map((option, index) => (
+        <li key={index}>
+            {(currentQuestionIndex === 0 || currentQuestionIndex === 1 || currentQuestionIndex === 3 || currentQuestionIndex === 4) ? (
+                <label>
+                    <input
+                        type="checkbox"
+                        value={option}
+                        checked={selectedOptions.has(option)}
+                        onChange={() => handleOptionSelect(option)}
+                        className='checkboxes'
+                    />
+                    <span className='checkboxes'></span>
+                    <p>{option}</p>
+                </label>
+            ) : (
+                <button onClick={() => handleOptionSelect(option)} disabled={selectedOptions.has(option)}>
+                    {option}
+                </button>
+            )}
+        </li>
+    ))}
+</ul>
+
+                        
+                        
+
+                    {(currentQuestionIndex === 0 || currentQuestionIndex === 1 || currentQuestionIndex === 4) && (selectedOptions.has("E. Other") || selectedOptions.has("E. Otro")) && (
                         <textarea
                             className='textarea--card'
                             value={userInput}

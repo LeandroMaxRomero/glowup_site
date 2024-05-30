@@ -22,8 +22,21 @@
       font-weight: 700;
       line-height: normal;
       text-transform: uppercase;
-      text-align: end;
-      padding-bottom: 50px;
+  }
+  h4{
+    color: #FFF;
+    font-family: Epilogue;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+    text-align: start;
+    width: 95%;
+    padding-bottom: 18px;
+    span{
+      font-weight: 700;
+    }
   }
 }
 
@@ -54,6 +67,7 @@
     }
     span {
       cursor: pointer;
+      min-width: 36.8px;
     }
   }
 
