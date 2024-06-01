@@ -12,31 +12,33 @@
     position: fixed;
     top: 50%;
     left: 50%;
-    width: 90%;
+    width: 80%;
     height: 100%;
     transform: translate(-50%, -50%);
     background-color: #1B1B1B;
     box-shadow: 5px 5px 50px 20px rgba(217, 217, 217, 0.25);
     min-height: 495px;
-    max-height: 780px;
+    max-height: 700px;
     flex-direction: column;
     justify-content: space-between;
     z-index: 100;
     padding: 30px;
     gap: 40px;
     @media (max-width:920px){
-        max-height: fit-content;
-        min-width: 650px;
+        max-height: 720px;
     }
     @media (max-width:650px) {
         padding: 20px;
-        min-width: 440px;
-        max-height: fit-content;
+        max-height: 700px;
     }
-    @media (max-width:400px) {
-        min-width: 320px;
-        max-height: fit-content;
+    @media (max-width:425px) {
+        padding: 20px;
+        max-height: 720px;
+        gap: 30px;
+        width: 90%;   
     }
+    
+    
     .survey__btn--close{
         background-color: transparent;
         color: v.$negro;
@@ -51,33 +53,34 @@
 .encabezado--survey{
     display: flex;
     flex-direction: column;
-    width: 60%;
-    margin: 0 auto;
-    padding: 0 1rem;
+    margin: 0 0 40px;
     gap: 18px;
-    h2{
-        color: v.$blanco;
+    align-items: flex-start;
+    align-self: baseline;
+    .title{
         font-family: v.$font;
+        color: #ADADAD;
+        font-size: 25px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-transform: uppercase;
+        align-self: center;
+        
+        @include m.mobile {
+            font-size: 22px;
+        }
+    }
+    .question{
+        font-family: v.$font;
+        color: v.$blanco;
         font-size: 25px;
         font-style: normal;
         font-weight: 400;
         line-height: normal;
         text-transform: uppercase;
         @include m.mobile {
-            font-size: 20px;
-        }
-    }
-    h3{
-        color: v.$blanco;
-        font-family: v.$font;
-        font-size: 20px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-        text-transform: uppercase;
-        @include m.mobile {
-            font-size: 16px;
-        
+            font-size: 22px;
         }
     }
 }
@@ -85,14 +88,27 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
 }
-
-.answers--list{
+.survey--content{
     display: flex;
     flex-direction: column;
+    align-items: baseline;
     width: 60%;
-    gap: 18px;
-    padding: 0 1rem;
+    margin: 0 auto;
+    @include m.mobile {
+        width: 80%;
+    }
+    @media (max-width:425px) {
+        width: 90%;   
+    }
+}
+.answers--list{
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
     justify-content: space-between;
     align-self: center;
     margin: 0;
@@ -100,8 +116,9 @@
         flex-direction: column;
     }
     @include m.mobile {
-        gap: 30px;
+        gap: 25px;
     }
+    
     li{
         display: flex;
     }
@@ -118,20 +135,22 @@
         display: flex;
         padding: 10px;
         align-items: center;
-        gap: 10px; 
+        gap: 10px;
 
         color: #FFF;
-        text-align: center;
         font-family: Epilogue;
         font-size: 20px;
         font-style: normal;
         font-weight: 400;
         line-height: normal;
+        @include m.mobile {
+            font-size: 14px;
+        }
         &:disabled{
             background-color: #5BD8FF;
             color: v.$negro;
         }
-        
+
         .checkoption{
             display: inline-block;
             position: relative;
@@ -169,9 +188,9 @@
                 opacity: 1;
                 transition: all 0.3s ease;
             }
-                
+
             }
-            
+
         }
     }
     label{
@@ -216,7 +235,7 @@
         &:hover{
             color:v.$blanco;
         }
-        
+
     }
 
 }
@@ -227,10 +246,8 @@
     background-color: transparent;
     border: 2px solid #5BD8FF;
     height: 122px;
+    margin-top: 20px;
     width: 100%;
-    min-width: 450px;
-    max-width: 1220px; 
-
     color: #FFF;
     font-family: Epilogue;
     font-size: 20px;
@@ -239,8 +256,6 @@
     line-height: normal;
     @include m.mobile {
         font-size: 16px;
-        min-width: 300px;
-        height: 30%;
     }
 
     ::placeholder{
@@ -258,6 +273,11 @@
     justify-content: space-between;
     width: 100%;
     padding: 0 2rem;
+    @include m.mobile {
+        svg{
+            width: 20px;
+        }
+    }
 }
 .survey__btn--anterior, .survey__btn--siguiente{
     width: 177px;
@@ -283,7 +303,7 @@
         margin-top: 4px;
     }
     @include m.mobile {
-        width: 150px;
+        width: 120px;
         font-size: 14px;
     }
 

@@ -328,55 +328,55 @@ export const QuestionCard = () => {
     const questions = [
         {
             id: 1,
-            question_es: 'Tipo de Práctica Médica',
-            question_en: 'Type of Medical Practice',
-            sub_es:'Pregunta: ¿Qué tipo de práctica médica opera?',
-            sub_en:'Question: What type of medical practice do you operate?',
+            title_es: 'Pregunta 1/6',
+            title_en: 'Question 1/6',
+            question_es:'¿Qué tipo de práctica médica opera?',
+            question_en:'What type of medical practice do you operate?',
             options_en: ['A. Solo Practice', 'B. Group Practice', 'C. Clinic', 'D. Hospital', 'E. Other'],
             options_es: ['A. Práctica Individual', 'B. Práctica en Grupo', 'C. Clínica', 'D. Hospital', 'E. Otro']
         },
         {
             id: 2,
-            question_es: 'Objetivo Principal de Marketing',
-            question_en: 'Primary Marketing Objective',
-            sub_es:'Pregunta: ¿Cuál es su objetivo principal de marketing?',
-            sub_en:'Question: What is your primary marketing objective?',
+            title_es: 'Pregunta 2/6',
+            title_en: 'Question 2/6',
+            question_es:'¿Cuál es su objetivo principal de marketing?',
+            question_en:'What is your primary marketing objective?',
             options_es: ['A. Aumentar las Citas de Pacientes', 'B. Mejorar la Presencia en Línea', 'C. Incrementar la Participación de los Pacientes', 'D. Mejorar la Retención de Pacientes', 'E. Otro'],
             options_en: ['A. Increase Patient Appointments', 'B. Enhance Online Presence', 'C. Boost Patient Engagement', 'D. Improve Patient Retention', 'E. Other']
         },
         {
             id: 3,
-            question_es: 'Presupuesto Mensual Actual de Marketing',
-            question_en: 'Current Monthly Marketing Budget',
-            sub_es:'Pregunta: ¿Cuál es su presupuesto mensual actual de marketing?',
-            sub_en:'Question: What is your current monthly marketing budget?',
-            options_es: ['A. $500-$1,000', 'B. $1,000-$3,000', 'C. $3,000-$5,000', 'D. $5,000-$10,000', 'E. $10,000+'],
-            options_en: ['A. $500-$1,000', 'B. $1,000-$3,000', 'C. $3,000-$5,000', 'D. $5,000-$10,000', 'E. $10,000+']
+            title_es: 'Pregunta 3/6',
+            title_en: 'Question 3/6',
+            question_es:'¿Cuál es su presupuesto mensual actual de marketing?',
+            question_en:'What is your current monthly marketing budget?',
+            options_es: ['A. $500 - $1,000', 'B. $1,000 - $3,000', 'C. $3,000 - $5,000', 'D. $5,000 - $10,000', 'E. $10,000 +'],
+            options_en: ['A. $500 - $1,000', 'B. $1,000 - $3,000', 'C. $3,000 - $5,000', 'D. $5,000 - $10,000', 'E. $10,000 +']
         },
         {
             id: 4,
-            question_es: 'Audiencia Objetivo Principal',
-            question_en: 'Primary Target Audience',
-            sub_es:'Pregunta: ¿Quién es su audiencia objetivo principal?',
-            sub_en:'Question: Who is your primary target audience?',
+            title_es: 'Pregunta 4/6',
+            title_en: 'Question 4/6',
+            question_es:'¿Quién es su audiencia objetivo principal?',
+            question_en:'Who is your primary target audience?',
             options_es: ['A. Pacientes Locales', 'B. Pacientes Regionales', 'C. Pacientes Nacionales', 'D. Pacientes Internacionales'],
             options_en: ['A. Local Patients', 'B. Regional Patients', 'C. National Patients', 'D. International Patients']
         },
         {
             id: 5,
-            question_es: 'Mayor Desafío de Marketing',
-            question_en: 'Biggest Marketing Challenge:',
-            sub_es:'Pregunta: ¿Cuál es su mayor desafío de marketing en este momento?',
-            sub_en:'Question: What is your biggest marketing challenge right now?',
+            title_es: 'Pregunta 5/6',
+            title_en: 'Question 5/6',
+            question_es:'¿Cuál es su mayor desafío de marketing en este momento?',
+            question_en:'What is your biggest marketing challenge right now?',
             options_es: ['A. Generar Prospectos', 'B. Convertir Prospectos', 'C. Retener Pacientes', 'D. Medir el ROI', 'E. Otro'],
             options_en: ['A. Generating Leads', 'B. Converting Leads', 'C. Retaining Patients', 'D. Measuring ROI', 'E. Other']
         },
         {
             id: 6,
-            question_es: 'Plazo para Iniciar Esfuerzos de Marketing',
-            question_en: 'Timeline for Starting Marketing Efforts:',
-            sub_es:'Pregunta: ¿Cuándo planea iniciar sus esfuerzos de marketing?',
-            sub_en:'Question: How soon are you looking to start your marketing efforts?',
+            title_es: 'Pregunta 6/6',
+            title_en: 'Question 6/6',
+            question_es:'¿Cuándo planea iniciar sus esfuerzos de marketing?',
+            question_en:'How soon are you looking to start your marketing efforts?',
             options_es: ['A. Inmediatamente', 'B. Dentro de los próximos 1-3 meses', 'C. Dentro de los próximos 3-6 meses', 'D. No estoy seguro'],
             options_en: ['A. Immediately', 'B. Within the next 1-3 months', 'C. Within the next 3-6 months', 'D. Not sure']
         },
@@ -402,71 +402,46 @@ export const QuestionCard = () => {
 
                     </div>
 
-                    <div className='encabezado--survey'>
-                        <h2>{lang==='castellano' ? questions[currentQuestionIndex].question_es : questions[currentQuestionIndex].question_en}</h2>
-                        <h3>{lang==='castellano' ? questions[currentQuestionIndex].sub_es : questions[currentQuestionIndex].sub_en}</h3>
+                    <div className='survey--content'>
+                        <div className='encabezado--survey'>
+                            <h2 className='title'>{lang==='castellano' ? questions[currentQuestionIndex].title_es : questions[currentQuestionIndex].title_en}</h2>
+                            <h2 className='question'>{lang==='castellano' ? questions[currentQuestionIndex].question_es : questions[currentQuestionIndex].question_en}</h2>
+                        </div>
+
+                        <ul className='answers--list'>
+                            {(lang === 'castellano' ? questions[currentQuestionIndex].options_es : questions[currentQuestionIndex].options_en).map((option, index) => (
+                                <li key={index}>
+                                    {(currentQuestionIndex === 0 || currentQuestionIndex === 1 || currentQuestionIndex === 3 || currentQuestionIndex === 4) ? (
+                                        <label>
+                                            <input
+                                                type="checkbox"
+                                                value={option}
+                                                checked={selectedOptions.has(option)}
+                                                onChange={() => handleOptionSelect(option)}
+                                                className='checkboxes'
+                                            />
+                                            <span className='checkboxes'></span>
+                                            <p>{option}</p>
+                                        </label>
+                                    ) : (
+                                        <button onClick={() => handleOptionSelect(option)} disabled={selectedOptions.has(option)}>
+                                            {option}
+                                        </button>
+                                    )}
+                                </li>
+                            ))}
+                        </ul>
+                        
+                        {(currentQuestionIndex === 0 || currentQuestionIndex === 1 || currentQuestionIndex === 4) && (selectedOptions.has("E. Other") || selectedOptions.has("E. Otro")) && (
+                            <textarea
+                                className='textarea--card'
+                                value={userInput}
+                                onChange={handleUserInput}
+                                placeholder={lang==='castellano'?"Ingrese su respuesta aquí":"Enter your response here..."}
+                            />
+                        )}
                     </div>
 
-                    
-                            {/* <ul className='answers--list'>
-                                {questions[currentQuestionIndex].options_en.map((option, index) => (
-                                    <li key={index}>
-                                        {(currentQuestionIndex === 0 || currentQuestionIndex === 1 || currentQuestionIndex === 3 || currentQuestionIndex === 4)  ? (
-                                            <label>
-                                                <input
-                                                    type="checkbox"
-                                                    value={option}
-                                                    checked={selectedOptions.has(option)}
-                                                    onChange={() => handleOptionSelect(option)}
-                                                    className='checkboxes'
-                                                />
-                                                <span className='checkboxes'></span>
-                                                <p>{lang === 'castellano' ? questions[currentQuestionIndex].options_es[index] : option }</p>
-                                            </label>
-                                        ) : (
-                                            <button onClick={() => handleOptionSelect(option)} disabled={selectedOptions.has(option)}>
-                                                {lang === 'castellano' ? questions[currentQuestionIndex].options_es[index]: option}
-                                            </button>
-                                        )}
-                                    </li>
-                                ))}
-                            </ul> */}
-
-<ul className='answers--list'>
-    {(lang === 'castellano' ? questions[currentQuestionIndex].options_es : questions[currentQuestionIndex].options_en).map((option, index) => (
-        <li key={index}>
-            {(currentQuestionIndex === 0 || currentQuestionIndex === 1 || currentQuestionIndex === 3 || currentQuestionIndex === 4) ? (
-                <label>
-                    <input
-                        type="checkbox"
-                        value={option}
-                        checked={selectedOptions.has(option)}
-                        onChange={() => handleOptionSelect(option)}
-                        className='checkboxes'
-                    />
-                    <span className='checkboxes'></span>
-                    <p>{option}</p>
-                </label>
-            ) : (
-                <button onClick={() => handleOptionSelect(option)} disabled={selectedOptions.has(option)}>
-                    {option}
-                </button>
-            )}
-        </li>
-    ))}
-</ul>
-
-                        
-                        
-
-                    {(currentQuestionIndex === 0 || currentQuestionIndex === 1 || currentQuestionIndex === 4) && (selectedOptions.has("E. Other") || selectedOptions.has("E. Otro")) && (
-                        <textarea
-                            className='textarea--card'
-                            value={userInput}
-                            onChange={handleUserInput}
-                            placeholder={lang==='castellano'?"Ingrese su respuesta aquí":"Enter your response here..."}
-                        />
-                    )}
 
                     <div className='survey__btn--nav'>
                         {currentQuestionIndex > 0 && (
