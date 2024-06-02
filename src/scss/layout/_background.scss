@@ -342,3 +342,47 @@
         
     }
 }
+
+.container__background--blogs{
+    background-color: v.$background;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: -10;
+    &.blur{
+        backdrop-filter: blur(5px);
+        opacity: 0.25;
+    }
+    .light--one{
+        position: absolute;
+        z-index: -8;
+        top: 71px;
+        left: 0;
+        @include m.mobile {
+            top: 210px;
+            left: 0;
+            width: 496px;
+            height: 500px;
+        }
+    }
+    .light--two{
+        position: absolute;
+        z-index: -8;
+        top: 202px;
+        right: 0;
+        @include m.mobile {
+            top: 435px;
+            right: 0;
+            width: 350px;
+            height: 463px;
+        }
+    }
+    .zigzag{
+        position: absolute;
+        top: 920px;
+        left: 0.5px;
+        @include m.tablet {
+            top: 900px;
+        }
+    }
+}

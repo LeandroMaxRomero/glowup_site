@@ -2,9 +2,9 @@ import { useEffect, useContext } from "react";
 import QuestionCard from '../QuestionCard/QuestionCard';
 import { SurveyContext } from '../../Context/SurveyContext';
 import { LenguaContext } from "../../Context/LangProvider";
-import { BackGroundTerms } from "./BackGroundTerms";
 import { Footer } from "../Footer/Footer";
 import * as Scroll from "react-scroll";
+import { BackGroundTerms } from "./BackGroundTerms";
 
 
 export const TermsOfUse = () => {

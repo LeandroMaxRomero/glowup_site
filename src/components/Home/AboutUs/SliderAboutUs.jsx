@@ -69,5 +69,5 @@ export const SliderAboutUs =({cardsBoxes})=> {
 }
 
 SliderAboutUs.propTypes = {
-    cardsBoxes: PropTypes.node.isRequired,
+    cardsBoxes: PropTypes.array.isRequired,
 }

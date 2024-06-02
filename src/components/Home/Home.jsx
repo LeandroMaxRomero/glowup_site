@@ -11,15 +11,24 @@ import * as Scroll from "react-scroll";
 import { useContext, useEffect } from 'react';
 import { SurveyContext } from '../../Context/SurveyContext';
 
+import { LenguaContext } from "../../Context/LangProvider";
+
 export const Home = () => {
 
   const { showCard } = useContext(SurveyContext);
+  const useLengua = () => useContext(LenguaContext);
+  const { lang } = useLengua();
 
   let scroll = Scroll.animateScroll;
 
   useEffect(() => {
     scroll.scrollToTop();
   });
+
+  const title = {
+    title_es: "Mantente informado",
+    title_en: "Stay informed"
+  }
   
   return (
     <>
@@ -33,7 +42,7 @@ export const Home = () => {
           <Services />
           <AboutUs />
           <AboutUsMobile />
-          <BlogSpotsSlider />
+          <BlogSpotsSlider content ={lang==='castellano'? title.title_es : title.title_en}/>
           <Footer />
         </div>
 
