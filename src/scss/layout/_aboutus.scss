@@ -16,6 +16,7 @@
                          "b2 b3 b4 b5";
 
     @media (max-width: 1320px){
+        padding-top: 0;
         max-width: 986px;
         grid-template-rows: 1fr 1fr 1fr;
         grid-template-columns: repeat(6, 1fr);
@@ -30,7 +31,7 @@
         }
     }
     @media (max-width: 986px){
-        // max-width: 986px;
+        padding-top: 90px;
         grid-template-rows:  1fr 1fr 1fr;
         grid-template-columns: 1fr 1fr;
         grid-template-areas:
@@ -40,12 +41,6 @@
         .box1, .box2{
             justify-self: center;
         }
-        // .box2, .box4{
-        //     justify-self: right;
-        // }
-        // .box3, .box5{
-        //     justify-self: left;
-        // }
     }
     
 
@@ -135,6 +130,9 @@
         flex-direction: column;
         gap: 20px;
         padding: 40px 10px 0;
+        @media (max-width: 1320px){
+            padding-top: 20px;
+        }
         @include m.tablet {
             padding-top: 0;
         }

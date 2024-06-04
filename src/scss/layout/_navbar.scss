@@ -187,3 +187,15 @@
     }
 
 }
+.link-aboutUs-NoMobile{
+    display: block;
+    @media (max-width:650px){
+        display: none;
+    }
+}
+.link-aboutUs-Mobile{
+    display: none;
+    @media (max-width:650px){
+        display: block;
+    }
+}

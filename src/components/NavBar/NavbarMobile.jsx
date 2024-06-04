@@ -56,7 +56,7 @@ export const NavbarMobile = () => {
                 <div className="container__navlinks--mobile" onClick={() => setOpenMenu(!openMenu)}>
                     <a href="/#home">Inicio</a>
                     <a href="/#services">Servicios</a>
-                    <a href="/#whyus-mb">¿Por qué nosotros?</a>
+                    <a href="/#whyus">¿Por qué nosotros?</a>
                     <a href="/#blogs">Blogs</a>
                     <Link to="/form">Contacto</Link>
                 </div>
@@ -64,7 +64,8 @@ export const NavbarMobile = () => {
                 <div className="container__navlinks--mobile" onClick={() => setOpenMenu(!openMenu)}>
                     <a href="/#home">Home</a>
                     <a href="/#services">Services</a>
-                    <a href="/#whyus-mb">Why us?</a>
+                    <a className="link-aboutUs-NoMobile" href="/#whyus">Why us?</a>
+                    <a className="link-aboutUs-Mobile" href="/#whyus-mobile">Why us?</a>
                     <a href="/#blogs">Blogs</a>
                     <Link to="/form">Contact</Link>
                 </div>

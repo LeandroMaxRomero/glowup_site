@@ -53,7 +53,7 @@ export const AboutUsMobile = () => {
         },
     ]
   return (
-    <div className='container__aboutus--mobile' id='whyus-mb'>
+    <div className='container__aboutus--mobile' id='whyus-mobile'>
         
             {lang==='castellano'
             ?

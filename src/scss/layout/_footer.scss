@@ -20,12 +20,24 @@
     justify-content: space-between;
     padding-bottom: 70px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.20);
-    h3{
-        font-size: 24px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: normal;
-        text-transform: uppercase;
+    .footer__contact{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding-top: 6px;
+        @media (max-width:650px){
+        }
+        h3{
+            font-size: 24px;
+            color: #ADADAD;
+            text-align: center;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+            text-transform: uppercase;
+            padding: 0;
+        }
     }
 }
 
@@ -34,7 +46,7 @@
     margin-bottom: 20px;
 }
 
-.footer__nav, .footer__social, .footer__contact{
+.footer__nav, .footer__social{
     display: flex;
     flex-direction: column;
     gap: 20px;

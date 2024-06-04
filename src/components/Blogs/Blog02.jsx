@@ -45,7 +45,7 @@ export const Blog02 = () => {
         <div className={(showCard===true?'blur':'')+" container__blogs"}>
             
             <div className="container__blog--header">
-                <img src="./img/header-blog01.png" alt="" />
+                <img src="./img/header-blog02.png" alt="Header Blog 2" />
             </div>
             
             {

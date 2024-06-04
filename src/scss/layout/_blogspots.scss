@@ -14,6 +14,9 @@
       line-height: normal;
       text-transform: uppercase;
       margin-bottom: 50px;
+      @include m.tablet {
+        font-size: 32px;
+      }
     }
 }
  .swiper{
@@ -41,14 +44,16 @@
     height: 130px;
 }
 
-
   .container--blog__img{
     display: flex;
     flex:50;
-    // height: 188px;
-    // width: 310px;
     position: relative;
     overflow: hidden;
+    height: 188px;
+    max-width: 310px;
+    @include m.tablet {
+      height: 130px;
+    }
     @media(max-width:780px){
       flex: 40;
     }
@@ -79,14 +84,23 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-  }
+  }  
+}
 
+.blogspot-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  flex:50;
+  @media(max-width:780px){
+    flex: 60;
+  }
 
   h2{
     font-size: 24px;
     font-style: normal;
     font-weight: 600;
-    line-height: normal;
+    line-height: 29px;
     text-transform: uppercase;
     width: fit-content;
     margin: 0;
@@ -95,28 +109,29 @@
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    @include m.tablet {
+      font-size: 18px;
+      line-height: 22px;
+    }
+    @media (max-width: 779px){
+      font-size: 24px;
+      line-height: 28px;
+    }
   }
+
   p{
     color: #ADADAD;
-font-size: 16px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-text-transform: uppercase;
-  }
-}
-
-.blog-content{
-  display: flex;
-  flex-direction: column;
-  padding-top: 21px;
-  gap: 6px;
-  flex:50;
-  @include m.tablet {
-    padding-top: 11px;
-  }
-  @media(max-width:780px){
-    flex: 60;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+    @include m.tablet {
+      font-size: 13px;
+    }
+    @media (max-width: 779px){
+      font-size: 16px;
+    }
   }
 }
 
@@ -152,7 +167,7 @@ text-transform: uppercase;
   @include m.mobile {
     display: block;
     max-width: 440px;
-    min-height: 480px;
+    min-height: 520px;
     .container--blog{
       display: flex;
       flex-direction: column;
@@ -162,13 +177,15 @@ text-transform: uppercase;
       min-height: 250px;
       max-width: 440px;
     }
-    .blog-content{
+    .blogspot-content{
       flex: 1;
+      gap: 20px;
       h2{
         font-size: 32px;
+        line-height: 38px;
       }
       p{
-        font-size: 24px;
+        font-size: 20px;
       }
     }
     .swiper-pagination-bullet-active{

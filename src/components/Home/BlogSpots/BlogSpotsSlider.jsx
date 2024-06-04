@@ -27,7 +27,7 @@ export const BlogSpotsSlider = ({ content }) => {
         slidesPerView={1}
         spaceBetween={36}
         centeredSlides={false}
-        slidesPerGroupSkip={1}
+        slidesPerGroupSkip={2}
         grabCursor={false}
         keyboard={{
           enabled: true,
@@ -51,15 +51,15 @@ export const BlogSpotsSlider = ({ content }) => {
                     <Link to="/blog01">
                         <div className="container--blog">
                             <div className="container--blog__img">
-                                <img src="./img/blog.png" alt="Card" className="blog-img" />
+                                <img src="./img/header-blog01.png" alt="Miniatura Blog 1" className="blog-img" />
                             </div>
-                            <div className="blog-content">
-                                <h2>{lang==='castellano'?"Guía Completa":"A Comprehensive Guide"}</h2>
+                            <div className="blogspot-content">
+                                <h2>#1 - {lang==='castellano'?"Eleva tu Práctica en 2024":"Elevate Your Practice in 2024"}</h2>
                                 {lang==='castellano'
                                 ?
-                                <p>10 Estrategias Comprobadas de Marketing Digital para Elevar el Crecimiento de tu Práctica de Salud en 2024</p>
+                                <p>Estrategias Comprobadas de Marketing Digital para el Crecimiento Médico</p>
                                 :
-                                <p>10 Proven Digital Marketing Strategies to Elevate Your Healthcare {`Practice's`} Growth in 2024</p>
+                                <p>Proven Digital Marketing Strategies for Medical Growth</p>
                                 }
                             </div>
                         </div>
@@ -68,15 +68,15 @@ export const BlogSpotsSlider = ({ content }) => {
                     <Link to="/blog02">
                         <div className="container--blog">
                             <div className="container--blog__img">
-                                <img src="./img/blog.png" alt="Card" className="blog-img" />
+                                <img src="./img/header-blog02.png" alt="Miniatura Blog 2" className="blog-img" />
                             </div>
-                            <div className="blog-content">
-                                <h2>BLOG 2</h2>
+                            <div className="blogspot-content">
+                                <h2>#2 - {lang==='castellano'? "Guía Definitiva para Adquirir Pacientes" : "Ultimate Guide to Patient Acquisition"}</h2>
                                 {lang==='castellano'
                                 ?
-                                <p>Español: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                                <p>5 Estrategias que Toda Práctica Debe Conocer</p>
                                 :
-                                <p>English: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                                <p>5 Strategies Every Practice Should Know</p>
                                 }
                             </div>
                         </div>
@@ -89,15 +89,15 @@ export const BlogSpotsSlider = ({ content }) => {
                     <Link to="/blog03">
                         <div className="container--blog">
                             <div className="container--blog__img">
-                                <img src="./img/blog.png" alt="Card" className="blog-img" />
+                                <img src="./img/header-blog03.png" alt="Miniatura Blog 3" className="blog-img" />
                             </div>
-                            <div className="blog-content">
-                                <h2>BLOG 3</h2>
+                            <div className="blogspot-content">
+                                <h2>#3 - {lang==='castellano'? "Domina el Marketing Digital" : "Master Digital Marketing"}</h2>
                                 {lang==='castellano'
                                 ?
-                                <p>Español: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                                <p>8 Estrategias para Elevar tu Práctica Médica</p>
                                 :
-                                <p>English: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                                <p>8 Strategies to Elevate Your Medical Practice</p>
                                 }
                                 </div>
                         </div>
@@ -106,16 +106,16 @@ export const BlogSpotsSlider = ({ content }) => {
                     <Link to="/blog04">
                         <div className="container--blog">
                             <div className="container--blog__img">
-                                <img src="./img/blog.png" alt="Card" className="blog-img" />
+                                <img src="./img/header-blog04.png" alt="Card" className="blog-img" />
                             </div>
-                            <div className="blog-content">
-                                <h2>BLOG 4</h2>
-                                {lang==='castellano'
-                                ?
-                                <p>Español: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
-                                :
-                                <p>English: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
-                                }
+                            <div className="blogspot-content">
+                            <h2>#4 - {lang==='castellano' ? "Estrategias de Email Marketing" : "Email Marketing Strategies" }</h2>
+                            {lang==='castellano'
+                            ?
+                            <p>5 Formas de generar Leads y Retener Pacientes</p>
+                            :
+                            <p>5 Ways to Nurture Leads and Retain Patients</p>
+                            }
                             </div>
                         </div>
                     </Link>
@@ -127,15 +127,15 @@ export const BlogSpotsSlider = ({ content }) => {
                     <Link to="/blog05">
                         <div className="container--blog">
                             <div className="container--blog__img">
-                                <img src="./img/blog.png" alt="Card" className="blog-img" />
+                                <img src="./img/header-blog05.png" alt="Manos estrechándose en acuerdo mutuo" className="blog-img" />
                             </div>
-                            <div className="blog-content">
-                                <h2>BLOG 5</h2>
+                            <div className="blogspot-content">
+                                <h2>#5 - {lang==='castellano' ? "El Arte de la Participación del Paciente" : "Art of Patient Engagement"}</h2>
                                 {lang==='castellano'
                                 ?
-                                <p>Español: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                                <p>10 Técnicas para Construir Conexiones Significativas</p>
                                 :
-                                <p>English: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                                <p>10 Techniques for Building Meaningful Connections</p>
                                 }
                             </div>
                         </div>
@@ -144,15 +144,15 @@ export const BlogSpotsSlider = ({ content }) => {
                     <Link to="/blog06">
                         <div className="container--blog">
                             <div className="container--blog__img">
-                                <img src="./img/blog.png" alt="Card" className="blog-img" />
+                                <img src="./img/header-blog06.png" alt="Miniatura blog 6" className="blog-img" />
                             </div>
-                            <div className="blog-content">
-                                <h2>BLOG 6</h2>
+                            <div className="blogspot-content">
+                                <h2>#6 - {lang==='castellano' ? "Genera Leads de Calidad" : "Generate Quality Leads"}</h2>
                                 {lang==='castellano'
                                 ?
-                                <p>Español: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                                <p>6 Estrategias Efectivas de Generación de Leads para tu Práctica</p>
                                 :
-                                <p>English: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                                <p>6 Effective Lead Generation Strategies for Your Practice</p>
                                 }
                             </div>
                         </div>
@@ -165,15 +165,15 @@ export const BlogSpotsSlider = ({ content }) => {
                     <Link to="/blog07">
                         <div className="container--blog">
                             <div className="container--blog__img">
-                                <img src="./img/blog.png" alt="Card" className="blog-img" />
+                                <img src="./img/header-blog07.png" alt="Card" className="blog-img" />
                             </div>
-                            <div className="blog-content">
-                                <h2>BLOG 7</h2>
+                            <div className="blogspot-content">
+                                <h2>#7 - {lang==='castellano'?"Crea Landing pages Altamente Convertidoras":"Create High-Converting Landing Pages"}</h2>
                                 {lang==='castellano'
                                 ?
-                                <p>Español: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                                <p>Diseña landing pages que atraigan y conviertan pacientes potenciales</p>
                                 :
-                                <p>English: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                                <p>How to design landing pages that attract and convert potential patients</p>
                                 }
                             </div>
                         </div>
@@ -182,15 +182,15 @@ export const BlogSpotsSlider = ({ content }) => {
                     <Link to="/blog08">
                         <div className="container--blog">
                             <div className="container--blog__img">
-                                <img src="./img/blog.png" alt="Card" className="blog-img" />
+                                <img src="./img/header-blog08.png" alt="Minatura blog 8" className="blog-img" />
                             </div>
-                            <div className="blog-content">
-                                <h2>BLOG 8</h2>
+                            <div className="blogspot-content">
+                                <h2>#8 - {lang==='castellano'?"Campañas Publicitarias Exitosas: Una Guía para...":"Successful Ad Campaigns: A Guide for..."}</h2>
                                 {lang==='castellano'
                                 ?
-                                <p>Español: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                                <p>Consejos Paso a Paso para Crear y Gestionar Publicidad Efectiva</p>
                                 :
-                                <p>English: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                                <p>Step-by-Step Tips for Creating and Managing Effective Advertising</p>
                                 }
                             </div>
                         </div>
@@ -203,15 +203,15 @@ export const BlogSpotsSlider = ({ content }) => {
                     <Link to="/blog09">
                         <div className="container--blog">
                             <div className="container--blog__img">
-                                <img src="./img/blog.png" alt="Card" className="blog-img" />
+                                <img src="./img/header-blog09.png" alt="Miniatura blog 9" className="blog-img" />
                             </div>
-                            <div className="blog-content">
-                                <h2>BLOG 9</h2>
+                            <div className="blogspot-content">
+                                <h2>#9 - {lang==='castellano'?"Ranking y Visibilidad: 10 tips de SEO":"Ranking & Visibility: 10 SEO Tips"}</h2>
                                 {lang==='castellano'
                                 ?
-                                <p>Español: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                                <p>Aprende a optimizar tu sitio web para los motores de búsqueda y mejorar...</p>
                                 :
-                                <p>English: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                                <p>Learn how to optimize your website for search engines and improve...</p>
                                 }
                             </div>
                         </div>
@@ -220,15 +220,15 @@ export const BlogSpotsSlider = ({ content }) => {
                     <Link to="/blog10">
                         <div className="container--blog">
                             <div className="container--blog__img">
-                                <img src="./img/blog.png" alt="Card" className="blog-img" />
+                                <img src="./img/header-blog10.png" alt="Miniatura blog 10" className="blog-img" />
                             </div>
-                            <div className="blog-content">
-                                <h2>BLOG 10</h2>
+                            <div className="blogspot-content">
+                                <h2>#10 - {lang==='castellano' ? "MKT: Mide el Éxito de tus Esfuerzos" : "Measure the Success of Your MKT Efforts"}</h2>
                                 {lang==='castellano'
                                 ?
-                                <p>Español: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                                <p>6 Métricas Claves para Evaluar la Efectividad de las Estrategias...</p>
                                 :
-                                <p>English: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                                <p>6 Key Metrics to Track for Evaluating the Effectiveness of Your Medical...</p>
                                 }
                             </div>
                         </div>
@@ -238,20 +238,23 @@ export const BlogSpotsSlider = ({ content }) => {
             
         </Swiper>
 
+        {/* Versión Mobile */}
+
+
         <Swiper pagination={true} modules={[Pagination]} className="mySwiperMobile">
         <SwiperSlide>
             <Link to="/blog01">
                 <div className="container--blog">
                     <div className="container--blog__img">
-                        <img src="./img/blog.png" alt="Card" className="blog-img" />
+                        <img src="./img/header-blog01.png" alt="Card" className="blog-img" />
                     </div>
-                    <div className="blog-content">
-                        <h2>BLOG 1</h2>
+                    <div className="blogspot-content">
+                        <h2>#1 - {lang==='castellano'?"Eleva tu Práctica en 2024":"Elevate Your Practice in 2024"}</h2>
                         {lang==='castellano'
                         ?
-                        <p>Español: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                        <p>Estrategias Comprobadas de Marketing Digital para el Crecimiento Médico</p>
                         :
-                        <p>English: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                        <p>Proven Digital Marketing Strategies for Medical Growth</p>
                         }
                     </div>
                 </div>
@@ -262,15 +265,15 @@ export const BlogSpotsSlider = ({ content }) => {
         <Link to="/blog02">
             <div className="container--blog">
                 <div className="container--blog__img">
-                    <img src="./img/blog.png" alt="Card" className="blog-img" />
+                    <img src="./img/header-blog02.png" alt="Card" className="blog-img" />
                 </div>
-                <div className="blog-content">
-                    <h2>BLOG 2</h2>
+                <div className="blogspot-content">
+                    <h2>#2 - {lang==='castellano'? "Guía Definitiva para Adquirir Pacientes" : "Ultimate Guide to Patient Acquisition"}</h2>
                     {lang==='castellano'
                     ?
-                    <p>Español: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                    <p>5 Estrategias que Toda Práctica Debe Conocer</p>
                     :
-                    <p>English: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                    <p>5 Strategies Every Practice Should Know</p>
                     }
                 </div>
             </div>
@@ -281,15 +284,15 @@ export const BlogSpotsSlider = ({ content }) => {
         <Link to="/blog03">
             <div className="container--blog">
                 <div className="container--blog__img">
-                    <img src="./img/blog.png" alt="Card" className="blog-img" />
+                    <img src="./img/header-blog03.png" alt="Miniatura Blog 3" className="blog-img" />
                 </div>
-                <div className="blog-content">
-                    <h2>BLOG 3</h2>
+                <div className="blogspot-content">
+                    <h2>#3 - {lang==='castellano'? "Domina el Marketing Digital" : "Master Digital Marketing"}</h2>
                     {lang==='castellano'
                     ?
-                    <p>Español: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                    <p>8 Estrategias para Elevar tu Práctica Médica</p>
                     :
-                    <p>English: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                    <p>8 Strategies to Elevate Your Medical Practice</p>
                     }
                 </div>
             </div>
@@ -300,15 +303,15 @@ export const BlogSpotsSlider = ({ content }) => {
         <Link to="/blog04">
             <div className="container--blog">
                 <div className="container--blog__img">
-                    <img src="./img/blog.png" alt="Card" className="blog-img" />
+                    <img src="./img/header-blog04.png" alt="Miniatura Blog 4" className="blog-img" />
                 </div>
-                <div className="blog-content">
-                    <h2>BLOG 4</h2>
+                <div className="blogspot-content">
+                    <h2>#4 - {lang==='castellano' ? "Estrategias de Email Marketing" : "Email Marketing Strategies" }</h2>
                     {lang==='castellano'
                     ?
-                    <p>Español: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                    <p>5 Formas de generar Leads y Retener Pacientes</p>
                     :
-                    <p>English: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                    <p>5 Ways to Nurture Leads and Retain Patients</p>
                     }
                 </div>
             </div>
@@ -319,15 +322,15 @@ export const BlogSpotsSlider = ({ content }) => {
         <Link to="/blog05">
             <div className="container--blog">
                 <div className="container--blog__img">
-                    <img src="./img/blog.png" alt="Card" className="blog-img" />
+                    <img src="./img/header-blog05.png" alt="manos estrechándose en acuerdo mutuo" className="blog-img" />
                 </div>
-                <div className="blog-content">
-                    <h2>BLOG 5</h2>
+                <div className="blogspot-content">
+                    <h2>#5 - {lang==='castellano' ? "El Arte de la Participación del Paciente" : "Art of Patient Engagement"}</h2>
                     {lang==='castellano'
                     ?
-                    <p>Español: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                    <p>10 Técnicas para Construir Conexiones Significativas</p>
                     :
-                    <p>English: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                    <p>10 Techniques for Building Meaningful Connections</p>
                     }
                 </div>
             </div>
@@ -338,15 +341,15 @@ export const BlogSpotsSlider = ({ content }) => {
         <Link to="/blog06">
             <div className="container--blog">
                 <div className="container--blog__img">
-                    <img src="./img/blog.png" alt="Card" className="blog-img" />
+                    <img src="./img/header-blog06.png" alt="Miniatura blog 6" className="blog-img" />
                 </div>
-                <div className="blog-content">
-                    <h2>BLOG 6</h2>
+                <div className="blogspot-content">
+                    <h2>#6 - {lang==='castellano' ? "Genera Leads de Calidad" : "Generate Quality Leads"}</h2>
                     {lang==='castellano'
                     ?
-                    <p>Español: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                    <p>6 Estrategias Efectivas de Generación de Leads para tu Práctica</p>
                     :
-                    <p>English: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                    <p>6 Effective Lead Generation Strategies for Your Practice</p>
                     }
                 </div>
             </div>
@@ -357,15 +360,15 @@ export const BlogSpotsSlider = ({ content }) => {
         <Link to="/blog07">
             <div className="container--blog">
                 <div className="container--blog__img">
-                    <img src="./img/blog.png" alt="Card" className="blog-img" />
+                    <img src="./img/header-blog07.png" alt="Miniatura blog 7" className="blog-img" />
                 </div>
-                <div className="blog-content">
-                    <h2>BLOG 7</h2>
+                <div className="blogspot-content">
+                    <h2>#7 - {lang==='castellano'?"Crea Landing pages Altamente Convertidoras":"Create High-Converting Landing Pages"}</h2>
                     {lang==='castellano'
                     ?
-                    <p>Español: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                    <p>Diseña landing pages que atraigan y conviertan pacientes potenciales</p>
                     :
-                    <p>English: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                    <p>How to design landing pages that attract and convert potential patients</p>
                     }
                 </div>
             </div>
@@ -376,15 +379,15 @@ export const BlogSpotsSlider = ({ content }) => {
         <Link to="/blog08">
             <div className="container--blog">
                 <div className="container--blog__img">
-                    <img src="./img/blog.png" alt="Card" className="blog-img" />
+                    <img src="./img/blog.png" alt="Miniatura blog 8" className="blog-img" />
                 </div>
-                <div className="blog-content">
-                    <h2>BLOG 8</h2>
+                <div className="blogspot-content">
+                    <h2>#8 - {lang==='castellano'?"Campañas Publicitarias Exitosas: Una Guía para...":"Successful Ad Campaigns: A Guide for..."}</h2>
                     {lang==='castellano'
                     ?
-                    <p>Español: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                    <p>Consejos Paso a Paso para Crear y Gestionar Publicidad Efectiva</p>
                     :
-                    <p>English: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                    <p>Step-by-Step Tips for Creating and Managing Effective Advertising</p>
                     }
                 </div>
             </div>
@@ -395,15 +398,15 @@ export const BlogSpotsSlider = ({ content }) => {
         <Link to="/blog09">
             <div className="container--blog">
                 <div className="container--blog__img">
-                    <img src="./img/blog.png" alt="Card" className="blog-img" />
+                    <img src="./img/header-blog09.png" alt="Miniatura blog 9" className="blog-img" />
                 </div>
-                <div className="blog-content">
-                    <h2>BLOG 9</h2>
+                <div className="blogspot-content">
+                    <h2>#9 - {lang==='castellano'?"Ranking y Visibilidad: 10 tips de SEO":"Ranking & Visibility: 10 SEO Tips"}</h2>
                     {lang==='castellano'
                     ?
-                    <p>Español: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                    <p>Aprende a optimizar tu sitio web para los motores de búsqueda y mejorar su ranking y visibilidad.</p>
                     :
-                    <p>English: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                    <p>Learn how to optimize your website for search engines and improve its ranking and visibility.</p>
                     }
                 </div>
             </div>
@@ -414,15 +417,15 @@ export const BlogSpotsSlider = ({ content }) => {
         <Link to="/blog10">
             <div className="container--blog">
                 <div className="container--blog__img">
-                    <img src="./img/blog.png" alt="Card" className="blog-img" />
+                    <img src="./img/header-blog10.png" alt="Miniatura blog 10" className="blog-img" />
                 </div>
-                <div className="blog-content">
-                    <h2>BLOG 10</h2>
+                <div className="blogspot-content">
+                    <h2>#10 - {lang==='castellano' ? "MKT: Mide el Éxito de tus Esfuerzos" : "Measure the Success of Your MKT Efforts"}</h2>
                     {lang==='castellano'
                     ?
-                    <p>Español: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                    <p>6 Métricas Clave para Evaluar la Efectividad de las Estrategias de Marketing de tu Práctica Médica</p>
                     :
-                    <p>English: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+                    <p>6 Key Metrics to Track for Evaluating the Effectiveness of Your Medical {`Practice's`} Marketing Strategies</p>
                     }
                 </div>
             </div>
