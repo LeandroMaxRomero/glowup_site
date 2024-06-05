@@ -24,8 +24,8 @@
       text-transform: uppercase;
   }
   h4{
-    color: #FFF;
-    font-family: Epilogue;
+    color: v.$blanco;
+    font-family: v.$font;
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
@@ -49,7 +49,7 @@
 .divisor--accordion{
   width: 1300px;
   height: 3px;
-  background: linear-gradient(8deg, #5BD8FF 56%, #69FFB7 89.04%)
+  background: linear-gradient(8deg, v.$celeste 56%, v.$verde 89.04%)
 }
 
 .accordionHeading {
@@ -82,7 +82,7 @@
     &:hover {
       h3{
         transition: ease-out 300ms;
-        background: linear-gradient(90deg, #5BD8FF 0%, #69FFB7 100%);
+        background: linear-gradient(90deg, v.$celeste 0%, v.$verde 100%);
         background-clip: border-box;
         background-clip: text;
         -webkit-background-clip: text;
@@ -99,7 +99,7 @@
     overflow: hidden;
     transition: all 600ms ease-in-out;
     .cont-despl {
-        color: #ADADAD;
+        color: v.$placeholder;
         text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.09);
         font-size: 20px;
         font-style: normal;

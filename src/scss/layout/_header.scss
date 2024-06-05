@@ -52,17 +52,13 @@
         }
         span{
             text-decoration-line: underline;
-            text-decoration-color:#5BD8FF;
+            text-decoration-color:v.$celeste;
             color: v.$celeste;
-            // background: linear-gradient(8deg, #5BD8FF 56%, #69FFB7 89.04%);
-            // background-clip: text;
-            // -webkit-background-clip: text;
-            // -webkit-text-fill-color: transparent;
         }
     }
 }
 h4{
-    color: #ADADAD;
+    color: v.$placeholder;
     text-align: center;
     font-size: 24px;
     font-style: normal;
@@ -80,7 +76,7 @@ h4{
         gap: 10px;
 
         --b: 2px;   /* thickness of the border */
-        --c: #5BD8FF;   /* color of the border */
+        --c: v.$celeste;   /* color of the border */
         --w: 11px;  /* width of border */
         
         
@@ -95,7 +91,7 @@ h4{
         
         &:hover{
         cursor: pointer;
-        border: 2px solid #5BD8FF;
+        border: 2px solid v.$celeste;
         background: rgba(91, 216, 255, 0.20);
         transition: 0.5s;
         }

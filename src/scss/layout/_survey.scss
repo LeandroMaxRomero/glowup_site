@@ -58,7 +58,7 @@
     width: 100%;
     .title{
         font-family: v.$font;
-        color: #ADADAD;
+        color: v.$placeholder;
         font-size: 25px;
         font-style: normal;
         font-weight: 400;
@@ -128,7 +128,7 @@
         height: 46px;
         width: fit-content;
         font-weight: 600;
-        border: 2px solid #5BD8FF;
+        border: 2px solid v.$celeste;
         border-radius: 2.5px;
         width: 100%;
 
@@ -137,8 +137,8 @@
         align-items: center;
         gap: 10px;
 
-        color: #FFF;
-        font-family: Epilogue;
+        color: v.$blanco;
+        font-family: v.$font;
         font-size: 20px;
         font-style: normal;
         font-weight: 400;
@@ -147,7 +147,7 @@
             font-size: 14px;
         }
         &:disabled{
-            background-color: #5BD8FF;
+            background-color:v.$celeste;
             color: v.$negro;
         }
 
@@ -158,7 +158,7 @@
             height: 13px;
             background-color: transparent;
             border-radius: 100%;
-            border: 2px solid #5BD8FF;
+            border: 2px solid v.$celeste;
             transition: all 0.5s;
         }
 
@@ -173,14 +173,14 @@
             height: 13px;
             background-color: transparent;
             border-radius: 100%;
-            border: 2px solid #5BD8FF;
+            border: 2px solid v.$celeste;
             transition: all 0.5s;
             &:after{
                 content: "";
                 position: absolute;
                 left: 0;
                 top: 0;
-                background-color: #5BD8FF;
+                background-color: v.$celeste;
                 border: 2px solid black;
                 border-radius: 100%;
                 width: 100%;
@@ -200,14 +200,17 @@
         height: fit-content;
         display: flex;
         gap: 5px;
+        cursor: pointer;
         @include m.mobile {
             font-size: 16px;
         }
-        cursor: pointer;
         input{
             display: none;
             &:checked~span:after{
                     opacity: 1;
+            }
+            &:checked~p{
+                color: v.$celeste;
             }
         }
         span{
@@ -218,12 +221,12 @@
             min-height: 13px;
             background-color: transparent;
             border-radius: 100%;
-            border: 2px solid #5BD8FF;
+            border: 2px solid v.$celeste;
             transition: all 0.5s;
             &:after{
                 content: "";
                 position: absolute;
-                background-color: #5BD8FF;
+                background-color: v.$celeste;
                 border: 2px solid black;
                 border-radius: 100%;
                 width: 100%;
@@ -232,10 +235,9 @@
                 transition: all 0.3s ease;
             }
         }
-        &:hover{
-            color:v.$blanco;
+        p:hover{
+            color:v.$verde;
         }
-
     }
 
 }
@@ -244,12 +246,12 @@
     resize: none;
     align-self: center;
     background-color: transparent;
-    border: 2px solid #5BD8FF;
+    border: 2px solid v.$celeste;
     height: 122px;
     margin-top: 20px;
     width: 100%;
-    color: #FFF;
-    font-family: Epilogue;
+    color: v.$blanco;
+    font-family: v.$font;
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
@@ -259,8 +261,8 @@
     }
 
     ::placeholder{
-        color: #ADADAD;
-        font-family: Epilogue;
+        color: v.$placeholder;
+        font-family: v.$font;
         font-size: 20px;
         font-style: normal;
         font-weight: 400;
@@ -283,7 +285,7 @@
     width: 177px;
     height: 42px;
     background-color: transparent;
-    border: 2px solid #5BD8FF;
+    border: 2px solid v.$celeste;
 
     display: flex;
     gap: 10px;
@@ -292,8 +294,8 @@
     padding: 0;
 
 
-    color: #FFF;
-    font-family: Epilogue;
+    color: v.$blanco;
+    font-family: v.$font;
     font-size: 24px;
     font-style: normal;
     font-weight: 400;

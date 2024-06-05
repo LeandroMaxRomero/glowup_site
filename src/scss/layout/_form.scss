@@ -75,7 +75,7 @@
     flex-direction: column;
     min-height: 560px;
     h3{
-        color: #FFF;
+        color: v.$blanco;
         font-size: 20px;
         font-style: normal;
         font-weight: 400;
@@ -99,7 +99,7 @@
     width: 100%;
     input{
         width: 100%;
-        border: 1px solid #5BD8FF;
+        border: 1px solid v.$celeste;
         background-color: transparent;
         padding: 13px 10px;
         
@@ -118,7 +118,7 @@
 
 .select--form{
     width: 100%;
-    border: 1px solid #5BD8FF;
+    border: 1px solid v.$celeste;
     background-color: transparent;
     padding: 13px 10px;
 
@@ -163,7 +163,7 @@
         resize: none;
         width: 100%;
         min-height: 228px;
-        border: 1px solid #5BD8FF;
+        border: 1px solid v.$celeste;
         background-color: transparent;
         padding: 13px 10px;
 
@@ -178,7 +178,7 @@
 .btn__form--submit{
     width: 205.816px;
     height: 41.253px;
-    border: 1px solid #5BD8FF;
+    border: 1px solid v.$celeste;
     background-color: transparent;
     align-self: center;
 
@@ -193,7 +193,7 @@
 .disable-option{
     display:flex;
     width: 100%;
-    border: 1px solid #5BD8FF;
+    border: 1px solid v.$celeste;
     padding: 13px 10px;
     position: relative;
     background-color: transparent;
@@ -243,7 +243,7 @@
     top: 43px;
     display: none;    
     width: 100%;
-    border: 1px solid #5BD8FF;
+    border: 1px solid v.$celeste;
     background-color: transparent;
     padding: 13px 10px;
     &::after{
