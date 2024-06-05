@@ -54,7 +54,7 @@ export const BlogSpotsSlider = ({ content }) => {
                                 <img src="./img/header-blog01.png" alt="Miniatura Blog 1" className="blog-img" />
                             </div>
                             <div className="blogspot-content">
-                                <h2>#1 - {lang==='castellano'?"Eleva tu Práctica en 2024":"Elevate Your Practice in 2024"}</h2>
+                                <h2>{lang==='castellano'?"Eleva tu Práctica en 2024":"Elevate Your Practice in 2024"}</h2>
                                 {lang==='castellano'
                                 ?
                                 <p>Estrategias Comprobadas de Marketing Digital para el Crecimiento Médico</p>
@@ -71,7 +71,7 @@ export const BlogSpotsSlider = ({ content }) => {
                                 <img src="./img/header-blog02.png" alt="Miniatura Blog 2" className="blog-img" />
                             </div>
                             <div className="blogspot-content">
-                                <h2>#2 - {lang==='castellano'? "Guía Definitiva para Adquirir Pacientes" : "Ultimate Guide to Patient Acquisition"}</h2>
+                                <h2>{lang==='castellano'? "Guía Definitiva para Adquirir Pacientes" : "Ultimate Guide to Patient Acquisition"}</h2>
                                 {lang==='castellano'
                                 ?
                                 <p>5 Estrategias que Toda Práctica Debe Conocer</p>
@@ -92,7 +92,7 @@ export const BlogSpotsSlider = ({ content }) => {
                                 <img src="./img/header-blog03.png" alt="Miniatura Blog 3" className="blog-img" />
                             </div>
                             <div className="blogspot-content">
-                                <h2>#3 - {lang==='castellano'? "Domina el Marketing Digital" : "Master Digital Marketing"}</h2>
+                                <h2>{lang==='castellano'? "Domina el Marketing Digital" : "Master Digital Marketing"}</h2>
                                 {lang==='castellano'
                                 ?
                                 <p>8 Estrategias para Elevar tu Práctica Médica</p>
@@ -109,7 +109,7 @@ export const BlogSpotsSlider = ({ content }) => {
                                 <img src="./img/header-blog04.png" alt="Card" className="blog-img" />
                             </div>
                             <div className="blogspot-content">
-                            <h2>#4 - {lang==='castellano' ? "Estrategias de Email Marketing" : "Email Marketing Strategies" }</h2>
+                            <h2>{lang==='castellano' ? "Estrategias de Email Marketing" : "Email Marketing Strategies" }</h2>
                             {lang==='castellano'
                             ?
                             <p>5 Formas de generar Leads y Retener Pacientes</p>
@@ -130,7 +130,7 @@ export const BlogSpotsSlider = ({ content }) => {
                                 <img src="./img/header-blog05.png" alt="Manos estrechándose en acuerdo mutuo" className="blog-img" />
                             </div>
                             <div className="blogspot-content">
-                                <h2>#5 - {lang==='castellano' ? "El Arte de la Participación del Paciente" : "Art of Patient Engagement"}</h2>
+                                <h2>{lang==='castellano' ? "El Arte de la Participación del Paciente" : "Art of Patient Engagement"}</h2>
                                 {lang==='castellano'
                                 ?
                                 <p>10 Técnicas para Construir Conexiones Significativas</p>
@@ -147,7 +147,7 @@ export const BlogSpotsSlider = ({ content }) => {
                                 <img src="./img/header-blog06.png" alt="Miniatura blog 6" className="blog-img" />
                             </div>
                             <div className="blogspot-content">
-                                <h2>#6 - {lang==='castellano' ? "Genera Leads de Calidad" : "Generate Quality Leads"}</h2>
+                                <h2>{lang==='castellano' ? "Genera Leads de Calidad" : "Generate Quality Leads"}</h2>
                                 {lang==='castellano'
                                 ?
                                 <p>6 Estrategias Efectivas de Generación de Leads para tu Práctica</p>
@@ -168,7 +168,7 @@ export const BlogSpotsSlider = ({ content }) => {
                                 <img src="./img/header-blog07.png" alt="Card" className="blog-img" />
                             </div>
                             <div className="blogspot-content">
-                                <h2>#7 - {lang==='castellano'?"Crea Landing pages Altamente Convertidoras":"Create High-Converting Landing Pages"}</h2>
+                                <h2>{lang==='castellano'?"Crea Landing pages Altamente Convertidoras":"Create High-Converting Landing Pages"}</h2>
                                 {lang==='castellano'
                                 ?
                                 <p>Diseña landing pages que atraigan y conviertan pacientes potenciales</p>
@@ -185,7 +185,7 @@ export const BlogSpotsSlider = ({ content }) => {
                                 <img src="./img/header-blog08.png" alt="Minatura blog 8" className="blog-img" />
                             </div>
                             <div className="blogspot-content">
-                                <h2>#8 - {lang==='castellano'?"Campañas Publicitarias Exitosas: Una Guía para...":"Successful Ad Campaigns: A Guide for..."}</h2>
+                                <h2>{lang==='castellano'?"Campañas Publicitarias Exitosas: Una Guía para...":"Successful Ad Campaigns: A Guide for..."}</h2>
                                 {lang==='castellano'
                                 ?
                                 <p>Consejos Paso a Paso para Crear y Gestionar Publicidad Efectiva</p>
@@ -206,7 +206,7 @@ export const BlogSpotsSlider = ({ content }) => {
                                 <img src="./img/header-blog09.png" alt="Miniatura blog 9" className="blog-img" />
                             </div>
                             <div className="blogspot-content">
-                                <h2>#9 - {lang==='castellano'?"Ranking y Visibilidad: 10 tips de SEO":"Ranking & Visibility: 10 SEO Tips"}</h2>
+                                <h2>{lang==='castellano'?"Ranking y Visibilidad: 10 tips de SEO":"Ranking & Visibility: 10 SEO Tips"}</h2>
                                 {lang==='castellano'
                                 ?
                                 <p>Aprende a optimizar tu sitio web para los motores de búsqueda y mejorar...</p>
@@ -223,7 +223,7 @@ export const BlogSpotsSlider = ({ content }) => {
                                 <img src="./img/header-blog10.png" alt="Miniatura blog 10" className="blog-img" />
                             </div>
                             <div className="blogspot-content">
-                                <h2>#10 - {lang==='castellano' ? "MKT: Mide el Éxito de tus Esfuerzos" : "Measure the Success of Your MKT Efforts"}</h2>
+                                <h2>{lang==='castellano' ? "MKT: Mide el Éxito de tus Esfuerzos" : "Measure the Success of Your MKT Efforts"}</h2>
                                 {lang==='castellano'
                                 ?
                                 <p>6 Métricas Claves para Evaluar la Efectividad de las Estrategias...</p>
@@ -249,7 +249,7 @@ export const BlogSpotsSlider = ({ content }) => {
                         <img src="./img/header-blog01.png" alt="Card" className="blog-img" />
                     </div>
                     <div className="blogspot-content">
-                        <h2>#1 - {lang==='castellano'?"Eleva tu Práctica en 2024":"Elevate Your Practice in 2024"}</h2>
+                        <h2>{lang==='castellano'?"Eleva tu Práctica en 2024":"Elevate Your Practice in 2024"}</h2>
                         {lang==='castellano'
                         ?
                         <p>Estrategias Comprobadas de Marketing Digital para el Crecimiento Médico</p>
@@ -268,7 +268,7 @@ export const BlogSpotsSlider = ({ content }) => {
                     <img src="./img/header-blog02.png" alt="Card" className="blog-img" />
                 </div>
                 <div className="blogspot-content">
-                    <h2>#2 - {lang==='castellano'? "Guía Definitiva para Adquirir Pacientes" : "Ultimate Guide to Patient Acquisition"}</h2>
+                    <h2>{lang==='castellano'? "Guía Definitiva para Adquirir Pacientes" : "Ultimate Guide to Patient Acquisition"}</h2>
                     {lang==='castellano'
                     ?
                     <p>5 Estrategias que Toda Práctica Debe Conocer</p>
@@ -287,7 +287,7 @@ export const BlogSpotsSlider = ({ content }) => {
                     <img src="./img/header-blog03.png" alt="Miniatura Blog 3" className="blog-img" />
                 </div>
                 <div className="blogspot-content">
-                    <h2>#3 - {lang==='castellano'? "Domina el Marketing Digital" : "Master Digital Marketing"}</h2>
+                    <h2>{lang==='castellano'? "Domina el Marketing Digital" : "Master Digital Marketing"}</h2>
                     {lang==='castellano'
                     ?
                     <p>8 Estrategias para Elevar tu Práctica Médica</p>
@@ -306,7 +306,7 @@ export const BlogSpotsSlider = ({ content }) => {
                     <img src="./img/header-blog04.png" alt="Miniatura Blog 4" className="blog-img" />
                 </div>
                 <div className="blogspot-content">
-                    <h2>#4 - {lang==='castellano' ? "Estrategias de Email Marketing" : "Email Marketing Strategies" }</h2>
+                    <h2>{lang==='castellano' ? "Estrategias de Email Marketing" : "Email Marketing Strategies" }</h2>
                     {lang==='castellano'
                     ?
                     <p>5 Formas de generar Leads y Retener Pacientes</p>
@@ -325,7 +325,7 @@ export const BlogSpotsSlider = ({ content }) => {
                     <img src="./img/header-blog05.png" alt="manos estrechándose en acuerdo mutuo" className="blog-img" />
                 </div>
                 <div className="blogspot-content">
-                    <h2>#5 - {lang==='castellano' ? "El Arte de la Participación del Paciente" : "Art of Patient Engagement"}</h2>
+                    <h2>{lang==='castellano' ? "El Arte de la Participación del Paciente" : "Art of Patient Engagement"}</h2>
                     {lang==='castellano'
                     ?
                     <p>10 Técnicas para Construir Conexiones Significativas</p>
@@ -344,7 +344,7 @@ export const BlogSpotsSlider = ({ content }) => {
                     <img src="./img/header-blog06.png" alt="Miniatura blog 6" className="blog-img" />
                 </div>
                 <div className="blogspot-content">
-                    <h2>#6 - {lang==='castellano' ? "Genera Leads de Calidad" : "Generate Quality Leads"}</h2>
+                    <h2>{lang==='castellano' ? "Genera Leads de Calidad" : "Generate Quality Leads"}</h2>
                     {lang==='castellano'
                     ?
                     <p>6 Estrategias Efectivas de Generación de Leads para tu Práctica</p>
@@ -363,7 +363,7 @@ export const BlogSpotsSlider = ({ content }) => {
                     <img src="./img/header-blog07.png" alt="Miniatura blog 7" className="blog-img" />
                 </div>
                 <div className="blogspot-content">
-                    <h2>#7 - {lang==='castellano'?"Crea Landing pages Altamente Convertidoras":"Create High-Converting Landing Pages"}</h2>
+                    <h2>{lang==='castellano'?"Crea Landing pages Altamente Convertidoras":"Create High-Converting Landing Pages"}</h2>
                     {lang==='castellano'
                     ?
                     <p>Diseña landing pages que atraigan y conviertan pacientes potenciales</p>
@@ -382,7 +382,7 @@ export const BlogSpotsSlider = ({ content }) => {
                     <img src="./img/blog.png" alt="Miniatura blog 8" className="blog-img" />
                 </div>
                 <div className="blogspot-content">
-                    <h2>#8 - {lang==='castellano'?"Campañas Publicitarias Exitosas: Una Guía para...":"Successful Ad Campaigns: A Guide for..."}</h2>
+                    <h2>{lang==='castellano'?"Campañas Publicitarias Exitosas: Una Guía para...":"Successful Ad Campaigns: A Guide for..."}</h2>
                     {lang==='castellano'
                     ?
                     <p>Consejos Paso a Paso para Crear y Gestionar Publicidad Efectiva</p>
@@ -401,7 +401,7 @@ export const BlogSpotsSlider = ({ content }) => {
                     <img src="./img/header-blog09.png" alt="Miniatura blog 9" className="blog-img" />
                 </div>
                 <div className="blogspot-content">
-                    <h2>#9 - {lang==='castellano'?"Ranking y Visibilidad: 10 tips de SEO":"Ranking & Visibility: 10 SEO Tips"}</h2>
+                    <h2>{lang==='castellano'?"Ranking y Visibilidad: 10 tips de SEO":"Ranking & Visibility: 10 SEO Tips"}</h2>
                     {lang==='castellano'
                     ?
                     <p>Aprende a optimizar tu sitio web para los motores de búsqueda y mejorar su ranking y visibilidad.</p>
@@ -420,7 +420,7 @@ export const BlogSpotsSlider = ({ content }) => {
                     <img src="./img/header-blog10.png" alt="Miniatura blog 10" className="blog-img" />
                 </div>
                 <div className="blogspot-content">
-                    <h2>#10 - {lang==='castellano' ? "MKT: Mide el Éxito de tus Esfuerzos" : "Measure the Success of Your MKT Efforts"}</h2>
+                    <h2>{lang==='castellano' ? "MKT: Mide el Éxito de tus Esfuerzos" : "Measure the Success of Your MKT Efforts"}</h2>
                     {lang==='castellano'
                     ?
                     <p>6 Métricas Clave para Evaluar la Efectividad de las Estrategias de Marketing de tu Práctica Médica</p>
